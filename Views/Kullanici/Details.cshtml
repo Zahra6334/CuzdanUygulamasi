@@ -1,0 +1,21 @@
+﻿@model CuzdanUygulamasi.Models.Kullanici
+
+@{
+    ViewData["Title"] = "Kullanıcı Detayları";
+}
+
+<h2>Kullanıcı Detayları</h2>
+
+<dl class="row">
+    <dt class="col-sm-2">AdSoyad</dt>
+    <dd class="col-sm-10">@Model.AdSoyad</dd>
+
+    <dt class="col-sm-2">Email</dt>
+    <dd class="col-sm-10">@Model.Email</dd>
+
+    <dt class="col-sm-2">Kullanıcı Id</dt>
+    <dd class="col-sm-10">@Model.Id</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Düzenle</a>
+<a asp-action="Index" class="btn btn-secondary">Geri</a>

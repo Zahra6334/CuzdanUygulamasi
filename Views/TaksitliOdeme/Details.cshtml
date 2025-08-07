@@ -1,0 +1,30 @@
+﻿@model CuzdanUygulamasi.Models.TaksitliOdeme
+
+@{
+    ViewData["Title"] = "Taksitli Ödeme Detayları";
+}
+
+<h2>Taksitli Ödeme Detayları</h2>
+
+<dl class="row">
+    <dt class="col-sm-2">Kullanici</dt>
+    <dd class="col-sm-10">@Model.Kullanici</dd>
+
+    <dt class="col-sm-2">Taksit Sayısı</dt>
+    <dd class="col-sm-10">@Model.TaksitSayisi</dd>
+
+    <dt class="col-sm-2">Faiz Oranı (%)</dt>
+    <dd class="col-sm-10">@Model.FaizOrani</dd>
+
+    <dt class="col-sm-2">Toplam Tutar</dt>
+    <dd class="col-sm-10">@Model.ToplamTutar</dd>
+
+    <dt class="col-sm-2">Kalan Taksit</dt>
+    <dd class="col-sm-10">@Model.KalanTaksit</dd>
+
+    <dt class="col-sm-2">Kullanıcı ID</dt>
+    <dd class="col-sm-10">@Model.KullaniciId</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Düzenle</a>
+<a asp-action="Index" class="btn btn-secondary">Geri</a>

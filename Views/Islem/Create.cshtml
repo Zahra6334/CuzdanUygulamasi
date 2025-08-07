@@ -1,0 +1,36 @@
+﻿@model CuzdanUygulamasi.Models.Islem
+
+@{
+    ViewData["Title"] = "Yeni İşlem Ekle";
+}
+
+<h2>Yeni İşlem Ekle</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Tutar"></label>
+        <input asp-for="Tutar" class="form-control" />
+        <span asp-validation-for="Tutar" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Aciklama"></label>
+        <input asp-for="Aciklama" class="form-control" />
+        <span asp-validation-for="Aciklama" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Tarih"></label>
+        <input asp-for="Tarih" type="date" class="form-control" />
+        <span asp-validation-for="Tarih" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IslemTipi"></label>
+        <select asp-for="IslemTipi" class="form-control" asp-items="Html.GetEnumSelectList<CuzdanUygulamasi.Models.IslemTipi>()"></select>
+        <span asp-validation-for="IslemTipi" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="KullaniciId"></label>
+        <input asp-for="KullaniciId" class="form-control" />
+        <span asp-validation-for="KullaniciId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success mt-2">Kaydet</button>
+</form>

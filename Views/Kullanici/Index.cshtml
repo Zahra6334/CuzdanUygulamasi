@@ -1,0 +1,35 @@
+﻿@model List<CuzdanUygulamasi.Models.Kullanici>
+
+@{
+    ViewData["Title"] = "Kullanıcı Listesi";
+}
+
+<h2>Kullanıcılar</h2>
+
+<a asp-action="Create" class="btn btn-primary">Yeni Kullanıcı Ekle</a>
+
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>AdSoyad</th>
+            <th>Email</th>
+            <th>Kullanıcı Id</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kullanici in Model)
+        {
+            <tr>
+                <td>@kullanici.AdSoyad</td>
+                <td>@kullanici.Email</td>
+                <td>@kullanici.Id</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@kullanici.Id">Detay</a> |
+                    <a asp-action="Edit" asp-route-id="@kullanici.Id">Düzenle</a> |
+                    <a asp-action="Delete" asp-route-id="@kullanici.Id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

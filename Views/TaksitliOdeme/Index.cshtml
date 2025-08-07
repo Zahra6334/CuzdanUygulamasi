@@ -1,0 +1,41 @@
+﻿@model List<CuzdanUygulamasi.Models.TaksitliOdeme>
+
+@{
+    ViewData["Title"] = "Taksitli Ödeme Listesi";
+}
+
+<h2>Taksitli Ödeme Listesi</h2>
+
+<a asp-action="Create" class="btn btn-primary">Yeni Taksitli Ödeme Ekle</a>
+
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>Kullanici</th>
+            <th>Taksit Sayısı</th>
+            <th>Faiz Oranı (%)</th>
+            <th>Toplam Tutar</th>
+            <th>Kalan Taksit</th>
+            <th>Kullanıcı ID</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var odeme in Model)
+        {
+            <tr>
+                <td>@odeme.Kullanici</td>
+                <td>@odeme.TaksitSayisi</td>
+                <td>@odeme.FaizOrani</td>
+                <td>@odeme.ToplamTutar</td>
+                <td>@odeme.KalanTaksit</td>
+                <td>@odeme.KullaniciId</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@odeme.Id">Detay</a> |
+                    <a asp-action="Edit" asp-route-id="@odeme.Id">Düzenle</a> |
+                    <a asp-action="Delete" asp-route-id="@odeme.Id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

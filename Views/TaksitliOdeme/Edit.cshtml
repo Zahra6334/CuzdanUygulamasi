@@ -1,0 +1,40 @@
+﻿@model CuzdanUygulamasi.Models.TaksitliOdeme
+
+@{
+    ViewData["Title"] = "Taksitli Ödeme Düzenle";
+}
+
+<h2>Taksitli Ödeme Düzenle</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Kullanici"></label>
+        <input asp-for="Kullanici" class="form-control" />
+        <span asp-validation-for="Kullanici" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TaksitSayisi"></label>
+        <input asp-for="TaksitSayisi" class="form-control" />
+        <span asp-validation-for="TaksitSayisi" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FaizOrani"></label>
+        <input asp-for="FaizOrani" class="form-control" />
+        <span asp-validation-for="FaizOrani" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ToplamTutar"></label>
+        <input asp-for="ToplamTutar" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="KalanTaksit"></label>
+        <input asp-for="KalanTaksit" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="KullaniciId"></label>
+        <input asp-for="KullaniciId" class="form-control" />
+        <span asp-validation-for="KullaniciId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Güncelle</button>
+</form>

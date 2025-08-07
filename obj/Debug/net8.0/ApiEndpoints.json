@@ -1,0 +1,191 @@
+[
+  {
+    "ContainingType": "CuzdanUygulamasi.Controllers.IslemController",
+    "Method": "TumIslemleriGetir",
+    "RelativePath": "api/Islem",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CuzdanUygulamasi.Controllers.IslemController",
+    "Method": "IslemEkle",
+    "RelativePath": "api/Islem",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "yeniIslem",
+        "Type": "CuzdanUygulamasi.Models.Islem",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CuzdanUygulamasi.Controllers.IslemController",
+    "Method": "IslemGuncelle",
+    "RelativePath": "api/Islem/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "guncellenenIslem",
+        "Type": "CuzdanUygulamasi.Models.Islem",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CuzdanUygulamasi.Controllers.IslemController",
+    "Method": "IslemSil",
+    "RelativePath": "api/Islem/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CuzdanUygulamasi.Controllers.KullaniciController",
+    "Method": "TumKullanicilariGetir",
+    "RelativePath": "api/Kullanici",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CuzdanUygulamasi.Controllers.KullaniciController",
+    "Method": "KullaniciEkle",
+    "RelativePath": "api/Kullanici",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "yeniKullanici",
+        "Type": "CuzdanUygulamasi.Models.Kullanici",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CuzdanUygulamasi.Controllers.KullaniciController",
+    "Method": "KullaniciGuncelle",
+    "RelativePath": "api/Kullanici/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "guncellenenKullanici",
+        "Type": "CuzdanUygulamasi.Models.Kullanici",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CuzdanUygulamasi.Controllers.KullaniciController",
+    "Method": "KullaniciSil",
+    "RelativePath": "api/Kullanici/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CuzdanUygulamasi.Controllers.TaksitliOdemeController",
+    "Method": "TumTaksitleriGetir",
+    "RelativePath": "api/TaksitliOdeme",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CuzdanUygulamasi.Controllers.TaksitliOdemeController",
+    "Method": "TaksitEkle",
+    "RelativePath": "api/TaksitliOdeme",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "yeniOdeme",
+        "Type": "CuzdanUygulamasi.Models.TaksitliOdeme",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CuzdanUygulamasi.Controllers.TaksitliOdemeController",
+    "Method": "TaksitGuncelle",
+    "RelativePath": "api/TaksitliOdeme/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "guncellenenOdeme",
+        "Type": "CuzdanUygulamasi.Models.TaksitliOdeme",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CuzdanUygulamasi.Controllers.TaksitliOdemeController",
+    "Method": "TaksitSil",
+    "RelativePath": "api/TaksitliOdeme/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,19 @@
+﻿@model CuzdanUygulamasi.Models.Kullanici
+
+@{
+    ViewData["Title"] = "Kullanıcı Sil";
+}
+
+<h2>Kullanıcı Sil</h2>
+
+<p>Bu kullanıcıyı silmek istediğinize emin misiniz?</p>
+
+<div>
+    <strong>@Model.AdSoyad @Model.Email</strong>
+</div>
+
+<form asp-action="DeleteConfirmed">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Evet, Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">Vazgeç</a>
+</form>
