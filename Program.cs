@@ -1,4 +1,5 @@
 using CuzdanUygulamasi.Data;
+using CuzdanUygulamasi.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IKullaniciServisi, KullaniciServisi>();
+
 
 var app = builder.Build();
 
@@ -27,7 +30,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 // Eðer authentication kullanýyorsan:
-// app.UseAuthentication();
+app.UseAuthentication();
 
 app.UseAuthorization();
 

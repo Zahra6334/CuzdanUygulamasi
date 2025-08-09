@@ -168,3 +168,4 @@ C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\obj\Debug\net8.0\r
 C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\obj\Debug\net8.0\CuzdanUygulamasi.pdb
 C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\obj\Debug\net8.0\CuzdanUygulamasi.genruntimeconfig.cache
 C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\obj\Debug\net8.0\ref\CuzdanUygulamasi.dll
+C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\obj\Debug\net8.0\CuzdanUygulamasi.sourcelink.json

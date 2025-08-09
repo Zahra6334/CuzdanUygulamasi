@@ -1,6 +1,7 @@
 ﻿using CuzdanUygulamasi.Data;
 using CuzdanUygulamasi.Models;
-using CuzdanUygulamasi.Services.Arayuzler;
+
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -47,6 +48,42 @@ namespace CuzdanUygulamasi.Services
 
             _veriTabani.Kullanicilar.Remove(kullanici);
             return await _veriTabani.SaveChangesAsync() > 0;
+        }
+
+        public Task Authenticate(string kullaniciAdi, string sifre)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Kullanici?> FindByEmailAsync(string email)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Kullanici?> FindByIdAsync(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<string> GeneratePasswordResetTokenAsync(Kullanici user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IdentityResult> ResetPasswordAsync(Kullanici user, string token, string newPassword)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<bool> EmailVarMi(string email)
+        {
+            return await _veriTabani.Kullanicilar.AnyAsync(u => u.Email == email);
+        }
+
+        public async Task<Kullanici> FindByEmailAndPasswordAsync(string email, string sifre)
+        {
+            return await _veriTabani.Kullanicilar
+                .FirstOrDefaultAsync(u => u.Email == email && u.SifreHash == sifre);
         }
     }
 }

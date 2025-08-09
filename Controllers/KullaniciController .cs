@@ -1,6 +1,5 @@
 ﻿using CuzdanUygulamasi.Models;
 using Microsoft.AspNetCore.Mvc;
-using CuzdanUygulamasi.Models;
 
 namespace CuzdanUygulamasi.Controllers
 {
