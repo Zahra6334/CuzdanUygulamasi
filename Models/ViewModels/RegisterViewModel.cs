@@ -1,4 +1,4 @@
-﻿namespace CuzdanUygulamasi.Models
+﻿namespace CuzdanUygulamasi.Models.ViewModels
 {
     public class RegisterViewModel
     {

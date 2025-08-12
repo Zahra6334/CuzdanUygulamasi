@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CuzdanUygulamasi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class TaksitliOdemeController : ControllerBase
     {

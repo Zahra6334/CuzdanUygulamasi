@@ -1,36 +1,223 @@
-﻿@model CuzdanUygulamasi.Models.Islem
-
-@{
-    ViewData["Title"] = "Yeni İşlem Ekle";
+﻿@{
+    ViewData["Title"] = "İşlemler";
 }
 
-<h2>Yeni İşlem Ekle</h2>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Finansal Uygulama</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #d92332;
+            --primary-dark: #a51c28;
+            --primary-light: #f8d7da;
+            --gradient: linear-gradient(135deg, #d92332 0%, #a51c28 100%);
+        }
 
-<form asp-action="Create">
-    <div class="form-group">
-        <label asp-for="Tutar"></label>
-        <input asp-for="Tutar" class="form-control" />
-        <span asp-validation-for="Tutar" class="text-danger"></span>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .header-section {
+            background: var(--gradient);
+            color: white;
+            border-radius: 0 0 30px 30px;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+            .header-section h1 {
+                font-weight: 700;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+        .content-container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+            .btn-primary:hover {
+                background-color: var(--primary-dark);
+                border-color: var(--primary-dark);
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(217, 35, 50, 0.3);
+            }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            color: white;
+            font-weight: 600;
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333;
+                border-color: #bd2130;
+            }
+
+        .form-control, .form-select {
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ced4da;
+        }
+
+            .form-control:focus, .form-select:focus {
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 0.25rem rgba(217, 35, 50, 0.25);
+            }
+
+        .table-striped > tbody > tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .table thead th {
+            border-bottom: 2px solid var(--primary-color);
+            background-color: #e9ecef;
+            color: var(--primary-dark);
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: var(--primary-light) !important;
+            cursor: pointer;
+        }
+
+        .transaction-type {
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .income {
+            color: #28a745;
+        }
+
+        .expense {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section text-center">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">İşlemler</h1>
+            <p class="lead animate__animated animate__fadeIn animate__delay-1s">
+                Gelir ve giderlerinizi yönetin.
+            </p>
+        </div>
     </div>
-    <div class="form-group">
-        <label asp-for="Aciklama"></label>
-        <input asp-for="Aciklama" class="form-control" />
-        <span asp-validation-for="Aciklama" class="text-danger"></span>
+
+    <div class="container">
+        <div class="content-container animate__animated animate__fadeInUp animate__delay-1s">
+            <h2 class="mb-4">Yeni İşlem Ekle</h2>
+            <form>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <label for="islemTuru" class="form-label">İşlem Türü</label>
+                        <select id="islemTuru" class="form-select">
+                            <option selected>Seçiniz...</option>
+                            <option value="gelir">Gelir</option>
+                            <option value="gider">Gider</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="tutar" class="form-label">Tutar (₺)</label>
+                        <input type="number" class="form-control" id="tutar" placeholder="0.00">
+                    </div>
+                    <div class="col-12">
+                        <label for="aciklama" class="form-label">Açıklama</label>
+                        <input type="text" class="form-control" id="aciklama" placeholder="Fatura ödemesi, maaş vb.">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="kategori" class="form-label">Kategori</label>
+                        <select id="kategori" class="form-select">
+                            <option selected>Seçiniz...</option>
+                            <option>Yemek</option>
+                            <option>Giyim</option>
+                            <option>Ulaşım</option>
+                            <option>Maaş</option>
+                            <option>Diğer</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="tarih" class="form-label">Tarih</label>
+                        <input type="date" class="form-control" id="tarih">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary w-100 mt-2">
+                            <i class="fas fa-plus-circle me-2"></i>İşlemi Kaydet
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <hr class="my-5">
+
+            <h2 class="mb-4">Tüm İşlemler</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tarih</th>
+                            <th scope="col">Açıklama</th>
+                            <th scope="col">Kategori</th>
+                            <th scope="col">Tür</th>
+                            <th scope="col">Tutar (₺)</th>
+                            <th scope="col">İşlem</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>12.08.2025</td>
+                            <td>Market alışverişi</td>
+                            <td>Yemek</td>
+                            <td class="transaction-type expense">Gider</td>
+                            <td class="expense">-245.75</td>
+                            <td><button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>07.08.2025</td>
+                            <td>Temmuz ayı maaşı</td>
+                            <td>Maaş</td>
+                            <td class="transaction-type income">Gelir</td>
+                            <td class="income">+8,500.00</td>
+                            <td><button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>05.08.2025</td>
+                            <td>Elektrik faturası</td>
+                            <td>Fatura</td>
+                            <td class="transaction-type expense">Gider</td>
+                            <td class="expense">-185.00</td>
+                            <td><button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label asp-for="Tarih"></label>
-        <input asp-for="Tarih" type="date" class="form-control" />
-        <span asp-validation-for="Tarih" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="IslemTipi"></label>
-        <select asp-for="IslemTipi" class="form-control" asp-items="Html.GetEnumSelectList<CuzdanUygulamasi.Models.IslemTipi>()"></select>
-        <span asp-validation-for="IslemTipi" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="KullaniciId"></label>
-        <input asp-for="KullaniciId" class="form-control" />
-        <span asp-validation-for="KullaniciId" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-success mt-2">Kaydet</button>
-</form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

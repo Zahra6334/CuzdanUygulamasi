@@ -45,5 +45,6 @@ namespace CuzdanUygulamasi.Models
         [ForeignKey("TaksitliOdeme")]
         public int? TaksitOdemeId { get; set; }
         public TaksitliOdeme TaksitliOdeme { get; set; }
+
     }
 }

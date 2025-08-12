@@ -1,14 +1,37 @@
-﻿using CuzdanUygulamasi.Models;
+﻿using CuzdanUygulamasi.Data;
+using CuzdanUygulamasi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CuzdanUygulamasi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
-    public class KullaniciController : ControllerBase
+    public class KullaniciController : Controller
     {
+        // Test amaçlı hafızada kullanıcı listesi (normalde DB'den çekilir)
         private static List<Kullanici> kullanicilar = new List<Kullanici>();
+        private readonly ApplicationDbContext _context;
+        public KullaniciController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
+        [HttpGet("Details/{id}")]
+        public IActionResult Details(int id)
+        {
+            var kullanici = _context.Kullanicilar.FirstOrDefault(k => k.Id == id);
+            if (kullanici == null)
+                return NotFound();
+
+            return View(kullanici);
+        }
+
+
+
+
+
+        // API metotları
         [HttpGet]
         public IActionResult TumKullanicilariGetir()
         {

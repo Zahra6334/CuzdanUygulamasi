@@ -1,6 +1,180 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Gizlilik Politikası";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d92332;
+            --primary-dark: #a51c28;
+            --primary-light: #f8d7da;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .privacy-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 20px rgba(217, 35, 50, 0.15);
+        }
+
+            .privacy-header h1 {
+                font-weight: 700;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+        .privacy-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .privacy-section {
+            margin-bottom: 2.5rem;
+        }
+
+            .privacy-section h2 {
+                color: var(--primary-color);
+                border-bottom: 2px solid var(--primary-light);
+                padding-bottom: 0.5rem;
+                margin-bottom: 1.5rem;
+                font-weight: 600;
+            }
+
+            .privacy-section h3 {
+                color: var(--primary-dark);
+                margin-top: 1.5rem;
+                font-weight: 500;
+            }
+
+        .back-to-home {
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+            .back-to-home:hover {
+                color: var(--primary-dark);
+                text-decoration: underline;
+            }
+
+        .privacy-icon {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="privacy-header text-center">
+        <div class="container">
+            <h1 class="display-4">@ViewData["Title"]</h1>
+            <p class="lead mt-3">Kişisel verilerinizin güvenliği bizim için önemlidir</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="privacy-container">
+            <div class="privacy-section">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-lock privacy-icon" viewBox="0 0 16 16">
+                        <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z" />
+                        <path d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415z" />
+                    </svg>
+                    Veri Toplama ve Kullanım
+                </h2>
+                <p>Uygulamamızı kullanırken aşağıdaki kişisel verilerinizi topluyoruz:</p>
+                <ul>
+                    <li>Hesap oluştururken sağladığınız temel bilgiler (ad, e-posta vb.)</li>
+                    <li>Finansal işlemlerinize ilişkin veriler (gelir, gider, taksit bilgileri)</li>
+                    <li>Cihaz bilgileri ve kullanım istatistikleri</li>
+                </ul>
+                <p>Bu veriler uygulamamızın işlevselliğini sağlamak, geliştirmek ve güvenliğinizi artırmak amacıyla kullanılmaktadır.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-database-lock privacy-icon" viewBox="0 0 16 16">
+                        <path d="M13 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                        <path d="M11 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0z" />
+                        <path d="M12.5 10c.276 0 .5-.448.5-1s-.224-1-.5-1-.5.448-.5 1 .224 1 .5 1z" />
+                        <path d="M12 13.5c0 .276-.224.5-.5.5s-.5-.224-.5-.5.224-.5.5-.5.5.224.5.5z" />
+                        <path d="M3 6c0 .276-.224.5-.5.5S2 6.276 2 6s.224-.5.5-.5S3 5.724 3 6z" />
+                        <path d="M2.5 10c.276 0 .5-.448.5-1s-.224-1-.5-1-.5.448-.5 1 .224 1 .5 1z" />
+                        <path d="M2 13.5c0 .276-.224.5-.5.5s-.5-.224-.5-.5.224-.5.5-.5.5.224.5.5z" />
+                        <path d="M8 5a1.5 1.5 0 0 1 1.5 1.5V8h-3v-.5A1.5 1.5 0 0 1 8 5z" />
+                        <path d="M14 14.5V16h-3v-1.5h1v-1a1.5 1.5 0 0 1 3 0v1h1z" />
+                    </svg>
+                    Veri Güvenliği
+                </h2>
+                <p>Topladığımız tüm veriler endüstri standartlarında şifreleme yöntemleriyle korunmaktadır:</p>
+                <ul>
+                    <li>Verileriniz SSL sertifikası ile şifrelenerek iletilir</li>
+                    <li>Finansal bilgileriniz ek güvenlik katmanlarıyla korunur</li>
+                    <li>Düzenli güvenlik denetimleri ve güncellemeler yapıyoruz</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share privacy-icon" viewBox="0 0 16 16">
+                        <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+                    </svg>
+                    Üçüncü Parti Paylaşımı
+                </h2>
+                <p>Verileriniz yalnızca aşağıdaki durumlarda sınırlı şekilde paylaşılabilir:</p>
+                <ul>
+                    <li>Yasal zorunluluklar gereği</li>
+                    <li>Uygulama hizmetlerini sağlamak için gerekli iş ortaklarıyla (veri işleme amaçlı)</li>
+                    <li>Kullanıcı güvenliğini sağlamak amacıyla</li>
+                </ul>
+                <p>Finansal verileriniz hiçbir şekilde pazarlama veya reklam amaçlı paylaşılmaz.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-wide privacy-icon" viewBox="0 0 16 16">
+                        <path d="M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.96 0 0 1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08.284a.96.96 0 0 1-1.186 1.187l-.284-.081c-.96-.275-1.65.918-.931 1.613l.211.205a.96.96 0 0 1-.434 1.622l-.286.071c-.97.243-.97 1.62 0 1.864l.286.071a.96.96 0 0 1 .434 1.622l-.211.205c-.719.695-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 1.187l-.081.283c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 1.622.434l.071.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 1.622-.434l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 1.187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96 0 0 1 .434-1.622l.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a.96.96 0 0 1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l-.284.08a.96.96 0 0 1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1.613-.931l-.205.211a.96.96 0 0 1-1.622-.434L8.932.727zM8 12.997a4.998 4.998 0 1 1 0-9.995 4.998 4.998 0 0 1 0 9.996z" />
+                    </svg>
+                    Haklarınız
+                </h2>
+                <p>Kullanıcılar olarak aşağıdaki haklara sahipsiniz:</p>
+                <ul>
+                    <li>Kişisel verilerinize erişim hakkı</li>
+                    <li>Verilerinizin düzeltilmesini talep etme hakkı</li>
+                    <li>Hesabınızı ve verilerinizi silme hakkı</li>
+                    <li>Veri işleme faaliyetlerimize itiraz etme hakkı</li>
+                </ul>
+                <p>Bu haklarınızı kullanmak için <a href="mailto:privacy@cuzdanapp.com">privacy@cuzdanapp.com</a> adresinden bizimle iletişime geçebilirsiniz.</p>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="/" class="back-to-home">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                    </svg>
+                    Ana Sayfaya Dön
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

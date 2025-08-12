@@ -1,5 +1,6 @@
 ﻿using CuzdanUygulamasi.Data;
 using CuzdanUygulamasi.Models;
+using CuzdanUygulamasi.Models.ViewModels;
 using CuzdanUygulamasi.Services;
 
 using Microsoft.AspNetCore.Mvc;

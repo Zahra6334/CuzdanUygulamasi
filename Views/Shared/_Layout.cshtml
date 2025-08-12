@@ -1,18 +1,291 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - CuzdanUygulamasi</title>
+    <title>@ViewData["Title"] - Finans Cüzdanım</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/CuzdanUygulamasi.styles.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    @RenderSection("Styles", required: false)
+    <style>
+        :root {
+            --primary-dark: #8B0000;
+            --primary-light: #FF6B6B;
+            --secondary: #FFE5E5;
+            --text-light: #FFFFFF;
+            --text-dark: #333333;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.2) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .navbar-brand, .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+        }
+
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .container {
+            flex: 1;
+            padding-bottom: 80px; /* Space for bottom nav */
+        }
+
+        .main-content {
+            padding: 20px 0;
+        }
+
+        /* Card styles */
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+        .card-header {
+            background-color: transparent;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0 0 15px 0;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+        }
+
+        /* Button styles */
+        .btn-primary {
+            background-color: var(--primary-light);
+            border-color: var(--primary-light);
+            color: var(--text-dark);
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+            .btn-primary:hover {
+                background-color: var(--secondary);
+                border-color: var(--secondary);
+                color: var(--text-dark);
+                transform: translateY(-2px);
+            }
+
+        /* Bottom navigation */
+        .bottom-nav {
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 12px;
+            transition: all 0.3s;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+            .nav-link i {
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+
+            .nav-link.active {
+                background-color: rgba(255, 255, 255, 0.2);
+                color: var(--primary-light);
+                transform: translateY(-5px);
+            }
+
+            .nav-link:hover {
+                color: var(--primary-light);
+                text-decoration: none;
+            }
+
+        /* Custom styles for financial app */
+        .balance-amount {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        .transaction-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .transaction-details {
+            display: flex;
+            align-items: center;
+        }
+
+        .transaction-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+        }
+
+        .transaction-amount.income {
+            color: #4CAF50;
+        }
+
+        .transaction-amount.expense {
+            color: #FF5252;
+        }
+
+        .progress-container {
+            margin: 20px 0;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary-light);
+            border-radius: 4px;
+        }
+
+        /* Form styles */
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-light);
+            border-radius: 8px;
+            padding: 12px 15px;
+        }
+
+            .form-control:focus {
+                background-color: rgba(255, 255, 255, 0.15);
+                border-color: var(--primary-light);
+                color: var(--text-light);
+                box-shadow: 0 0 0 0.25rem rgba(139, 0, 0, 0.25);
+            }
+
+        .form-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Footer adjustments */
+        footer {
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--secondary);
+        }
+
+            footer a {
+                color: var(--primary-light);
+            }
+
+        /* Responsive adjustments */
+        @@media (max-width: 768px) {
+            .container {
+                padding-bottom: 100px;
+            }
+
+            .nav-links {
+                padding: 0 10px;
+            }
+
+            .nav-link {
+                font-size: 10px;
+                padding: 5px;
+            }
+
+                .nav-link i {
+                    font-size: 18px;
+                }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CuzdanUygulamasi</a>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Finans Cüzdanım</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,32 +293,50 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home me-1"></i> Anasayfa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fas fa-shield-alt me-1"></i> Gizlilik</a>
                         </li>
                     </ul>
+                    
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-3 main-content">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - CuzdanUygulamasi - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="container text-center">
+            &copy; 2025 - Finans Cüzdanım - <a asp-area="" asp-controller="Home" asp-action="Privacy">Gizlilik Politikası</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Styles", required: false)
-    @RenderSection("Scripts", required: false)
 
+    <script>
+        // Bottom navigation active state management
+        document.querySelectorAll('.bottom-nav .nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.bottom-nav .nav-link').forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                this.classList.add('active');
+
+                // Here you would typically load the corresponding page content
+                // For now it's just UI demonstration
+            });
+        });
+    </script>
+
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

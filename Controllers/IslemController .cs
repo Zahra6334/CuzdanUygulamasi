@@ -1,51 +1,63 @@
-﻿using CuzdanUygulamasi.Models;
+﻿using CuzdanUygulamasi.Data;
+using CuzdanUygulamasi.Models;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace CuzdanUygulamasi.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class IslemController : ControllerBase
+    public class IslemController : Controller
     {
         private static List<Islem> islemler = new List<Islem>();
+        private readonly ApplicationDbContext _context;
+        public IslemController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
+        // Ana sayfa (tüm işlemler)
+        public IActionResult Index()
+        {
+            return View(islemler);
+        }
         [HttpGet]
-        public IActionResult TumIslemleriGetir()
+        public IActionResult Create()
         {
-            return Ok(islemler);
+            return View();
+        }
+        public IActionResult Create(Islem islem)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Islemler.Add(islem);
+                _context.SaveChanges();
+                return RedirectToAction("Create"); // işlem listesine geri dön
+            }
+            return View(islem); // hatalıysa form tekrar gösterilir
         }
 
+
+        // İşlem ekleme (form ile)
         [HttpPost]
-        public IActionResult IslemEkle([FromBody] Islem yeniIslem)
+        public IActionResult IslemEkle(Islem yeniIslem)
         {
-            islemler.Add(yeniIslem);
-            return Ok("İşlem eklendi.");
+            if (yeniIslem != null)
+            {
+                yeniIslem.Id = islemler.Count > 0 ? islemler.Max(i => i.Id) + 1 : 1;
+                yeniIslem.Tarih = DateTime.Now;
+                islemler.Add(yeniIslem);
+            }
+            return RedirectToAction("Index");
         }
-
-        [HttpPut("{id}")]
-        public IActionResult IslemGuncelle(int id, [FromBody] Islem guncellenenIslem)
-        {
-            var mevcut = islemler.FirstOrDefault(i => i.Id == id);
-            if (mevcut == null) return NotFound("İşlem bulunamadı.");
-
-            mevcut.IslemTipi = guncellenenIslem.IslemTipi;
-            mevcut.Tutar = guncellenenIslem.Tutar;
-            mevcut.Tarih = guncellenenIslem.Tarih;
-            mevcut.Aciklama = guncellenenIslem.Aciklama;
-            mevcut.KullaniciId = guncellenenIslem.KullaniciId;
-
-            return Ok("İşlem güncellendi.");
-        }
-
-        [HttpDelete("{id}")]
+        // İşlem silme
+        [HttpPost]
         public IActionResult IslemSil(int id)
         {
             var silinecek = islemler.FirstOrDefault(i => i.Id == id);
-            if (silinecek == null) return NotFound("İşlem bulunamadı.");
+            if (silinecek != null)
+                islemler.Remove(silinecek);
 
-            islemler.Remove(silinecek);
-            return Ok("İşlem silindi.");
+            return RedirectToAction("Index");
         }
     }
 }

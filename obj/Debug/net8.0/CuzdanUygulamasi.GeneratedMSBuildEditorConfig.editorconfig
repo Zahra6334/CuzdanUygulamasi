@@ -68,24 +68,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNsZW1cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ZAHRA/source/repos/CuzdanUygulamasi/CuzdanUygulamasi/Views/Kullanici/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ZAHRA/source/repos/CuzdanUygulamasi/CuzdanUygulamasi/Views/Kullanici/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/ZAHRA/source/repos/CuzdanUygulamasi/CuzdanUygulamasi/Views/Kullanici/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ZAHRA/source/repos/CuzdanUygulamasi/CuzdanUygulamasi/Views/Kullanici/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ZAHRA/source/repos/CuzdanUygulamasi/CuzdanUygulamasi/Views/Kullanici/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ZAHRA/source/repos/CuzdanUygulamasi/CuzdanUygulamasi/Views/Shared/Error.cshtml]

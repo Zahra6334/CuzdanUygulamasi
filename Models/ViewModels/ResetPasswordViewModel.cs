@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CuzdanUygulamasi.Models
+namespace CuzdanUygulamasi.Models.ViewModels
 {
     public class ResetPasswordViewModel
     {
