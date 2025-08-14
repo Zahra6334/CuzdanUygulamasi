@@ -16,16 +16,22 @@ namespace CuzdanUygulamasi.Models
         public decimal ToplamTutar { get; set; }
 
         [Required]
+        [Range(1, 120)]
         public int TaksitSayisi { get; set; }
 
         [Required]
-        public float FaizOrani { get; set; }
+        [Range(0, 100)]
+        public decimal FaizOrani { get; set; }
 
         public int KalanTaksit { get; set; }
 
-        public DateTime BaslangicTarihi { get; set; }
+        public DateTime BaslangicTarihi { get; set; } = DateTime.Now;
 
-        public DateTime BitisTarihi { get; set; }
-       
+        public DateTime SonOdemeTarihi => BaslangicTarihi.AddMonths(TaksitSayisi);
+
+        [NotMapped]
+        public decimal AylikTaksit => (ToplamTutar * (1 + FaizOrani / 100)) / TaksitSayisi;
+
+        public DateTime BitisTarihi { get; internal set; }
     }
 }

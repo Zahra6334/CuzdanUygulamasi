@@ -85,6 +85,45 @@ namespace CuzdanUygulamasi.Controllers
 
             return Ok("Kullanıcı güncellendi.");
         }
+        [HttpPost("ProfilFotoGuncelle")]
+        public async Task<IActionResult> ProfilFotoGuncelle(int id, IFormFile profilFoto)
+        {
+            var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userIdStr == null || int.Parse(userIdStr) != id)
+                return Unauthorized();
+
+            if (profilFoto != null && profilFoto.Length > 0)
+            {
+                // Kayıt yolu
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "profiles");
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
+                }
+
+                // Benzersiz dosya adı
+                var uniqueFileName = $"{Guid.NewGuid()}_{profilFoto.FileName}";
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await profilFoto.CopyToAsync(stream);
+                }
+
+                // DB'de güncelle
+                var kullanici = await _context.Kullanicilar.FirstOrDefaultAsync(k => k.Id == id);
+                if (kullanici == null)
+                    return NotFound();
+
+                kullanici.ProfiPic= $"/images/profiles/{uniqueFileName}";
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("Details", new { id = id });
+            }
+
+            return BadRequest("Geçerli bir fotoğraf seçilmedi.");
+        }
+
 
         [HttpDelete("{id}")]
         public IActionResult KullaniciSil(int id)

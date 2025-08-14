@@ -1,8 +1,10 @@
-﻿using CuzdanUygulamasi.Models;
+﻿using CuzdanUygulamasi.Data;
+using CuzdanUygulamasi.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CuzdanUygulamasi.Data;
+using System.Threading.Tasks;
 
 namespace CuzdanUygulamasi.Services
 {
@@ -15,45 +17,69 @@ namespace CuzdanUygulamasi.Services
             _veriTabani = veriTabani;
         }
 
-        public List<TaksitliOdeme> TumTaksitliOdemeleriGetir()
+        // Kullanıcının tüm taksitli ödemelerini getir
+        public async Task<List<TaksitliOdeme>> TumTaksitliOdemeleriGetirAsync(int kullaniciId)
         {
-            return _veriTabani.TaksitliOdemeler.ToList();
+            return await _veriTabani.TaksitliOdemeler
+                                    .Where(x => x.KullaniciId == kullaniciId)
+                                    .ToListAsync();
         }
 
-        public TaksitliOdeme IdIleTaksitliOdemeGetir(int id)
+        // ID ile taksitli ödeme getir
+        public async Task<TaksitliOdeme?> IdIleTaksitliOdemeGetirAsync(int id, int kullaniciId)
         {
-            return _veriTabani.TaksitliOdemeler.FirstOrDefault(x => x.Id == id);
+            return await _veriTabani.TaksitliOdemeler
+                                    .FirstOrDefaultAsync(x => x.Id == id && x.KullaniciId == kullaniciId);
         }
 
-        public void YeniTaksitliOdemeEkle(TaksitliOdeme odeme)
+        // Yeni taksitli ödeme ekle
+        public async Task YeniTaksitliOdemeEkleAsync(TaksitliOdeme odeme)
         {
             odeme.BaslangicTarihi = DateTime.Now;
-            _veriTabani.TaksitliOdemeler.Add(odeme);
-            _veriTabani.SaveChanges();
+            odeme.KalanTaksit = odeme.TaksitSayisi;
+            odeme.BitisTarihi = odeme.BaslangicTarihi.AddMonths(odeme.TaksitSayisi);
+
+            await _veriTabani.TaksitliOdemeler.AddAsync(odeme);
+            await _veriTabani.SaveChangesAsync();
         }
 
-        public void TaksitliOdemeyiGuncelle(TaksitliOdeme guncelOdeme)
+        // Taksitli ödemeyi güncelle
+        public async Task<bool> TaksitliOdemeyiGuncelleAsync(TaksitliOdeme guncelOdeme, int kullaniciId)
         {
-            var eskiOdeme = _veriTabani.TaksitliOdemeler.FirstOrDefault(x => x.Id == guncelOdeme.Id);
+            var eskiOdeme = await IdIleTaksitliOdemeGetirAsync(guncelOdeme.Id, kullaniciId);
+            if (eskiOdeme == null) return false;
 
-            if (eskiOdeme != null)
-            {
-                
-                eskiOdeme.ToplamTutar = guncelOdeme.ToplamTutar;
-                eskiOdeme.TaksitSayisi = guncelOdeme.TaksitSayisi;
-                eskiOdeme.BaslangicTarihi = guncelOdeme.BaslangicTarihi;
-                _veriTabani.SaveChanges();
-            }
+            eskiOdeme.ToplamTutar = guncelOdeme.ToplamTutar;
+            eskiOdeme.TaksitSayisi = guncelOdeme.TaksitSayisi;
+            eskiOdeme.FaizOrani = guncelOdeme.FaizOrani;
+            eskiOdeme.BaslangicTarihi = guncelOdeme.BaslangicTarihi;
+            eskiOdeme.KalanTaksit = guncelOdeme.KalanTaksit;
+            eskiOdeme.BitisTarihi = eskiOdeme.BaslangicTarihi.AddMonths(guncelOdeme.TaksitSayisi);
+
+            await _veriTabani.SaveChangesAsync();
+            return true;
         }
 
-        public void TaksitliOdemeyiSil(int id)
+        // Taksitli ödemeyi sil
+        public async Task<bool> TaksitliOdemeyiSilAsync(int id, int kullaniciId)
         {
-            var silinecek = _veriTabani.TaksitliOdemeler.FirstOrDefault(x => x.Id == id);
-            if (silinecek != null)
-            {
-                _veriTabani.TaksitliOdemeler.Remove(silinecek);
-                _veriTabani.SaveChanges();
-            }
+            var silinecek = await IdIleTaksitliOdemeGetirAsync(id, kullaniciId);
+            if (silinecek == null) return false;
+
+            _veriTabani.TaksitliOdemeler.Remove(silinecek);
+            await _veriTabani.SaveChangesAsync();
+            return true;
+        }
+
+        // Taksit ödeme yap
+        public async Task<bool> TaksitOdemeYapAsync(int id, int kullaniciId)
+        {
+            var odeme = await IdIleTaksitliOdemeGetirAsync(id, kullaniciId);
+            if (odeme == null || odeme.KalanTaksit <= 0) return false;
+
+            odeme.KalanTaksit--;
+            await _veriTabani.SaveChangesAsync();
+            return true;
         }
     }
 }

@@ -19,6 +19,8 @@ namespace CuzdanUygulamasi.Models
         [Required]
         public string SifreHash { get; set; }
 
+        public string? ProfiPic {  get; set; }
+
         public DateTime KayitTarihi { get; set; } = DateTime.Now;
 
         // İlişkiler

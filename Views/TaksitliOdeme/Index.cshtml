@@ -1,41 +1,288 @@
 ﻿@model List<CuzdanUygulamasi.Models.TaksitliOdeme>
 
-@{
-    ViewData["Title"] = "Taksitli Ödeme Listesi";
-}
-
-<h2>Taksitli Ödeme Listesi</h2>
-
-<a asp-action="Create" class="btn btn-primary">Yeni Taksitli Ödeme Ekle</a>
-
-<table class="table table-striped mt-3">
-    <thead>
-        <tr>
-            <th>Kullanici</th>
-            <th>Taksit Sayısı</th>
-            <th>Faiz Oranı (%)</th>
-            <th>Toplam Tutar</th>
-            <th>Kalan Taksit</th>
-            <th>Kullanıcı ID</th>
-            <th>İşlemler</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var odeme in Model)
-        {
-            <tr>
-                <td>@odeme.Kullanici</td>
-                <td>@odeme.TaksitSayisi</td>
-                <td>@odeme.FaizOrani</td>
-                <td>@odeme.ToplamTutar</td>
-                <td>@odeme.KalanTaksit</td>
-                <td>@odeme.KullaniciId</td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@odeme.Id">Detay</a> |
-                    <a asp-action="Edit" asp-route-id="@odeme.Id">Düzenle</a> |
-                    <a asp-action="Delete" asp-route-id="@odeme.Id">Sil</a>
-                </td>
-            </tr>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taksitlerim</title>
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --secondary-color: #FF6B6B;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
-    </tbody>
-</table>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            margin-right: 30px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+            .nav-links a {
+                color: rgba(255, 255, 255, 0.9);
+                text-decoration: none;
+                margin-right: 20px;
+                font-size: 15px;
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+            }
+
+                .nav-links a:hover {
+                    color: white;
+                    transform: translateY(-2px);
+                }
+
+                .nav-links a i {
+                    margin-right: 8px;
+                    font-size: 16px;
+                }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0 25px;
+        }
+
+            .page-header h2 {
+                font-size: 28px;
+                color: var(--dark-color);
+                font-weight: 600;
+            }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            text-align: center;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+            .btn:hover {
+                background-color: #7a0000;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(139, 0, 0, 0.2);
+            }
+
+        .btn-sm {
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+
+        .btn-warning {
+            background-color: var(--warning-color);
+            color: var(--dark-color);
+        }
+
+            .btn-warning:hover {
+                background-color: #e0a800;
+            }
+
+        .btn-danger {
+            background-color: #dc3545;
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333;
+            }
+
+        .taksit-table {
+            width: 100%;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+            .taksit-table thead {
+                background-color: var(--primary-color);
+                color: white;
+            }
+
+            .taksit-table th {
+                padding: 15px;
+                text-align: left;
+                font-weight: 500;
+            }
+
+            .taksit-table td {
+                padding: 15px;
+                border-bottom: 1px solid #eee;
+                vertical-align: middle;
+            }
+
+            .taksit-table tr:last-child td {
+                border-bottom: none;
+            }
+
+            .taksit-table tbody tr {
+                transition: var(--transition);
+            }
+
+                .taksit-table tbody tr:hover {
+                    background-color: rgba(139, 0, 0, 0.05);
+                }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-primary {
+            background-color: rgba(139, 0, 0, 0.1);
+            color: var(--primary-color);
+        }
+
+        .badge-warning {
+            background-color: rgba(255, 193, 7, 0.2);
+            color: #856404;
+        }
+
+        .badge-success {
+            background-color: rgba(40, 167, 69, 0.2);
+            color: #155724;
+        }
+
+        @@media (max-width: 768px) {
+            .taksit-table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+        <div class="page-header">
+            <h2><i class="fas fa-credit-card" style="margin-right: 10px;"></i> Taksitlerim</h2>
+            <a asp-action="Create" class="btn"><i class="fas fa-plus" style="margin-right: 8px;"></i> Yeni Taksit Ekle</a>
+        </div>
+
+        <table class="taksit-table">
+            <thead>
+                <tr>
+                    <th>Taksit Sayısı</th>
+                    <th>Faiz Oranı</th>
+                    <th>Toplam Tutar</th>
+                    <th>Kalan Taksit</th>
+                    <th>Durum</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var odeme in Model)
+                {
+                    <tr>
+                        <td>@odeme.TaksitSayisi</td>
+                        <td>@odeme.FaizOrani %</td>
+                        <td>@odeme.ToplamTutar.ToString("C")</td>
+                        <td>@odeme.KalanTaksit</td>
+                        <td>
+                            @if (odeme.KalanTaksit == 0)
+                            {
+                                <span class="badge badge-success">Tamamlandı</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-warning">Devam Ediyor</span>
+                            }
+                        </td>
+                        <td>
+                            <div class="action-buttons">
+                                <a asp-action="Edit" asp-route-id="@odeme.Id" class="btn btn-sm btn-warning">
+                                    <i class="fas fa-edit"></i> Düzenle
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@odeme.Id" class="btn btn-sm btn-danger">
+                                    <i class="fas fa-trash-alt"></i> Sil
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @if (!Model.Any())
+        {
+            <div style="background: white; padding: 30px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center;">
+                <i class="fas fa-credit-card" style="font-size: 50px; color: #ddd; margin-bottom: 20px;"></i>
+                <h3 style="color: #666; margin-bottom: 15px;">Henüz taksit eklemediniz</h3>
+                <p style="color: #888; margin-bottom: 20px;">Yeni bir taksit planı oluşturarak ödemelerinizi takip edebilirsiniz</p>
+                <a asp-action="Create" class="btn" style="width: auto; display: inline-block;">
+                    <i class="fas fa-plus" style="margin-right: 8px;"></i> Yeni Taksit Ekle
+                </a>
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -1,20 +1,249 @@
 ﻿@model CuzdanUygulamasi.Models.TaksitliOdeme
 
-@{
-    ViewData["Title"] = "Taksitli Ödeme Sil";
-}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taksit Sil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --secondary-color: #FF6B6B;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
 
-<h2>Taksitli Ödeme Sil</h2>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<p>Bu taksitli ödemeyi silmek istediğinize emin misiniz?</p>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
 
-<div>
-    <strong>Kullanici:</strong> @Model.Kullanici<br />
-    <strong>Taksit Sayısı:</strong> @Model.TaksitSayisi
-</div>
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-<form asp-action="DeleteConfirmed">
-    <input type="hidden" asp-for="Id" />
-    <button type="submit" class="btn btn-danger">Sil</button>
-    <a asp-action="Index" class="btn btn-secondary">İptal</a>
-</form>
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            margin-right: 30px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+            .nav-links a {
+                color: rgba(255, 255, 255, 0.9);
+                text-decoration: none;
+                margin-right: 20px;
+                font-size: 15px;
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+            }
+
+                .nav-links a:hover {
+                    color: white;
+                    transform: translateY(-2px);
+                }
+
+                .nav-links a i {
+                    margin-right: 8px;
+                    font-size: 16px;
+                }
+
+        .page-header {
+            margin: 30px 0 25px;
+        }
+
+            .page-header h2 {
+                font-size: 28px;
+                color: var(--dark-color);
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+            }
+
+                .page-header h2 i {
+                    margin-right: 12px;
+                    color: var(--primary-color);
+                }
+
+        .confirmation-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .warning-icon {
+            font-size: 60px;
+            color: var(--danger-color);
+            margin-bottom: 20px;
+        }
+
+        .confirmation-message {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .details-container {
+            background-color: #fff9f9;
+            border: 1px solid #ffdddd;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .detail-item {
+            margin-bottom: 10px;
+            display: flex;
+        }
+
+        .detail-label {
+            font-weight: 500;
+            color: #555;
+            min-width: 120px;
+        }
+
+        .detail-value {
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+        }
+
+        .btn-danger {
+            background-color: var(--danger-color);
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2);
+            }
+
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+
+            .btn-secondary:hover {
+                background-color: #5a6268;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(108, 117, 125, 0.2);
+            }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        @@media (max-width: 768px) {
+            .confirmation-card {
+                padding: 20px;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+        <div class="page-header">
+            <h2><i class="fas fa-trash-alt"></i> Taksitli Ödeme Sil</h2>
+        </div>
+
+        <div class="confirmation-card">
+            <div class="warning-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+
+            <h3 style="color: var(--danger-color); margin-bottom: 15px;">Silme İşlemi</h3>
+            <p class="confirmation-message">Bu taksitli ödemeyi silmek istediğinize emin misiniz?</p>
+
+            <div class="details-container">
+                <div class="detail-item">
+                    <span class="detail-label">Kullanıcı:</span>
+                    <span class="detail-value">@Model.Kullanici</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Taksit Sayısı:</span>
+                    <span class="detail-value">@Model.TaksitSayisi</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Toplam Tutar:</span>
+                    <span class="detail-value">₺@Model.ToplamTutar.ToString("N2")</span>
+                </div>
+            </div>
+
+            <form asp-action="DeleteConfirmed" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i> Sil
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="fas fa-times"></i> İptal
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

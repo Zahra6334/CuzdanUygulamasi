@@ -4,44 +4,267 @@
     ViewData["Title"] = "İşlemler Listesi";
 }
 
-<h2>İşlemler</h2>
-
-<a class="btn btn-primary mb-3" href="@Url.Action("Create", "Islem")">Yeni İşlem Ekle</a>
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Kullanıcı</th>
-            <th>Tutar</th>
-            <th>Açıklama</th>
-            <th>Kategori</th>
-            <th>Tarih</th>
-            <th>İşlem Tipi</th>
-            <th>Tekrarlı mı?</th>
-            <th>Periyot</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Id</td>
-                <td>@item.Kullanici?.AdSoyad</td>
-                <td>@item.Tutar.ToString("C")</td>
-                <td>@item.Aciklama</td>
-                <td>@item.Kategori?.Ad</td>
-                <td>@item.Tarih.ToString("dd.MM.yyyy")</td>
-                <td>@item.IslemTipi</td>
-                <td>@(item.TekrarliMi ? "Evet" : "Hayır")</td>
-                <td>@item.Periyot</td>
-                <td>
-                    <form method="post" asp-action="IslemSil" asp-route-id="@item.Id" style="display:inline;">
-                        <button type="submit" class="btn btn-danger btn-sm">Sil</button>
-                    </form>
-                </td>
-            </tr>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --secondary-color: #FF6B6B;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
-    </tbody>
-</table>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+            .btn-primary:hover {
+                background-color: #7a0000;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+        .btn-sm {
+            padding: 5px 10px;
+            font-size: 13px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+            .table th {
+                background-color: var(--primary-color);
+                color: white;
+                padding: 12px 15px;
+                text-align: left;
+                font-weight: 500;
+            }
+
+            .table td {
+                padding: 12px 15px;
+                border-bottom: 1px solid #eee;
+                vertical-align: middle;
+            }
+
+            .table tr:hover {
+                background-color: rgba(139, 0, 0, 0.05);
+            }
+
+        .table-striped tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+            .table-striped tr:nth-child(even):hover {
+                background-color: rgba(139, 0, 0, 0.05);
+            }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .badge-success {
+            background-color: var(--success-color);
+            color: white;
+        }
+
+        .badge-danger {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .badge-info {
+            background-color: var(--info-color);
+            color: white;
+        }
+
+        .badge-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 5px;
+        }
+
+        @@media (max-width: 768px) {
+            .table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            .container {
+                padding: 15px;
+                margin: 10px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2><i class="fas fa-exchange-alt"></i> İşlemler</h2>
+            <a class="btn btn-primary" href="@Url.Action("Create", "Islem")">
+                <i class="fas fa-plus"></i> Yeni İşlem Ekle
+            </a>
+        </div>
+
+        <div style="overflow-x: auto;">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Kullanıcı</th>
+                        <th>Tutar</th>
+                        <th>Açıklama</th>
+                        <th>Kategori</th>
+                        <th>Tarih</th>
+                        <th>Tip</th>
+                        <th>Tekrarlı</th>
+                        <th>Periyot</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Kullanici?.AdSoyad</td>
+                            <td style="font-weight: 500; color: @(item.IslemTipi == CuzdanUygulamasi.Models.IslemTipi.Gelir ? "var(--success-color)" : "var(--primary-color)")">
+                                @(item.IslemTipi == CuzdanUygulamasi.Models.IslemTipi.Gelir ? "+" : "-")@item.Tutar.ToString("C")
+                            </td>
+                            <td>@item.Aciklama</td>
+                            <td>
+                                <span class="badge badge-info">@item.Kategori?.Ad</span>
+                            </td>
+                            <td>@item.Tarih.ToString("dd.MM.yyyy")</td>
+                            <td>
+                                <span class="badge @(item.IslemTipi == CuzdanUygulamasi.Models.IslemTipi.Gelir ? "badge-success" : "badge-danger")">
+                                    @item.IslemTipi
+                                </span>
+                            </td>
+                            <td>
+                                @if (item.TekrarliMi)
+                                {
+                                    <span class="badge badge-success"><i class="fas fa-sync-alt"></i> Evet</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-secondary">Hayır</span>
+                                }
+                            </td>
+                            <td>@item.Periyot</td>
+                            <td class="action-buttons">
+                                <a href="@Url.Action("Edit", "Islem", new { id = item.Id })" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <form method="post" asp-action="IslemSil" asp-route-id="@item.Id" style="display:inline;">
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bu işlemi silmek istediğinize emin misiniz?')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Silme işlemi onayı
+        function confirmDelete() {
+            return confirm('Bu işlemi silmek istediğinize emin misiniz?');
+        }
+    </script>
+</body>
+</html>

@@ -9,21 +9,25 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Cüzdan Uygulaması</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>@ViewData["Title"] - Finans Cüzdanım</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
-            --primary-red: #dc3545;
-            --dark-red: #bb2d3b;
-            --light-bg: #fff0f0;
+            --primary-color: #8B0000;
+            --secondary-color: #FF6B6B;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --gradient: linear-gradient(135deg, #8B0000 0%, #FF6B6B 100%);
+            --border-radius: 12px;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
 
         body {
-            background-color: var(--light-bg);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -31,17 +35,20 @@
             padding: 20px;
         }
 
-        .register-card {
+        .register-container {
             width: 100%;
             max-width: 600px;
+        }
+
+        .register-card {
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(220, 53, 69, 0.1);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             overflow: hidden;
         }
 
         .card-header {
-            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            background: var(--gradient);
             color: white;
             padding: 1.5rem;
             text-align: center;
@@ -52,40 +59,44 @@
         }
 
         .form-control {
-            border-radius: 8px;
+            border-radius: var(--border-radius);
             padding: 12px 15px;
-            border: 1px solid #f1aeb5;
+            border: 1px solid #ddd;
+            transition: var(--transition);
         }
 
             .form-control:focus {
-                border-color: var(--primary-red);
-                box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
             }
 
         .input-group-text {
-            background-color: var(--primary-red);
+            background-color: var(--primary-color);
             color: white;
             border: none;
+            border-radius: var(--border-radius) 0 0 var(--border-radius) !important;
         }
 
         .btn-register {
-            background-color: var(--primary-red);
+            background-color: var(--primary-color);
+            color: white;
             border: none;
             padding: 12px;
             font-weight: 600;
             width: 100%;
-            border-radius: 8px;
-            transition: all 0.3s;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
         }
 
             .btn-register:hover {
-                background-color: var(--dark-red);
+                background-color: #7a0000;
                 transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(139, 0, 0, 0.2);
             }
 
         .form-check-input:checked {
-            background-color: var(--primary-red);
-            border-color: var(--primary-red);
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
         }
 
         .register-links {
@@ -94,93 +105,131 @@
         }
 
             .register-links a {
-                color: var(--primary-red);
+                color: var(--primary-color);
                 text-decoration: none;
                 font-weight: 500;
+                transition: var(--transition);
+            }
+
+                .register-links a:hover {
+                    color: #7a0000;
+                    text-decoration: underline;
+                }
+
+        .toggle-password {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-left: none;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0 !important;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+            .toggle-password:hover {
+                background-color: #e9ecef;
             }
 
         .password-hint {
             font-size: 0.8rem;
             color: #6c757d;
-            margin-top: 0.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .validation-summary {
+            border-radius: var(--border-radius);
+        }
+
+        .kvkk-link {
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        @@media (max-width: 768px) {
+            .card-body {
+                padding: 1.5rem;
+            }
+
+            .row > div {
+                padding-bottom: 0.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="register-card">
-        <div class="card-header">
-            <h3><i class="fas fa-user-plus me-2"></i>Yeni Hesap Oluştur</h3>
-        </div>
-        <div class="card-body">
-            <form asp-action="Register" method="post">
-                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+    <div class="register-container">
+        <div class="register-card">
+            <div class="card-header">
+                <h3><i class="fas fa-user-plus me-2"></i>Yeni Hesap Oluştur</h3>
+            </div>
+            <div class="card-body">
+                <form asp-action="Register" method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger validation-summary"></div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="mb-3">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
                             <label asp-for="Ad" class="form-label">Ad</label>
                             <input asp-for="Ad" class="form-control" placeholder="Adınız" />
-                            <span asp-validation-for="Ad" class="text-danger small"></span>
+                            <span asp-validation-for="Ad" class="text-danger small d-block mt-1"></span>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="mb-3">
+                        <div class="col-md-6 mb-3">
                             <label asp-for="Soyad" class="form-label">Soyad</label>
                             <input asp-for="Soyad" class="form-control" placeholder="Soyadınız" />
-                            <span asp-validation-for="Soyad" class="text-danger small"></span>
+                            <span asp-validation-for="Soyad" class="text-danger small d-block mt-1"></span>
                         </div>
                     </div>
-                </div>
 
-                <div class="mb-3">
-                    <label asp-for="Email" class="form-label">Email</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                        <input asp-for="Email" class="form-control" placeholder="ornek@email.com" />
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label">Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input asp-for="Email" class="form-control" placeholder="ornek@email.com" />
+                        </div>
+                        <span asp-validation-for="Email" class="text-danger small d-block mt-1"></span>
                     </div>
-                    <span asp-validation-for="Email" class="text-danger small"></span>
-                </div>
 
-                <div class="mb-3">
-                    <label asp-for="Sifre" class="form-label">Şifre</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                        <input asp-for="Sifre" type="password" class="form-control" id="password" placeholder="En az 8 karakter" />
-                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
-                            <i class="fas fa-eye"></i>
-                        </button>
+                    <div class="mb-3">
+                        <label asp-for="Sifre" class="form-label">Şifre</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input asp-for="Sifre" type="password" class="form-control" id="password" placeholder="En az 8 karakter" />
+                            <button class="btn toggle-password" type="button" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <span asp-validation-for="Sifre" class="text-danger small d-block mt-1"></span>
+                        <div class="password-hint">
+                            Şifreniz en az bir büyük harf, bir küçük harf ve bir sayı içermelidir
+                        </div>
                     </div>
-                    <span asp-validation-for="Sifre" class="text-danger small"></span>
-                    <div class="password-hint">
-                        Şifreniz en az bir büyük harf, bir küçük harf ve bir sayı içermelidir
+
+                    <div class="mb-3">
+                        <label asp-for="SifreTekrar" class="form-label">Şifre Tekrar</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input asp-for="SifreTekrar" type="password" class="form-control" placeholder="Şifrenizi tekrar girin" />
+                        </div>
+                        <span asp-validation-for="SifreTekrar" class="text-danger small d-block mt-1"></span>
                     </div>
-                </div>
 
-                <div class="mb-3">
-                    <label asp-for="SifreTekrar" class="form-label">Şifre Tekrar</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                        <input asp-for="SifreTekrar" type="password" class="form-control" placeholder="Şifrenizi tekrar girin" />
+                    <div class="mb-3 form-check">
+                        <input asp-for="KvkkOnay" class="form-check-input" />
+                        <label asp-for="KvkkOnay" class="form-check-label">
+                            <span class="kvkk-link" data-bs-toggle="modal" data-bs-target="#kvkkModal">KVKK Aydınlatma Metni</span>'ni okudum ve kabul ediyorum
+                        </label>
+                        <span asp-validation-for="KvkkOnay" class="text-danger small d-block mt-1"></span>
                     </div>
-                    <span asp-validation-for="SifreTekrar" class="text-danger small"></span>
-                </div>
 
-                <div class="mb-3 form-check">
-                    <input asp-for="KvkkOnay" class="form-check-input" />
-                    <label asp-for="KvkkOnay" class="form-check-label">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#kvkkModal">KVKK Aydınlatma Metni</a>'ni okudum ve kabul ediyorum
-                    </label>
-                    <span asp-validation-for="KvkkOnay" class="text-danger small"></span>
-                </div>
+                    <button type="submit" class="btn btn-register mb-3">
+                        <i class="fas fa-user-plus me-2"></i>Hesap Oluştur
+                    </button>
 
-                <button type="submit" class="btn btn-register mb-3">
-                    <i class="fas fa-user-plus me-2"></i>Hesap Oluştur
-                </button>
-
-                <div class="register-links">
-                    Zaten hesabınız var mı? <a asp-action="Login"><i class="fas fa-sign-in-alt me-1"></i>Giriş Yap</a>
-                </div>
-            </form>
+                    <div class="register-links">
+                        Zaten hesabınız var mı? <a asp-action="Login"><i class="fas fa-sign-in-alt me-1"></i>Giriş Yap</a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -189,14 +238,22 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">KVKK Aydınlatma Metni</h5>
+                    <h5 class="modal-title"><i class="fas fa-shield-alt me-2"></i>KVKK Aydınlatma Metni</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- KVKK metni buraya -->
-                    <h6>Kişisel Verilerin Korunması</h6>
-                    <p>6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında...</p>
-                    <!-- Detaylı metin -->
+                    <h6 class="text-primary">Kişisel Verilerin Korunması</h6>
+                    <p>6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında, Finans Cüzdanım uygulaması olarak kişisel verilerinizin güvenliğine büyük önem vermekteyiz.</p>
+
+                    <h6 class="mt-4 text-primary">Toplanan Veriler</h6>
+                    <ul>
+                        <li>Kimlik bilgileriniz (ad, soyad)</li>
+                        <li>İletişim bilgileriniz (e-posta adresi)</li>
+                        <li>Finansal işlem bilgileriniz (gelir, gider, taksit kayıtları)</li>
+                    </ul>
+
+                    <h6 class="mt-4 text-primary">Veri Kullanım Amaçları</h6>
+                    <p>Toplanan veriler yalnızca uygulama işlevselliğini sağlamak ve kullanıcı deneyiminizi iyileştirmek amacıyla kullanılacaktır.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
@@ -205,9 +262,7 @@
         </div>
     </div>
 
-    <!-- Bootstrap 5 JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- jQuery Validation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>

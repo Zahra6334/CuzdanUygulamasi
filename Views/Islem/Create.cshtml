@@ -4,61 +4,302 @@
     ViewData["Title"] = "Yeni İşlem Ekle";
 }
 
-<h2>Yeni İşlem Ekle</h2>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --secondary-color: #FF6B6B;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
 
-<form asp-action="Create" method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <div class="mb-3">
-        <label class="form-label">Tutar</label>
-        <input asp-for="Tutar" class="form-control" />
-        <span asp-validation-for="Tutar" class="text-danger"></span>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: block;
+            color: var(--dark-color);
+        }
+
+        .form-control, .form-select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 15px;
+            transition: var(--transition);
+            margin-bottom: 5px;
+            color: #000000;
+            background-color: #ffffff;
+        }
+
+            .form-control:focus, .form-select:focus {
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+                outline: none;
+                color: #000000;
+            }
+
+            .form-control::placeholder {
+                color: #666;
+                opacity: 1;
+            }
+
+            /* Tarayıcı otomatik tamamlama renkleri */
+            .form-control:-webkit-autofill,
+            .form-control:-webkit-autofill:hover,
+            .form-control:-webkit-autofill:focus {
+                -webkit-text-fill-color: #000000 !important;
+                -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+                transition: background-color 5000s ease-in-out 0s;
+            }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .form-check-input {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            accent-color: var(--primary-color);
+        }
+
+        .form-check-label {
+            font-weight: 400;
+        }
+
+        .text-danger {
+            color: #dc3545;
+            font-size: 13px;
+            margin-top: -5px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-success {
+            background-color: var(--success-color);
+            color: white;
+        }
+
+            .btn-success:hover {
+                background-color: #218838;
+                transform: translateY(-2px);
+                box-shadow: var(--box-shadow);
+            }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+            .btn-secondary:hover {
+                background-color: #5a6268;
+                transform: translateY(-2px);
+                box-shadow: var(--box-shadow);
+            }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+            .input-group .form-control {
+                padding-left: 40px;
+            }
+
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+
+        @@media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2><i class="fas fa-plus-circle"></i> Yeni İşlem Ekle</h2>
+
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label class="form-label">Tutar</label>
+                <div class="input-group">
+                    <span class="input-icon"><i class="fas fa-money-bill-wave"></i></span>
+                    <input asp-for="Tutar" class="form-control" placeholder="0.00" />
+                </div>
+                <span asp-validation-for="Tutar" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Açıklama</label>
+                <div class="input-group">
+                    <span class="input-icon"><i class="fas fa-comment-alt"></i></span>
+                    <input asp-for="Aciklama" class="form-control" placeholder="İşlem açıklaması" />
+                </div>
+                <span asp-validation-for="Aciklama" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Kategori</label>
+                <div class="input-group">
+                    <span class="input-icon"><i class="fas fa-tag"></i></span>
+                    <select asp-for="KategoriId" asp-items="@(new SelectList(ViewBag.Kategoriler, "Id", "Ad"))" class="form-select">
+                        <option value="">Kategori seçiniz</option>
+                    </select>
+                </div>
+                <span asp-validation-for="KategoriId" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">İşlem Tipi</label>
+                <div class="input-group">
+                    <span class="input-icon"><i class="fas fa-exchange-alt"></i></span>
+                    <select asp-for="IslemTipi" class="form-select">
+                        <option value="1">Gelir</option>
+                        <option value="2">Gider</option>
+                        <option value="3">Taksit</option>
+                    </select>
+                </div>
+                <span asp-validation-for="IslemTipi" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 form-check">
+                <input asp-for="TekrarliMi" type="checkbox" class="form-check-input" id="tekrarliCheck" />
+                <label class="form-check-label" for="tekrarliCheck">Tekrarlı İşlem</label>
+            </div>
+
+            <div class="mb-3" id="periyotContainer" style="display: none;">
+                <label class="form-label">Periyot</label>
+                <div class="input-group">
+                    <span class="input-icon"><i class="fas fa-calendar-alt"></i></span>
+                    <select asp-for="Periyot" class="form-select">
+                        <option value="">Periyot seçiniz</option>
+                        <option value="1">Günlük</option>
+                        <option value="2">Haftalık</option>
+                        <option value="3">Aylık</option>
+                        <option value="4">Yıllık</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-save"></i> Kaydet
+                </button>
+                <a href="@Url.Action("Index", "Islem")" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Geri
+                </a>
+            </div>
+        </form>
     </div>
 
-    <div class="mb-3">
-        <label class="form-label">Açıklama</label>
-        <input asp-for="Aciklama" class="form-control" />
-        <span asp-validation-for="Aciklama" class="text-danger"></span>
-    </div>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+        <script>
+            // Tekrarlı işlem seçeneğine göre periyot alanını göster/gizle
+            document.getElementById('tekrarliCheck').addEventListener('change', function() {
+                document.getElementById('periyotContainer').style.display = this.checked ? 'block' : 'none';
+            });
 
-    <div class="mb-3">
-        <label class="form-label">Kategori</label>
-        <select asp-for="KategoriId" asp-items="@(new SelectList(ViewBag.Kategoriler, "Id", "Ad"))" class="form-select">
-            <option value="">Seçiniz</option>
-        </select>
-        <span asp-validation-for="KategoriId" class="text-danger"></span>
-    </div>
+            // Sayfa yüklendiğinde kontrol et
+            document.addEventListener('DOMContentLoaded', function() {
+                const tekrarliCheck = document.getElementById('tekrarliCheck');
+                if (tekrarliCheck) {
+                    document.getElementById('periyotContainer').style.display =
+                        tekrarliCheck.checked ? 'block' : 'none';
+                }
 
-    <div class="mb-3">
-        <label class="form-label">İşlem Tipi</label>
-        <select asp-for="IslemTipi" class="form-select">
-            <option value="1">Gelir</option>
-            <option value="2">Gider</option>
-            <option value="3">Taksit</option>
-        </select>
-        <span asp-validation-for="IslemTipi" class="text-danger"></span>
-    </div>
-
-    <div class="mb-3 form-check">
-        <input asp-for="TekrarliMi" type="checkbox" class="form-check-input" />
-        <label class="form-check-label">Tekrarlı mı?</label>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Periyot</label>
-        <select asp-for="Periyot" class="form-select">
-            <option value="">Seçiniz</option>
-            <option value="1">Günlük</option>
-            <option value="2">Haftalık</option>
-            <option value="3">Aylık</option>
-            <option value="4">Yıllık</option>
-        </select>
-    </div>
-
-    <button type="submit" class="btn btn-success">Kaydet</button>
-    <a href="@Url.Action("Index", "Islem")" class="btn btn-secondary">Geri</a>
-</form>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+                // Input alanlarına odaklanıldığında metin rengini kontrol et
+                document.querySelectorAll('.form-control').forEach(input => {
+                    input.addEventListener('focus', function() {
+                        this.style.color = '#000000';
+                    });
+                });
+            });
+        </script>
+    }
+</body>
+</html>

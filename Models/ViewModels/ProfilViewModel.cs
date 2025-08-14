@@ -17,5 +17,7 @@ namespace CuzdanUygulamasi.Models.ViewModels
         public int KategoriSayisi { get; set; }
 
         public List<Islem> SonIslemler { get; set; }
+        public string? ProfiPic { get; set; }
+        public List<TaksitliOdeme> AktifTaksitler { get; set; } = new List<TaksitliOdeme>();
     }
 }

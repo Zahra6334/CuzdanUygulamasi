@@ -1,30 +1,264 @@
 ﻿@model CuzdanUygulamasi.Models.TaksitliOdeme
 
-@{
-    ViewData["Title"] = "Taksitli Ödeme Detayları";
-}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finans Cüzdanım - Taksit Detayları</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --secondary-color: #FF6B6B;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
 
-<h2>Taksitli Ödeme Detayları</h2>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<dl class="row">
-    <dt class="col-sm-2">Kullanici</dt>
-    <dd class="col-sm-10">@Model.Kullanici</dd>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
 
-    <dt class="col-sm-2">Taksit Sayısı</dt>
-    <dd class="col-sm-10">@Model.TaksitSayisi</dd>
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    <dt class="col-sm-2">Faiz Oranı (%)</dt>
-    <dd class="col-sm-10">@Model.FaizOrani</dd>
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    <dt class="col-sm-2">Toplam Tutar</dt>
-    <dd class="col-sm-10">@Model.ToplamTutar</dd>
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            margin-right: 30px;
+        }
 
-    <dt class="col-sm-2">Kalan Taksit</dt>
-    <dd class="col-sm-10">@Model.KalanTaksit</dd>
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
 
-    <dt class="col-sm-2">Kullanıcı ID</dt>
-    <dd class="col-sm-10">@Model.KullaniciId</dd>
-</dl>
+            .nav-links a {
+                color: rgba(255, 255, 255, 0.9);
+                text-decoration: none;
+                margin-right: 20px;
+                font-size: 15px;
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+            }
 
-<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Düzenle</a>
-<a asp-action="Index" class="btn btn-secondary">Geri</a>
+                .nav-links a:hover {
+                    color: white;
+                    transform: translateY(-2px);
+                }
+
+                .nav-links a i {
+                    margin-right: 8px;
+                    font-size: 16px;
+                }
+
+        .page-header {
+            margin: 30px 0 25px;
+        }
+
+            .page-header h2 {
+                font-size: 28px;
+                color: var(--dark-color);
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+            }
+
+                .page-header h2 i {
+                    margin-right: 12px;
+                    color: var(--primary-color);
+                }
+
+        .detail-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .detail-label {
+            font-weight: 500;
+            color: #555;
+            padding: 12px 15px;
+            background-color: rgba(139, 0, 0, 0.05);
+            border-radius: var(--border-radius);
+        }
+
+        .detail-value {
+            padding: 12px 15px;
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+        }
+
+        .currency {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            margin-top: 20px;
+        }
+
+            .btn:hover {
+                background-color: #7a0000;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(139, 0, 0, 0.2);
+            }
+
+            .btn i {
+                margin-right: 8px;
+            }
+
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+
+            .btn-secondary:hover {
+                background-color: #5a6268;
+            }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background-color: rgba(40, 167, 69, 0.15);
+            color: var(--success-color);
+        }
+
+        .status-completed {
+            background-color: rgba(108, 117, 125, 0.15);
+            color: #6c757d;
+        }
+
+        @@media (max-width: 768px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .detail-card {
+                padding: 20px;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+        <div class="page-header">
+            <h2><i class="fas fa-info-circle"></i> Taksitli Ödeme Detayları</h2>
+        </div>
+
+        <div class="detail-card">
+            <div class="detail-grid">
+                <div class="detail-label">Taksit Sayısı</div>
+                <div class="detail-value">@Model.TaksitSayisi</div>
+
+                <div class="detail-label">Faiz Oranı</div>
+                <div class="detail-value">@Model.FaizOrani%</div>
+
+                <div class="detail-label">Toplam Tutar</div>
+                <div class="detail-value"><span class="currency">₺@Model.ToplamTutar.ToString("N2")</span></div>
+
+                <div class="detail-label">Kalan Taksit</div>
+                <div class="detail-value">
+                    @Model.KalanTaksit
+                    @if (Model.KalanTaksit == 0)
+                    {
+                        <span class="status-badge status-completed" style="margin-left: 10px;">Tamamlandı</span>
+                    }
+                    else
+                    {
+                        <span class="status-badge status-active" style="margin-left: 10px;">Devam Ediyor</span>
+                    }
+                </div>
+
+                <div class="detail-label">Başlangıç Tarihi</div>
+                <div class="detail-value">@Model.BaslangicTarihi.ToShortDateString()</div>
+            </div>
+
+            <div class="btn-group">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn">
+                    <i class="fas fa-edit"></i> Düzenle
+                </a>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Geri
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
