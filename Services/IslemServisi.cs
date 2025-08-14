@@ -1,38 +1,41 @@
-﻿using CuzdanUygulamasi.Models;
+﻿using CuzdanUygulamasi.Data;
+using CuzdanUygulamasi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CuzdanUygulamasi.Services
 {
     public class IslemServisi
     {
-        private readonly List<Islem> _islemler = new();
+        private readonly ApplicationDbContext _context;
+
+        public IslemServisi(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
         public void IslemEkle(Islem islem)
         {
-            _islemler.Add(islem);
+            _context.Islemler.Add(islem);
+            _context.SaveChanges();
         }
 
-        public List<Islem> TumIslemleriGetir()
+        public decimal ToplamGelirHesapla(int kullaniciId)
         {
-            return _islemler;
+            return _context.Islemler
+                .Where(i => i.KullaniciId == kullaniciId && i.IslemTipi == IslemTipi.Gelir)
+                .Sum(i => (decimal?)i.Tutar) ?? 0m; // null check
         }
 
-        public decimal ToplamGelirHesapla()
+        public decimal ToplamGiderHesapla(int kullaniciId)
         {
-            return _islemler
-                .Where(i => i.IslemTipi == IslemTipi.Gelir)
-                .Sum(i => i.Tutar);
+            return _context.Islemler
+                .Where(i => i.KullaniciId == kullaniciId && i.IslemTipi == IslemTipi.Gider)
+                .Sum(i => (decimal?)i.Tutar) ?? 0m; // null check
         }
 
-        public decimal ToplamGiderHesapla()
+        public decimal BakiyeHesapla(int kullaniciId)
         {
-            return _islemler
-                .Where(i => i.IslemTipi == IslemTipi.Gider)
-                .Sum(i => i.Tutar);
-        }
-
-        public decimal BakiyeHesapla()
-        {
-            return ToplamGelirHesapla() - ToplamGiderHesapla();
+            return ToplamGelirHesapla(kullaniciId) - ToplamGiderHesapla(kullaniciId);
         }
     }
 }

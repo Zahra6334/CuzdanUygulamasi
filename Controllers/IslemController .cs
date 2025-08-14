@@ -3,59 +3,100 @@ using CuzdanUygulamasi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CuzdanUygulamasi.Controllers
 {
     public class IslemController : Controller
     {
-        private static List<Islem> islemler = new List<Islem>();
         private readonly ApplicationDbContext _context;
+
         public IslemController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // Ana sayfa (tüm işlemler)
-        public IActionResult Index()
+        // Index: Sadece giriş yapan kullanıcıya ait işlemler
+        public async Task<IActionResult> Index()
         {
+            var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userIdStr))
+                return View(new List<Islem>());
+
+            int userId = int.Parse(userIdStr);
+
+            var islemler = await _context.Islemler
+                .Where(i => i.KullaniciId == userId)
+                .Include(i => i.Kategori)
+                .Include(i => i.Kullanici)
+                .OrderByDescending(i => i.Tarih)
+                .ToListAsync();
+
             return View(islemler);
         }
+
+        // GET Create
         [HttpGet]
         public IActionResult Create()
         {
+            ViewBag.Kategoriler = _context.Kategoriler.ToList();
             return View();
         }
-        public IActionResult Create(Islem islem)
+
+        // POST Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Islem islem)
         {
-            if (ModelState.IsValid)
+            ViewBag.Kategoriler = _context.Kategoriler.ToList();
+
+            var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userIdStr))
             {
-                _context.Islemler.Add(islem);
-                _context.SaveChanges();
-                return RedirectToAction("Create"); // işlem listesine geri dön
+                ModelState.AddModelError("", "Kullanıcı login değil.");
+                return View(islem);
             }
-            return View(islem); // hatalıysa form tekrar gösterilir
+
+            islem.KullaniciId = int.Parse(userIdStr);
+            islem.Tarih = System.DateTime.Now;
+
+            _context.Islemler.Add(islem);
+            try
+            {
+                var result = await _context.SaveChangesAsync();
+                if (result > 0)
+                    return RedirectToAction("Index");
+                else
+                    ModelState.AddModelError("", "Kayıt eklenemedi.");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "Hata: " + ex.Message);
+            }
+
+            return View(islem);
         }
 
+        // Silme işlemi
+        [HttpPost]
+        public async Task<IActionResult> IslemSil(int id)
+        {
+            var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userIdStr))
+                return RedirectToAction("Index");
 
-        // İşlem ekleme (form ile)
-        [HttpPost]
-        public IActionResult IslemEkle(Islem yeniIslem)
-        {
-            if (yeniIslem != null)
-            {
-                yeniIslem.Id = islemler.Count > 0 ? islemler.Max(i => i.Id) + 1 : 1;
-                yeniIslem.Tarih = DateTime.Now;
-                islemler.Add(yeniIslem);
-            }
-            return RedirectToAction("Index");
-        }
-        // İşlem silme
-        [HttpPost]
-        public IActionResult IslemSil(int id)
-        {
-            var silinecek = islemler.FirstOrDefault(i => i.Id == id);
+            int userId = int.Parse(userIdStr);
+
+            var silinecek = await _context.Islemler
+                .FirstOrDefaultAsync(i => i.Id == id && i.KullaniciId == userId);
+
             if (silinecek != null)
-                islemler.Remove(silinecek);
+            {
+                _context.Islemler.Remove(silinecek);
+                await _context.SaveChangesAsync();
+            }
 
             return RedirectToAction("Index");
         }

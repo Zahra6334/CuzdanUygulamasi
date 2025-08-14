@@ -2,11 +2,13 @@
 using CuzdanUygulamasi.Models;
 using CuzdanUygulamasi.Models.ViewModels;
 using CuzdanUygulamasi.Services;
-
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace CuzdanUygulamasi.Controllers
@@ -43,6 +45,30 @@ namespace CuzdanUygulamasi.Controllers
                 ModelState.AddModelError("", "Email veya şifre hatalı");
                 return View(model);
             }
+
+            // Kullanıcı claims oluştur
+            var claims = new List<Claim>
+    {
+        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()), // UserId
+                   // Kullanıcı adı
+        new Claim(ClaimTypes.Email, user.Email)                  // Email
+    };
+
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+            var authProperties = new AuthenticationProperties
+            {
+                IsPersistent = true, // Tarayıcı kapansa bile cookie saklanır
+                ExpiresUtc = DateTimeOffset.UtcNow.AddHours(1) // Cookie süresi
+            };
+
+            // Kullanıcıyı login et
+            await HttpContext.SignInAsync(
+     CookieAuthenticationDefaults.AuthenticationScheme,
+     new ClaimsPrincipal(claimsIdentity),
+     authProperties
+ );
+
 
             return RedirectToAction("Details", "Kullanici", new { id = user.Id });
         }

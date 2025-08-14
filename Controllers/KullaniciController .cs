@@ -1,7 +1,9 @@
 ﻿using CuzdanUygulamasi.Data;
 using CuzdanUygulamasi.Models;
+using CuzdanUygulamasi.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace CuzdanUygulamasi.Controllers
 {
@@ -16,20 +18,45 @@ namespace CuzdanUygulamasi.Controllers
         {
             _context = context;
         }
-
         [HttpGet("Details/{id}")]
         public IActionResult Details(int id)
         {
-            var kullanici = _context.Kullanicilar.FirstOrDefault(k => k.Id == id);
+            var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userIdStr == null || int.Parse(userIdStr) != id)
+                return Unauthorized(); // Başkasının profilini görmesin
+
+            var kullanici = _context.Kullanicilar
+                .Include(k => k.Islemler)  // Kullanıcının işlemlerini çek
+                .ThenInclude(i => i.Kategori)
+                .Include(k => k.Islemler)
+                .ThenInclude(i => i.TaksitliOdeme)
+                .FirstOrDefault(k => k.Id == id);
+
             if (kullanici == null)
                 return NotFound();
 
-            return View(kullanici);
+            var vm = new ProfilViewModel
+            {
+                KullaniciId = kullanici.Id,
+                KullaniciAdi = kullanici.AdSoyad,
+                Email = kullanici.Email,
+                ToplamGelir = kullanici.Islemler
+                                .Where(i => i.IslemTipi == IslemTipi.Gelir)
+                                .Sum(i => i.Tutar),
+                ToplamGider = kullanici.Islemler
+                                .Where(i => i.IslemTipi == IslemTipi.Gider)
+                                .Sum(i => i.Tutar),
+                IslemSayisi = kullanici.Islemler.Count,
+                TaksitSayisi = kullanici.Islemler.Count(i => i.IslemTipi == IslemTipi.Taksit),
+                KategoriSayisi = kullanici.Islemler.Where(i => i.KategoriId != null).Select(i => i.KategoriId).Distinct().Count(),
+                SonIslemler = kullanici.Islemler
+                                .OrderByDescending(i => i.Tarih)
+                                .Take(5)
+                                .ToList()
+            };
+
+            return View(vm);
         }
-
-
-
-
 
         // API metotları
         [HttpGet]

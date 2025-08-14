@@ -1,5 +1,6 @@
 using CuzdanUygulamasi.Data;
 using CuzdanUygulamasi.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,14 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IKullaniciServisi, KullaniciServisi>();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Account/Login";  // Login sayfasý
+        options.LogoutPath = "/Account/Logout"; // Logout sayfasý
+        options.ExpireTimeSpan = TimeSpan.FromHours(1); // Cookie süresi
+    });
 
 var app = builder.Build();
 
