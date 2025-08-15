@@ -14,9 +14,13 @@ namespace CuzdanUygulamasi.Controllers
         // Test amaçlı hafızada kullanıcı listesi (normalde DB'den çekilir)
         private static List<Kullanici> kullanicilar = new List<Kullanici>();
         private readonly ApplicationDbContext _context;
-        public KullaniciController(ApplicationDbContext context)
+        private readonly IWebHostEnvironment _env;
+
+        public KullaniciController(ApplicationDbContext context, IWebHostEnvironment env)
         {
+
             _context = context;
+            _env = env;
         }
         [HttpGet("Details/{id}")]
         public IActionResult Details(int id)
@@ -40,6 +44,7 @@ namespace CuzdanUygulamasi.Controllers
                 KullaniciId = kullanici.Id,
                 KullaniciAdi = kullanici.AdSoyad,
                 Email = kullanici.Email,
+                ProfilPic=kullanici.ProfiPic,
                 ToplamGelir = kullanici.Islemler
                                 .Where(i => i.IslemTipi == IslemTipi.Gelir)
                                 .Sum(i => i.Tutar),
@@ -57,13 +62,44 @@ namespace CuzdanUygulamasi.Controllers
 
             return View(vm);
         }
-
-        // API metotları
-        [HttpGet]
-        public IActionResult TumKullanicilariGetir()
+        [HttpPost]
+        public async Task<IActionResult> ProfilResmiDegistir(IFormFile profilResmi)
         {
-            return Ok(kullanicilar);
+            var kullaniciId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            if (profilResmi != null && profilResmi.Length > 0)
+            {
+               
+                var kullanici = await _context.Kullanicilar.FindAsync(kullaniciId);
+
+                if (kullanici != null)
+                {
+                    // Klasör yolu
+                    string uploadsFolder = Path.Combine(_env.WebRootPath, "uploads");
+                    if (!Directory.Exists(uploadsFolder))
+                        Directory.CreateDirectory(uploadsFolder);
+
+                    // Dosya adı
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(profilResmi.FileName);
+                    string filePath = Path.Combine(uploadsFolder, fileName);
+
+                    // Dosyayı kaydet
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await profilResmi.CopyToAsync(stream);
+                    }
+
+                    // Kullanıcının profil fotoğrafını güncelle
+                    kullanici.ProfiPic = "/uploads/" + fileName;
+                    _context.Update(kullanici);
+                    await _context.SaveChangesAsync();
+                }
+            }
+
+            return RedirectToAction("Details", "Kullanici", new { id = kullaniciId });
+
         }
+
+       
 
         [HttpPost]
         public IActionResult KullaniciEkle([FromBody] Kullanici yeniKullanici)

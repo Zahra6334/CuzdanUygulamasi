@@ -1,18 +1,22 @@
 ﻿@model CuzdanUygulamasi.Models.TaksitliOdeme
+@{
+    ViewData["Title"] = "Taksit Düzenle";
+    Layout = null;
+}
 
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taksit Düzenle</title>
+    <title>@ViewData["Title"] - Finans Cüzdanım</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             --primary-color: #8B0000;
             --secondary-color: #FF6B6B;
-            --dark-color: #333;
+            --dark-color: #333; /* Yazı rengi olarak koyu gri */
             --light-color: #f8f9fa;
             --success-color: #28a745;
             --warning-color: #ffc107;
@@ -31,7 +35,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f5f5f5;
-            color: var(--dark-color);
+            color: var(--dark-color); /* Tüm sayfa yazı rengi */
             line-height: 1.6;
         }
 
@@ -51,46 +55,13 @@
             z-index: 100;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-            margin-right: 30px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
-
-            .nav-links a {
-                color: rgba(255, 255, 255, 0.9);
-                text-decoration: none;
-                margin-right: 20px;
-                font-size: 15px;
-                transition: var(--transition);
-                display: flex;
-                align-items: center;
-            }
-
-                .nav-links a:hover {
-                    color: white;
-                    transform: translateY(-2px);
-                }
-
-                .nav-links a i {
-                    margin-right: 8px;
-                    font-size: 16px;
-                }
-
         .page-header {
             margin: 30px 0 25px;
         }
 
             .page-header h2 {
                 font-size: 28px;
-                color: var(--dark-color);
+                color: var(--dark-color); /* Başlık rengi */
                 font-weight: 600;
                 display: flex;
                 align-items: center;
@@ -118,7 +89,7 @@
                 display: block;
                 margin-bottom: 8px;
                 font-weight: 500;
-                color: #555;
+                color: var(--dark-color); /* Label rengi */
             }
 
         .form-control {
@@ -129,6 +100,8 @@
             font-family: 'Poppins', sans-serif;
             font-size: 15px;
             transition: var(--transition);
+            color: var(--dark-color); /* Input yazı rengi */
+            background-color: white; /* Input arkaplan rengi */
         }
 
             .form-control:focus {
@@ -180,6 +153,22 @@
             margin-top: 30px;
         }
 
+        /* Para birimi ve yüzde işaretleri için stil */
+        .input-symbol {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+
+        .percent-symbol {
+            right: 15px;
+        }
+
+        .currency-symbol {
+            left: 15px;
+        }
+
         @@media (max-width: 768px) {
             .form-card {
                 padding: 20px;
@@ -196,6 +185,7 @@
     </style>
 </head>
 <body>
+    <div class="container">
         <div class="page-header">
             <h2><i class="fas fa-edit"></i> Taksitli Ödeme Düzenle</h2>
         </div>
@@ -205,24 +195,24 @@
                 <input type="hidden" asp-for="Id" />
 
                 <div class="form-group">
-                    <label asp-for="TaksitSayisi"></label>
+                    <label asp-for="TaksitSayisi">Taksit Sayısı</label>
                     <input asp-for="TaksitSayisi" class="form-control" />
                     <span asp-validation-for="TaksitSayisi" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="FaizOrani"></label>
+                    <label asp-for="FaizOrani">Faiz Oranı</label>
                     <div style="position: relative;">
                         <input asp-for="FaizOrani" class="form-control" />
-                        <span style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #777;">%</span>
+                        <span class="input-symbol percent-symbol">%</span>
                     </div>
                     <span asp-validation-for="FaizOrani" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="ToplamTutar"></label>
+                    <label asp-for="ToplamTutar">Toplam Tutar</label>
                     <div style="position: relative;">
-                        <span style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #777;">₺</span>
+                        <span class="input-symbol currency-symbol">₺</span>
                         <input asp-for="ToplamTutar" class="form-control" style="padding-left: 35px;" />
                     </div>
                     <span asp-validation-for="ToplamTutar" class="text-danger"></span>

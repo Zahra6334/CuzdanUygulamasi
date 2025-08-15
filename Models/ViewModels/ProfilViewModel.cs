@@ -8,6 +8,7 @@ namespace CuzdanUygulamasi.Models.ViewModels
         public int KullaniciId { get; set; }
         public string KullaniciAdi { get; set; }
         public string Email { get; set; }
+        public string ProfilPic {  get; set; }
         public decimal ToplamGelir { get; set; }
         public decimal ToplamGider { get; set; }
         public decimal ToplamBakiye => ToplamGelir - ToplamGider;

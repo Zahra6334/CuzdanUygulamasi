@@ -368,7 +368,7 @@
                     <a href="/Islem"><i class="fas fa-exchange-alt"></i> İşlemler</a>
                     <a href="#"><i class="fas fa-chart-pie"></i> Raporlar</a>
                     <a href="#"><i class="fas fa-cog"></i> Ayarlar</a>
-                    <a href="/Account/Logout"><i class="fas fa-sign-out-alt"></i> Çıkış</a>
+                    <a href="/Account/Login"><i class="fas fa-sign-out-alt"></i> Çıkış</a>
                 </nav>
             </div>
         </header>
@@ -377,7 +377,14 @@
             <!-- Sidebar -->
             <div class="profile-sidebar">
                 <div class="profile-info">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profil Resmi" class="profile-pic">
+                    <!-- Profil resmi -->
+                    <form asp-action="ProfilResmiDegistir" asp-controller="Kullanici" method="post" enctype="multipart/form-data">
+                        <label for="profilePicInput" style="cursor: pointer;">
+                            <img src="@Model.ProfilPic" alt="Profil Resmi" class="profile-pic" id="profileImage">
+                        </label>
+                        <input type="file" id="profilePicInput" name="profilResmi" accept="image/*" style="display: none;" onchange="this.form.submit()" />
+                    </form>
+
                     <h2 class="profile-name">@Model.KullaniciAdi</h2>
                     <p class="profile-email">@Model.Email</p>
 
@@ -386,23 +393,13 @@
                             <div class="stat-value">@Model.IslemSayisi</div>
                             <div class="stat-label">İşlem</div>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-value">@Model.TaksitSayisi</div>
-                            <div class="stat-label">Taksit</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value">@Model.KategoriSayisi</div>
-                            <div class="stat-label">Kategori</div>
-                        </div>
+                        
                     </div>
                 </div>
-
                 <div class="sidebar-menu">
                     <a href="/Islem" class="menu-item"><i class="fas fa-exchange-alt"></i> İşlemlerim</a>
                     <a href="/TaksitliOdeme/Index" class="menu-item"><i class="fas fa-credit-card"></i> Taksitlerim</a>
-                    <a href="/Islem" class="menu-item"><i class="fas fa-chart-bar"></i> Harcama Analizim</a>
-                    <a href="/Islem" class="menu-item"><i class="fas fa-bell"></i> Bildirimler</a>
-                    <a href="/Islem" class="menu-item"><i class="fas fa-cog"></i> Ayarlar</a>
+                    <a asp-controller="Islem" asp-action="Analiz" class="menu-item"><i class="fas fa-chart-bar"></i> Harcama Analizim</a>
                 </div>
             </div>
 

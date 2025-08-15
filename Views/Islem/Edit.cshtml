@@ -1,41 +1,198 @@
 ﻿@model CuzdanUygulamasi.Models.Islem
-
 @{
     ViewData["Title"] = "İşlem Düzenle";
+    Layout = null;
 }
 
-<h2>İşlem Düzenle</h2>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Finans Cüzdanım</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --secondary-color: #FF6B6B;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
 
-<form asp-action="Edit" method="post">
-    @Html.AntiForgeryToken()
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
 
-    <input type="hidden" asp-for="Id" />
-    <input type="hidden" asp-for="KullaniciId" />
+        .edit-container {
+            max-width: 600px;
+            margin: 30px auto;
+        }
 
-    <div class="form-group">
-        <label asp-for="Tutar"></label>
-        <input asp-for="Tutar" class="form-control" />
-        <span asp-validation-for="Tutar" class="text-danger"></span>
+        .edit-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background-color: white;
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+            .card-header h2 {
+                color: var(--primary-color);
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+            }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .input-group-text {
+            background-color: rgba(139, 0, 0, 0.1);
+            color: var(--primary-color);
+            border: 1px solid #eee;
+            border-right: none;
+        }
+
+        .form-control, .form-select {
+            border-radius: var(--border-radius);
+            padding: 12px 15px;
+            border: 1px solid #eee;
+            transition: var(--transition);
+        }
+
+            .form-control:focus, .form-select:focus {
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+            }
+
+        .btn-update {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-weight: 600;
+            width: 100%;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .btn-update:hover {
+                background-color: #7a0000;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(139, 0, 0, 0.2);
+            }
+
+        .text-danger {
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        @@media (max-width: 768px) {
+            .edit-container {
+                margin: 15px auto;
+            }
+
+            .card-body {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="edit-container">
+        <div class="edit-card">
+            <div class="card-header">
+                <h2><i class="fas fa-edit me-2"></i>İşlem Düzenle</h2>
+            </div>
+
+            <div class="card-body">
+                <form asp-action="Edit" method="post">
+                    @Html.AntiForgeryToken()
+
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="KullaniciId" />
+
+                    <div class="mb-3">
+                        <label asp-for="Tutar" class="form-label"></label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-lira-sign"></i>
+                            </span>
+                            <input asp-for="Tutar" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Tutar" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Aciklama" class="form-label"></label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-comment"></i>
+                            </span>
+                            <input asp-for="Aciklama" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Aciklama" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Tarih" class="form-label"></label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-calendar-alt"></i>
+                            </span>
+                            <input asp-for="Tarih" type="date" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Tarih" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="IslemTipi" class="form-label"></label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-tags"></i>
+                            </span>
+                            <select asp-for="IslemTipi" class="form-select"
+                                    asp-items="Html.GetEnumSelectList<CuzdanUygulamasi.Models.IslemTipi>()"></select>
+                        </div>
+                        <span asp-validation-for="IslemTipi" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-update">
+                            <i class="fas fa-save me-2"></i>Güncelle
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
-    <div class="form-group">
-        <label asp-for="Aciklama"></label>
-        <input asp-for="Aciklama" class="form-control" />
-        <span asp-validation-for="Aciklama" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Tarih"></label>
-        <input asp-for="Tarih" type="date" class="form-control" />
-        <span asp-validation-for="Tarih" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="IslemTipi"></label>
-        <select asp-for="IslemTipi" class="form-control"
-                asp-items="Html.GetEnumSelectList<CuzdanUygulamasi.Models.IslemTipi>()"></select>
-        <span asp-validation-for="IslemTipi" class="text-danger"></span>
-    </div>
-
-    <button type="submit" class="btn btn-primary mt-2">Güncelle</button>
-</form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

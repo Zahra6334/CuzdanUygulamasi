@@ -1,0 +1,456 @@
+﻿@model CuzdanUygulamasi.Models.ViewModels.AnalizViewModel
+@{
+    ViewData["Title"] = "Harcama Analiz";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Finans Cüzdanım</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --primary-light: #a52a2a;
+            --secondary-color: #FF6B6B;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --info-color: #17a2b8;
+            --border-radius: 10px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: var(--dark-color);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page-header {
+            margin: 2rem 0 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+            .page-header h2 {
+                font-size: 2.2rem;
+                color: var(--primary-color);
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                padding: 0 2rem;
+                background: white;
+                position: relative;
+                z-index: 1;
+            }
+
+            .page-header::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: linear-gradient(to right, transparent, #ddd, transparent);
+                z-index: 0;
+            }
+
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+            border: none;
+            overflow: hidden;
+            height: 100%;
+        }
+
+            .card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            font-weight: 500;
+            padding: 1.25rem;
+            border-bottom: none;
+            position: relative;
+        }
+
+            .card-header h5 {
+                margin: 0;
+                font-size: 1.1rem;
+                display: flex;
+                align-items: center;
+            }
+
+            .card-header i {
+                margin-right: 0.75rem;
+                font-size: 1.2rem;
+            }
+
+        .card-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 60px);
+        }
+
+        .chart-container {
+            position: relative;
+            flex-grow: 1;
+            min-height: 280px;
+            max-height: 320px;
+        }
+
+        .alert-info {
+            background-color: #f8f9fa;
+            border-color: #e9ecef;
+            color: #495057;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+            .alert-info i {
+                color: var(--info-color);
+                margin-right: 0.5rem;
+            }
+
+        .chart-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+            gap: 0.75rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .legend-color {
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
+            margin-right: 0.5rem;
+        }
+
+        @@media (max-width: 992px) {
+            .page-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .card-body {
+                padding: 1.25rem;
+            }
+        }
+
+        @@media (max-width: 768px) {
+            .page-header h2 {
+                font-size: 1.5rem;
+                padding: 0 1rem;
+            }
+
+            .chart-container {
+                min-height: 50px;
+                max-height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h2><i class="fas fa-chart-pie"></i> Harcama Analiz Paneli</h2>
+        </div>
+
+        @if (Model.AylikGelirGider == null || !Model.AylikGelirGider.Any())
+        {
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle fa-lg"></i> Henüz yeterli veri bulunmamaktadır. Analiz görüntülenebilmesi için işlem ekleyin.
+            </div>
+        }
+        else
+        {
+            <div class="row g-4">
+                <!-- Aylık Gelir-Gider Grafiği -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5><i class="fas fa-chart-line"></i>Aylık Gelir-Gider Analizi</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="gelirGiderChart"></canvas>
+                            </div>
+                            <div class="chart-legend mt-3">
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: rgba(40, 167, 69, 0.7);"></span>
+                                    <span>Gelir</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: rgba(220, 53, 69, 0.7);"></span>
+                                    <span>Gider</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kategori Dağılımı -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5><i class="fas fa-tags"></i>Kategori Bazında Harcamalar</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="kategoriChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @if (Model.TaksitOzeti != null && Model.TaksitOzeti.Any())
+                {
+                    <!-- Taksit Özeti -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-credit-card"></i>Taksitli Ödemelerin Durumu</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-container" style="min-height: 280px; max-height: 320px;">
+                                    <canvas id="taksitChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+
+    <!-- Gerekli JS Kütüphaneleri -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Aylık Gelir-Gider Grafiği
+        @if (Model.AylikGelirGider != null && Model.AylikGelirGider.Any())
+        {
+                    <text>
+                        var gelirGiderCtx = document.getElementById('gelirGiderChart').getContext('2d');
+                        var gelirGiderChart = new Chart(gelirGiderCtx, {
+                            type: 'bar',
+                            data: {
+                                labels: @Html.Raw(Json.Serialize(Model.AylikGelirGider.Select(x => $"{x.Yil}-{x.Ay}").Distinct())),
+                                datasets: [
+                                    {
+                                        label: 'Gelir',
+                                        data: @Html.Raw(Json.Serialize(Model.AylikGelirGider.Where(x => x.IslemTipi == IslemTipi.Gelir).Select(x => x.Toplam))),
+                                        backgroundColor: 'rgba(40, 167, 69, 0.7)',
+                                        borderColor: 'rgba(40, 167, 69, 1)',
+                                        borderWidth: 1,
+                                        borderRadius: 4,
+                                        barPercentage: 0.7
+                                    },
+                                    {
+                                        label: 'Gider',
+                                        data: @Html.Raw(Json.Serialize(Model.AylikGelirGider.Where(x => x.IslemTipi == IslemTipi.Gider).Select(x => x.Toplam))),
+                                        backgroundColor: 'rgba(220, 53, 69, 0.7)',
+                                        borderColor: 'rgba(220, 53, 69, 1)',
+                                        borderWidth: 1,
+                                        borderRadius: 4,
+                                        barPercentage: 0.7
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        grid: {
+                                            drawBorder: false,
+                                            color: '#f1f1f1'
+                                        },
+                                        ticks: {
+                                            callback: function(value) {
+                                                return '₺' + value.toLocaleString('tr-TR');
+                                            },
+                                            color: '#6c757d'
+                                        }
+                                    },
+                                    x: {
+                                        grid: {
+                                            display: false,
+                                            drawBorder: false
+                                        },
+                                        ticks: {
+                                            color: '#6c757d'
+                                        }
+                                    }
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    },
+                                    tooltip: {
+                                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                                        titleFont: {
+                                            size: 14,
+                                            weight: 'bold'
+                                        },
+                                        bodyFont: {
+                                            size: 13
+                                        },
+                                        callbacks: {
+                                            label: function(context) {
+                                                return context.dataset.label + ': ₺' + context.raw.toLocaleString('tr-TR');
+                                            }
+                                        },
+                                        padding: 12,
+                                        cornerRadius: 6
+                                    }
+                                },
+                                interaction: {
+                                    intersect: false,
+                                    mode: 'index'
+                                }
+                            }
+                        });
+                    </text>
+        }
+
+        // Kategori Dağılım Grafiği
+        @if (Model.KategoriDagilimi != null && Model.KategoriDagilimi.Any())
+        {
+                    <text>
+                        var kategoriCtx = document.getElementById('kategoriChart').getContext('2d');
+                        var kategoriChart = new Chart(kategoriCtx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: @Html.Raw(Json.Serialize(Model.KategoriDagilimi.Select(x => x.KategoriAdi))),
+                                datasets: [{
+                                    data: @Html.Raw(Json.Serialize(Model.KategoriDagilimi.Select(x => x.Toplam))),
+                                    backgroundColor: [
+                                        '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
+                                        '#FF9F40', '#8AC24A', '#607D8B', '#E91E63', '#00BCD4'
+                                    ],
+                                    borderWidth: 0,
+                                    borderRadius: 6,
+                                    spacing: 4
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                cutout: '65%',
+                                plugins: {
+                                    legend: {
+                                        position: 'right',
+                                        labels: {
+                                            padding: 15,
+                                            usePointStyle: true,
+                                            pointStyle: 'rectRounded',
+                                            font: {
+                                                size: 12
+                                            },
+                                            color: '#495057'
+                                        }
+                                    },
+                                    tooltip: {
+                                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                                        bodyFont: {
+                                            size: 13
+                                        },
+                                        callbacks: {
+                                            label: function(context) {
+                                                const label = context.label || '';
+                                                const value = context.raw || 0;
+                                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                                const percentage = Math.round((value / total) * 100);
+                                                return `${label}: ₺${value.toLocaleString('tr-TR')} (${percentage}%)`;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    </text>
+        }
+
+        // Taksit Özet Grafiği
+        @if (Model.TaksitOzeti != null && Model.TaksitOzeti.Any())
+        {
+                    <text>
+                        var taksitCtx = document.getElementById('taksitChart').getContext('2d');
+                        var taksitChart = new Chart(taksitCtx, {
+                            type: 'pie',
+                            data: {
+                                datasets: [{
+                                    data: @Html.Raw(Json.Serialize(Model.TaksitOzeti.Select(x => x.ToplamTutar))),
+                                    backgroundColor: [
+                                        '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'
+                                    ],
+                                    borderWidth: 0,
+                                    borderRadius: 6
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        position: 'bottom',
+                                        labels: {
+                                            padding: 15,
+                                            usePointStyle: true,
+                                            pointStyle: 'circle',
+                                            font: {
+                                                size: 12
+                                            },
+                                            color: '#495057'
+                                        }
+                                    },
+                                    tooltip: {
+                                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                                        bodyFont: {
+                                            size: 13
+                                        },
+                                        callbacks: {
+                                            label: function(context) {
+                                                return context.label + ': ₺' + context.raw.toLocaleString('tr-TR');
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    </text>
+        }
+    </script>
+</body>
+</html>

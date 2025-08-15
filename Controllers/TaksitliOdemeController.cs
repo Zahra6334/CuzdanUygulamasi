@@ -75,7 +75,7 @@ namespace CuzdanUygulamasi.Controllers
             int kullaniciId = GetCurrentUserId();
             if (id != guncellenenOdeme.Id) return NotFound();
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 var odeme = await _context.TaksitliOdemeler
                                           .FirstOrDefaultAsync(x => x.Id == id && x.KullaniciId == kullaniciId);
