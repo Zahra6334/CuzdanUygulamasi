@@ -16,6 +16,20 @@ namespace CuzdanUygulamasi.Data
         public DbSet<Islem> Islemler { get; set; }
         public DbSet<Kategori> Kategoriler { get; set; }
         public DbSet<TaksitliOdeme> TaksitliOdemeler { get; set; }
+        public DbSet<OdemeTaksiti> OdemeTaksitleri { get;  set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<TaksitliOdeme>()
+                .Property(t => t.ToplamTutar)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<OdemeTaksiti>()
+                .Property(o => o.OdenenTutar)
+                .HasPrecision(18, 2);
+        }
 
         internal async Task<string?> GetByIdAsync(int id, int kullaniciId)
         {

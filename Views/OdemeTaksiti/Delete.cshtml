@@ -1,0 +1,219 @@
+﻿@model CuzdanUygulamasi.Models.OdemeTaksiti
+
+@{
+    ViewData["Title"] = "Ödeme Sil";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Finans Cüzdanım</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --primary-light: #a52a2a;
+            --secondary-color: #FF6B6B;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --info-color: #17a2b8;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --border-radius: 10px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: var(--dark-color);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page-header {
+            margin: 2rem 0 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+            .page-header h2 {
+                font-size: 2.2rem;
+                color: var(--primary-color);
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                padding: 0 2rem;
+                background: white;
+                position: relative;
+                z-index: 1;
+            }
+
+            .page-header::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: linear-gradient(to right, transparent, #ddd, transparent);
+                z-index: 0;
+            }
+
+        .confirmation-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--danger-color);
+        }
+
+        .confirmation-message {
+            font-size: 1.1rem;
+            color: var(--danger-color);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+            .confirmation-message i {
+                font-size: 1.5rem;
+            }
+
+        .detail-item {
+            margin-bottom: 1.25rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+            .detail-item:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+
+            .detail-item b {
+                color: var(--primary-color);
+                display: inline-block;
+                min-width: 160px;
+            }
+
+        .btn {
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-danger {
+            background-color: var(--danger-color);
+            border-color: var(--danger-color);
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        @@media (max-width: 768px) {
+            .page-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .confirmation-card {
+                padding: 1.5rem;
+            }
+
+            .detail-item b {
+                min-width: 120px;
+                display: block;
+                margin-bottom: 0.5rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h2><i class="fas fa-trash-alt"></i> Ödeme Sil</h2>
+        </div>
+
+        <div class="confirmation-card">
+            <div class="confirmation-message">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Bu ödemeyi silmek istediğinize emin misiniz?</span>
+            </div>
+
+            <div class="detail-item">
+                <b>Id:</b> @Model.Id
+            </div>
+            <div class="detail-item">
+                <b>Taksitli Ödeme Id:</b> @Model.TaksitliOdemeId
+            </div>
+            <div class="detail-item">
+                <b>Ödenen Tutar:</b> @Model.OdenenTutar.ToString("C")
+            </div>
+            <div class="detail-item">
+                <b>Ödeme Tarihi:</b> @Model.OdemeTarihi.ToString("dd.MM.yyyy")
+            </div>
+            <div class="detail-item">
+                <b>Ödeme Yöntemi:</b> @Model.OdemeYontemi
+            </div>
+        </div>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <div class="action-buttons">
+                <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i> Sil
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-times"></i> İptal
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Gerekli JS Kütüphaneleri -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>

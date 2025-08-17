@@ -125,6 +125,36 @@ namespace CuzdanUygulamasi.Migrations
                     b.ToTable("Kullanicilar");
                 });
 
+            modelBuilder.Entity("CuzdanUygulamasi.Models.OdemeTaksiti", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("OdemeTarihi")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("OdemeYontemi")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<decimal>("OdenenTutar")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("TaksitliOdemeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TaksitliOdemeId");
+
+                    b.ToTable("OdemeTaksitleri");
+                });
+
             modelBuilder.Entity("CuzdanUygulamasi.Models.TaksitliOdeme", b =>
                 {
                     b.Property<int>("Id")
@@ -152,6 +182,7 @@ namespace CuzdanUygulamasi.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("ToplamTutar")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
@@ -193,6 +224,17 @@ namespace CuzdanUygulamasi.Migrations
                         .IsRequired();
 
                     b.Navigation("Kullanici");
+                });
+
+            modelBuilder.Entity("CuzdanUygulamasi.Models.OdemeTaksiti", b =>
+                {
+                    b.HasOne("CuzdanUygulamasi.Models.TaksitliOdeme", "TaksitliOdeme")
+                        .WithMany()
+                        .HasForeignKey("TaksitliOdemeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TaksitliOdeme");
                 });
 
             modelBuilder.Entity("CuzdanUygulamasi.Models.TaksitliOdeme", b =>
