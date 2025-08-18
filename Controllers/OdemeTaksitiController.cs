@@ -1,5 +1,6 @@
 ﻿using CuzdanUygulamasi.Data;
 using CuzdanUygulamasi.Models;
+using DinkToPdf;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using QuestPDF.Fluent;
@@ -7,6 +8,7 @@ using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using System.Reflection.Metadata;
 using Document = QuestPDF.Fluent.Document;
+using CuzdanUygulamasi.Extensions;
 
 
 
@@ -21,76 +23,39 @@ namespace CuzdanUygulamasi.Controllers
             _context = context;
         }
         // PDF indir
-        public IActionResult IndirPdf()
+        public IActionResult PdfSayfasi()
         {
             var odemeler = _context.OdemeTaksitleri.ToList();
-
-            QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
-
-            var pdf = Document.Create(container =>
-            {
-                container.Page(page =>
-                {
-                    page.Size(PageSizes.A4);
-                    page.Margin(2, Unit.Centimetre);
-                    page.PageColor(Colors.White);
-                    page.DefaultTextStyle(x => x.FontSize(12));
-
-                    // Header
-                    page.Header()
-                        .Text("Ödeme Taksitleri Listesi")
-                        .SemiBold().FontSize(16).FontColor(Colors.Black)
-                        .AlignCenter();
-
-                    // Tek Content çağrısı
-                    page.Content()
-                        .Table(table =>
-                        {
-                            // 4 kolon
-                            table.ColumnsDefinition(columns =>
-                            {
-                                columns.RelativeColumn();
-                                columns.RelativeColumn();
-                                columns.RelativeColumn();
-                                columns.RelativeColumn();
-                            });
-
-                            // Başlık satırı
-                            table.Header(header =>
-                            {
-                                header.Cell().Text("Id");
-                                header.Cell().Text("Ödenen Tutar");
-                                header.Cell().Text("Ödeme Tarihi");
-                                header.Cell().Text("Ödeme Yöntemi");
-                            });
-
-                            // Satırlar
-                            foreach (var item in odemeler)
-                            {
-                                table.Cell().Text(item.Id.ToString());
-                                table.Cell().Text(item.OdenenTutar.ToString());
-                                table.Cell().Text(item.OdemeTarihi.ToShortDateString());
-                                table.Cell().Text(item.OdemeYontemi ?? "-");
-                            }
-                        });
-
-                    // Footer
-                    page.Footer()
-                        .AlignCenter()
-                        .Text(txt =>
-                        {
-                            txt.Span("Sayfa ");
-                            txt.CurrentPageNumber();
-                            txt.Span(" / ");
-                            txt.TotalPages();
-                        });
-                });
-            });
-
-            var pdfBytes = pdf.GeneratePdf();
-
-            return File(pdfBytes, "application/pdf", "OdemeTaksitleri.pdf");
+            return View("OdemePdf", odemeler); // OdemePdf.cshtml'e veri gönderiyoruz
         }
+
+        public async Task<IActionResult> IndirPdf()
+        {
+            var odemeler = _context.OdemeTaksitleri.ToList();
+            var html = await this.RenderViewAsync("OdemePdf", odemeler, true);
+
+            var converter = new SynchronizedConverter(new PdfTools());
+            var doc = new HtmlToPdfDocument()
+            {
+                GlobalSettings = {
+            ColorMode = ColorMode.Color,
+            Orientation = Orientation.Portrait,
+            PaperSize = PaperKind.A4
+        },
+                Objects = {
+            new ObjectSettings()
+            {
+                HtmlContent = html,
+                WebSettings = { DefaultEncoding = "utf-8" } // Türkçe karakterler için
+            }
+        }
+            };
+
+            var pdf = converter.Convert(doc);
+            return File(pdf, "application/pdf", "OdemeTaksitleri.pdf");
+        }
+
+
         public IActionResult IndirPdfView()
         {
             return View(); // IndirPdf.cshtml

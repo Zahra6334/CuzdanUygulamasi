@@ -219,3 +219,7 @@ C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\r
 C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\runtimes\win-x86\native\libstdc++-6.dll
 C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\runtimes\win-x86\native\libwinpthread-1.dll
 C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\runtimes\win-x86\native\qpdf.dll
+C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\itextsharp.dll
+C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\DinkToPdf.dll
+C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\libwkhtmltox\libwkhtmltox.dll

@@ -4,6 +4,7 @@ using CuzdanUygulamasi.Models.ViewModels;
 using CuzdanUygulamasi.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -101,10 +102,14 @@ namespace CuzdanUygulamasi.Controllers
                     KayitTarihi = DateTime.Now
                 };
 
+                // Şifreyi hashle
+                var passwordHasher = new PasswordHasher<Kullanici>();
+                kullanici.SifreHash = passwordHasher.HashPassword(kullanici, model.Sifre);
+
                 // Veritabanına kaydet
                 await _kullaniciServisi.KullaniciOlusturAsync(kullanici);
 
-                // İstersen statik listeye de ekle (test için)
+                // Test amaçlı statik listeye ekle
                 kullanicilar.Add(kullanici);
 
                 return RedirectToAction("Login");
