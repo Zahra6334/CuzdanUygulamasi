@@ -17,6 +17,7 @@ namespace CuzdanUygulamasi.Data
         public DbSet<Kategori> Kategoriler { get; set; }
         public DbSet<TaksitliOdeme> TaksitliOdemeler { get; set; }
         public DbSet<OdemeTaksiti> OdemeTaksitleri { get;  set; }
+        public object Users { get; internal set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

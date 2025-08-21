@@ -1,0 +1,433 @@
+﻿@model ExchangeRateResponse
+@using System.Linq
+@using CuzdanUygulamasi.Services
+@inject ExchangeRateService ExchangeRateService
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Döviz Kurları - Finansal Cüzdanım</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --secondary-color: #FF6B6B;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+            .logo i {
+                margin-right: 10px;
+            }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+            .nav-links a {
+                color: rgba(255, 255, 255, 0.9);
+                text-decoration: none;
+                margin-right: 20px;
+                font-size: 15px;
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+            }
+
+                .nav-links a:hover {
+                    color: white;
+                    transform: translateY(-2px);
+                }
+
+                .nav-links a i {
+                    margin-right: 8px;
+                    font-size: 16px;
+                }
+
+        .page-header {
+            margin: 30px 0 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .page-header h2 {
+                font-size: 28px;
+                color: var(--dark-color);
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+            }
+
+                .page-header h2 i {
+                    margin-right: 12px;
+                    color: var(--primary-color);
+                }
+
+        .refresh-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+            .refresh-btn:hover {
+                background-color: #a52a2a;
+            }
+
+            .refresh-btn i {
+                margin-right: 8px;
+            }
+
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .info-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+
+            .info-item i {
+                margin-right: 10px;
+                color: var(--primary-color);
+            }
+
+        .currency-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+            .currency-table th {
+                background-color: var(--primary-color);
+                color: white;
+                padding: 15px;
+                text-align: left;
+                font-weight: 600;
+            }
+
+            .currency-table tr {
+                border-bottom: 1px solid #e0c9c9;
+                transition: var(--transition);
+            }
+
+                .currency-table tr:hover {
+                    background-color: #fff5f5;
+                }
+
+            .currency-table td {
+                padding: 15px;
+                font-size: 15px;
+            }
+
+        .currency-name {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .flag {
+            width: 30px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 2px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+
+        .up {
+            color: #27ae60;
+        }
+
+        .down {
+            color: #e74c3c;
+        }
+
+        .change {
+            font-size: 13px;
+            margin-left: 5px;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #6c757d;
+        }
+
+            .no-data i {
+                font-size: 40px;
+                margin-bottom: 15px;
+                color: #ced4da;
+            }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--primary-color);
+        }
+
+            .loading i {
+                font-size: 40px;
+                margin-bottom: 15px;
+                animation: spin 1s linear infinite;
+            }
+
+        @@keyframes spin {
+            0%
+
+        {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+
+        }
+
+        .app-footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        @@media (max-width: 768px) {
+            .header-container
+
+        {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-links {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+            .nav-links a {
+                margin: 5px 10px;
+            }
+
+        .info-bar {
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .page-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .currency-table {
+            font-size: 14px;
+        }
+
+            .currency-table th,
+            .currency-table td {
+                padding: 10px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h2><i class="fas fa-exchange-alt"></i> Döviz Kurları</h2>
+            <button class="refresh-btn" onclick="refreshRates()">
+                <i class="fas fa-sync-alt"></i> Yenile
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="info-bar">
+                <div class="info-item">
+                    <i class="fas fa-database"></i>
+                    <span>Base Currency: <strong>@(Model?.Base ?? "USD")</strong></span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Tarih: <strong>@(Model?.Date ?? DateTime.Now.ToString("yyyy-MM-dd"))</strong></span>
+                </div>
+            </div>
+
+            @if (Model?.Rates != null && Model.Rates.Count > 0)
+            {
+                <div class="table-responsive">
+                    <table class="currency-table">
+                        <thead>
+                            <tr>
+                                <th>Para Birimi</th>
+                                <th>Kur Değeri</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var rate in Model.Rates)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="currency-name">
+                                            <img src="https://flagcdn.com/w40/@(GetCountryCode(rate.Key)).png" class="flag" alt="@rate.Key">
+                                            @rate.Key
+                                        </div>
+                                    </td>
+                                    <td>@rate.Value.ToString("N4")</td>
+                                   
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="loading">
+                    <i class="fas fa-spinner"></i>
+                    <h3>Döviz kurları yükleniyor...</h3>
+                    <p>Lütfen bekleyiniz.</p>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="app-footer">
+            <p>Bu belge sistem tarafından otomatik üretilmiştir. | Veriler apilayer.com'dan alınmaktadır</p>
+            <p>© @DateTime.Now.Year - Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+
+    @functions {
+        public string GetCountryCode(string currencyCode)
+        {
+            var countryMap = new Dictionary<string, string>
+        {
+        {"USD", "us"},
+        {"EUR", "eu"},
+        {"GBP", "gb"},
+        {"JPY", "jp"},
+        {"CHF", "ch"},
+        {"CAD", "ca"},
+        {"AUD", "au"},
+        {"CNY", "cn"},
+        {"TRY", "tr"},
+        {"RUB", "ru"},
+        {"AED", "ae"},
+        {"AZN", "az"},
+        {"BGN", "bg"},
+        {"BRL", "br"},
+        {"DKK", "dk"},
+        {"INR", "in"},
+        {"IRR", "ir"},
+        {"IQD", "iq"},
+        {"KWD", "kw"},
+        {"NOK", "no"},
+        {"PKR", "pk"},
+        {"QAR", "qa"},
+        {"RON", "ro"},
+        {"SAR", "sa"},
+        {"SEK", "se"}
+        };
+
+            return countryMap.ContainsKey(currencyCode) ? countryMap[currencyCode] : "us";
+        }
+    }
+
+    <script>
+        function refreshRates() {
+            // Sayfayı yenile
+            window.location.reload();
+        }
+
+        // Sayfa yüklendiğinde API'den veri çek
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Döviz kurları sayfası yüklendi');
+        });
+    </script>
+</body>
+</html>

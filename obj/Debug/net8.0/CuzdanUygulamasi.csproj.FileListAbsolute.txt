@@ -223,3 +223,8 @@ C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\B
 C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\itextsharp.dll
 C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\DinkToPdf.dll
 C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\libwkhtmltox\libwkhtmltox.dll
+C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll

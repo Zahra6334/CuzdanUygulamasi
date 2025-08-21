@@ -27,6 +27,6 @@ namespace CuzdanUygulamasi.Models
         public List<Kategori> Kategoriler { get; set; }
         public List<Islem> Islemler { get; set; }
         public List<TaksitliOdeme> TaksitliOdemeler { get; set; }
-     
+       
     }
 }

@@ -14,6 +14,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IKullaniciServisi, KullaniciServisi>();
 builder.Services.AddScoped<TaksitliOdemeServisi>();
+builder.Services.AddScoped<ExchangeRateService>();
 var context = new CustomAssemblyLoadContext();
 context.LoadUnmanagedLibrary(Path.Combine(Directory.GetCurrentDirectory(), "libwkhtmltox", "libwkhtmltox.dll"));
 
@@ -25,6 +26,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LogoutPath = "/Account/Logout"; // Logout sayfasý
         options.ExpireTimeSpan = TimeSpan.FromHours(1); // Cookie süresi
     });
+
 
 var app = builder.Build();
 
@@ -50,5 +52,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
      pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
 
 app.Run();
