@@ -412,7 +412,17 @@
                         <h3 class="card-title">Toplam Bakiye</h3>
                         <div class="card-icon"><i class="fas fa-wallet"></i></div>
                     </div>
+
+                    <!-- TL Bakiye -->
                     <div class="balance-amount">₺@Model.ToplamBakiye.ToString("N2")</div>
+
+                    <!-- Diğer Para Birimleri -->
+                    <div class="currency-conversions">
+                        <p>$ @(Model.ToplamBakiye / Model.DovizKurlari["USD"])</p>
+                        <p>€ @(Model.ToplamBakiye / Model.DovizKurlari["EUR"])</p>
+                        <p>£ @(Model.ToplamBakiye / Model.DovizKurlari["GBP"])</p>
+                    </div>
+
                     <a href="/Islem" class="btn">Yeni İşlem Ekle</a>
                 </div>
 

@@ -4,6 +4,7 @@ using CuzdanUygulamasi.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using CuzdanUygulamasi.Services;
 
 namespace CuzdanUygulamasi.Controllers
 {
@@ -15,15 +16,17 @@ namespace CuzdanUygulamasi.Controllers
         private static List<Kullanici> kullanicilar = new List<Kullanici>();
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _env;
+        private readonly ExchangeRateService _exchangeRateService;
 
-        public KullaniciController(ApplicationDbContext context, IWebHostEnvironment env)
+        public KullaniciController(ApplicationDbContext context, IWebHostEnvironment env,ExchangeRateService exchangeRateService)
         {
 
             _context = context;
             _env = env;
+            _exchangeRateService = exchangeRateService;
         }
         [HttpGet("Details/{id}")]
-        public IActionResult Details(int id)
+        public async Task<IActionResult> DetailsAsync(int id)
         {
             var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (userIdStr == null || int.Parse(userIdStr) != id)
@@ -38,7 +41,7 @@ namespace CuzdanUygulamasi.Controllers
 
             if (kullanici == null)
                 return NotFound();
-
+            var result = await _exchangeRateService.GetRatesAsync("TRY", "USD,EUR,GBP");
             var vm = new ProfilViewModel
             {
                 KullaniciId = kullanici.Id,
@@ -57,7 +60,13 @@ namespace CuzdanUygulamasi.Controllers
                 SonIslemler = kullanici.Islemler
                                 .OrderByDescending(i => i.Tarih)
                                 .Take(5)
-                                .ToList()
+                                .ToList(),
+                DovizKurlari = new Dictionary<string, decimal>
+        {
+            { "USD", 1 / result.Rates["USD"] }, // 1 USD = ? TL
+            { "EUR", 1 / result.Rates["EUR"] }, // 1 EUR = ? TL
+            { "GBP", 1 / result.Rates["GBP"] }  // 1 GBP = ? TL
+        }
             };
 
             return View(vm);
