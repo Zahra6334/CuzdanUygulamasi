@@ -349,6 +349,7 @@
                         <tbody>
                             @foreach (var rate in Model.Rates)
                             {
+                                var oneCurrencyToTry = 1 / rate.Value;
                                 <tr>
                                     <td>
                                         <div class="currency-name">
@@ -356,7 +357,7 @@
                                             @rate.Key
                                         </div>
                                     </td>
-                                    <td>@rate.Value.ToString("N4")</td>
+                                    <td>@oneCurrencyToTry.ToString("N4")</td>
                                    
                                 </tr>
                             }

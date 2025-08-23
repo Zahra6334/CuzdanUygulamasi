@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CuzdanUygulamasi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5aa971607bc6858430dec095067cb9821fd8dcc2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4c3639bb54507fb7c4d51b86029becf97d1f81a")]
 [assembly: System.Reflection.AssemblyProductAttribute("CuzdanUygulamasi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CuzdanUygulamasi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
