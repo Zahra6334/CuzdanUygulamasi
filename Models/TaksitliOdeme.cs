@@ -33,5 +33,7 @@ namespace CuzdanUygulamasi.Models
         public decimal AylikTaksit => (ToplamTutar * (1 + FaizOrani / 100)) / TaksitSayisi;
 
         public DateTime BitisTarihi { get; internal set; }
+        public ICollection<OdemeTaksiti> OdemeTaksitleri { get; set; }
+
     }
 }

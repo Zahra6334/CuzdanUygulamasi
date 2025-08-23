@@ -1,0 +1,220 @@
+﻿@model List<CuzdanUygulamasi.Models.ViewModels.BildirimViewModel>
+@{
+    ViewData["Title"] = "Bildirimler";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Finans Cüzdanım</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --secondary-color: #FF6B6B;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            margin: 30px 0 25px;
+        }
+
+            .page-header h2 {
+                font-size: 28px;
+                color: var(--primary-color);
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+            }
+
+                .page-header h2 i {
+                    margin-right: 12px;
+                }
+
+        .notification-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .notification-table {
+            width: 100%;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+            .notification-table thead {
+                background-color: var(--primary-color);
+                color: white;
+            }
+
+            .notification-table th {
+                padding: 15px;
+                text-align: left;
+                font-weight: 500;
+                border-bottom: 1px solid #eee;
+            }
+
+            .notification-table td {
+                padding: 15px;
+                border-bottom: 1px solid #eee;
+                vertical-align: middle;
+            }
+
+            .notification-table tr:last-child td {
+                border-bottom: none;
+            }
+
+            .notification-table tbody tr {
+                transition: var(--transition);
+            }
+
+                .notification-table tbody tr:hover {
+                    background-color: rgba(139, 0, 0, 0.05);
+                }
+
+        .badge {
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background-color: rgba(40, 167, 69, 0.15);
+            color: #28a745;
+        }
+
+        .badge-warning {
+            background-color: rgba(255, 193, 7, 0.15);
+            color: #ffc107;
+        }
+
+        .alert-info {
+            background-color: rgba(23, 162, 184, 0.15);
+            border-color: rgba(23, 162, 184, 0.3);
+            color: #17a2b8;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .no-notifications {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+            .no-notifications i {
+                font-size: 48px;
+                color: #ddd;
+                margin-bottom: 15px;
+            }
+
+            .no-notifications h4 {
+                color: #666;
+                margin-bottom: 10px;
+            }
+
+            .no-notifications p {
+                color: #888;
+            }
+
+        @@media (max-width: 768px) {
+            .notification-table {
+                display: block;
+                overflow-x: auto;
+            }
+
+                .notification-table th,
+                .notification-table td {
+                    padding: 10px;
+                }
+
+            .page-header h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h2><i class="fas fa-bell"></i> Bildirimler</h2>
+        </div>
+
+        @if (Model == null || !Model.Any())
+        {
+            <div class="notification-card">
+                <div class="no-notifications">
+                    <i class="fas fa-bell-slash"></i>
+                    <h4>Şu anda bildirim bulunmamaktadır</h4>
+                    <p>Yeni bildirimleriniz burada görünecektir</p>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="notification-card">
+                <table class="notification-table">
+                    <thead>
+                        <tr>
+                            <th>Mesaj</th>
+                            <th>Tarih</th>
+                            <th>Durum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var b in Model)
+                        {
+                            <tr>
+                                <td>@b.Mesaj</td>
+                                <td>@b.Tarih.ToString("dd.MM.yyyy HH:mm")</td>
+                                <td>
+                                    @if (b.OkunduMu)
+                                    {
+                                        <span class="badge badge-success">Okundu</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-warning">Yeni</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

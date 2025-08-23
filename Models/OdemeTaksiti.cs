@@ -25,5 +25,11 @@ namespace CuzdanUygulamasi.Models
         [Required]
         [StringLength(50)]
         public string OdemeYontemi { get; set; }
+  
+        public bool OdendiMi { get; internal set; }
+        public DateTime SonOdemeTarihi { get; internal set; }
+        public int? IslemId { get; set; }
+        public Islem Islem { get; set; }
+
     }
 }

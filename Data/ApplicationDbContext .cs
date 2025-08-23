@@ -1,12 +1,11 @@
-﻿using CuzdanUygulamasi.Controllers;
-using CuzdanUygulamasi.Models;
-
+﻿using CuzdanUygulamasi.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CuzdanUygulamasi.Data
 {
     public class ApplicationDbContext : DbContext
     {
+        // Bu constructor çok önemli!
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -17,7 +16,9 @@ namespace CuzdanUygulamasi.Data
         public DbSet<Kategori> Kategoriler { get; set; }
         public DbSet<TaksitliOdeme> TaksitliOdemeler { get; set; }
         public DbSet<OdemeTaksiti> OdemeTaksitleri { get;  set; }
-        public object Users { get; internal set; }
+
+        public DbSet<Bildirim> Bildirimler { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -30,7 +31,15 @@ namespace CuzdanUygulamasi.Data
             modelBuilder.Entity<OdemeTaksiti>()
                 .Property(o => o.OdenenTutar)
                 .HasPrecision(18, 2);
+
+            // OdemeTaksiti -> Islem ilişkisi, cascade delete kapalı
+            modelBuilder.Entity<OdemeTaksiti>()
+                 .HasOne(ot => ot.Islem)
+                 .WithMany(i => i.OdemeTaksitleri)
+                 .HasForeignKey(ot => ot.IslemId)
+                 .OnDelete(DeleteBehavior.Restrict); // NO ACTION
         }
+
 
         internal async Task<string?> GetByIdAsync(int id, int kullaniciId)
         {
@@ -58,11 +67,6 @@ namespace CuzdanUygulamasi.Data
         }
 
         internal async Task YeniTaksitliOdemeEkleAsync(TaksitliOdeme odeme)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static implicit operator ApplicationDbContext(TaksitliOdemeController v)
         {
             throw new NotImplementedException();
         }
