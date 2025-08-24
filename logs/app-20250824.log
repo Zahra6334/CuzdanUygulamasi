@@ -1,0 +1,1068 @@
+2025-08-24 19:10:01.111 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 19:10:01.150 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 19:10:01.151 +03:00 [INF] Hosting environment: Development
+2025-08-24 19:10:01.153 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 19:10:22.749 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 19:10:22.922 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 19:10:23.279 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 19:10:23.283 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 19:10:24.000 +03:00 [INF] HTTP GET / responded 200 in 1254.7344 ms
+2025-08-24 19:11:38.414 +03:00 [INF] Application is shutting down...
+2025-08-24 19:15:58.181 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 19:15:58.208 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 19:15:58.211 +03:00 [INF] Hosting environment: Development
+2025-08-24 19:15:58.212 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 19:16:28.264 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 19:16:28.355 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 19:16:28.665 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 19:16:28.668 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 19:16:29.244 +03:00 [INF] HTTP GET / responded 200 in 981.8357 ms
+2025-08-24 19:17:24.803 +03:00 [INF] Application is shutting down...
+2025-08-24 19:17:28.606 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 19:17:28.632 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 19:17:28.634 +03:00 [INF] Hosting environment: Development
+2025-08-24 19:17:28.636 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 19:38:08.589 +03:00 [INF] Application is shutting down...
+2025-08-24 19:38:16.333 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 19:38:16.357 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 19:38:16.359 +03:00 [INF] Hosting environment: Development
+2025-08-24 19:38:16.361 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 19:38:28.684 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 19:38:28.774 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 19:38:29.081 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 19:38:29.083 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 19:38:29.655 +03:00 [INF] HTTP GET / responded 200 in 973.3677 ms
+2025-08-24 19:38:32.012 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at System.ThrowHelper.Throw(String paramName)
+   at System.ThrowHelper.ThrowIfNull(Object argument, String paramName)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogInformation(ILogger logger, String message, Object[] args)
+   at CuzdanUygulamasi.Controllers.AccountController.Login() in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\AccountController.cs:line 35
+   at lambda_method51(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-08-24 19:38:32.103 +03:00 [ERR] HTTP GET /Account/Login responded 500 in 102.9844 ms
+2025-08-24 19:39:21.489 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at System.ThrowHelper.Throw(String paramName)
+   at System.ThrowHelper.ThrowIfNull(Object argument, String paramName)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogInformation(ILogger logger, String message, Object[] args)
+   at CuzdanUygulamasi.Controllers.AccountController.Login() in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\AccountController.cs:line 35
+   at lambda_method51(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-08-24 19:39:21.508 +03:00 [ERR] HTTP GET /Account/Login responded 500 in 24.3840 ms
+2025-08-24 19:39:44.555 +03:00 [INF] Application is shutting down...
+2025-08-24 19:39:49.343 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 19:39:49.372 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 19:39:49.374 +03:00 [INF] Hosting environment: Development
+2025-08-24 19:39:49.376 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 19:39:53.137 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 19:39:53.288 +03:00 [INF] HTTP GET /Account/Login responded 200 in 152.6344 ms
+2025-08-24 19:40:00.974 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 19:40:00.982 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 19:40:01.885 +03:00 [INF] HTTP POST /Account/Login responded 302 in 1645.7895 ms
+2025-08-24 19:40:01.941 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 19:40:03.826 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1923.0551 ms
+2025-08-24 19:40:03.856 +03:00 [INF] HTTP GET /uploads/7a9b0aee-bf64-4ee0-b5ea-c5271a9911f2.png responded 304 in 4.8374 ms
+2025-08-24 19:40:07.193 +03:00 [INF] HomeController -> Bildirimler çalıştı.
+2025-08-24 19:40:07.323 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 134.7865 ms
+2025-08-24 19:40:10.736 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-24 19:40:10.739 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-24 19:40:10.809 +03:00 [INF] HTTP GET /TaksitliOdeme/Index responded 200 in 81.4493 ms
+2025-08-24 19:40:12.398 +03:00 [INF] TaksitliOdemeController -> Create çalıştı.
+2025-08-24 19:40:12.443 +03:00 [INF] HTTP GET /TaksitliOdeme/Create responded 200 in 49.7079 ms
+2025-08-24 19:40:26.093 +03:00 [INF] TaksitliOdemeController -> Create çalıştı.
+2025-08-24 19:40:26.101 +03:00 [INF] HTTP GET /TaksitliOdeme/Create responded 200 in 9.3087 ms
+2025-08-24 19:40:39.389 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-24 19:40:39.630 +03:00 [INF] HTTP POST /TaksitliOdeme/Create responded 302 in 283.5996 ms
+2025-08-24 19:40:39.643 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-24 19:40:39.647 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-24 19:40:39.663 +03:00 [INF] HTTP GET /TaksitliOdeme responded 200 in 20.8903 ms
+2025-08-24 19:40:55.593 +03:00 [INF] TaksitliOdemeController -> Create çalıştı.
+2025-08-24 19:40:55.599 +03:00 [INF] HTTP GET /TaksitliOdeme/Create responded 200 in 6.2424 ms
+2025-08-24 19:41:08.155 +03:00 [INF] IslemController -> Index çalıştı.
+2025-08-24 19:41:08.216 +03:00 [INF] HTTP GET /Islem responded 200 in 67.4581 ms
+2025-08-24 19:41:13.302 +03:00 [INF] IslemController -> Create çalıştı.
+2025-08-24 19:41:13.453 +03:00 [INF] HTTP GET /Islem/Create responded 200 in 161.7421 ms
+2025-08-24 19:41:13.477 +03:00 [INF] HTTP GET /lib/jquery-validation/dist/jquery.validate.min.js responded 200 in 7.2675 ms
+2025-08-24 19:41:13.477 +03:00 [INF] HTTP GET /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js responded 200 in 6.7182 ms
+2025-08-24 19:41:38.769 +03:00 [INF] HTTP POST /Islem/Create responded 302 in 83.6689 ms
+2025-08-24 19:41:38.781 +03:00 [INF] IslemController -> Index çalıştı.
+2025-08-24 19:41:38.797 +03:00 [INF] HTTP GET /Islem responded 200 in 16.9819 ms
+2025-08-24 19:41:44.086 +03:00 [INF] HTTP GET /Islem/Edit/1006 responded 200 in 58.6375 ms
+2025-08-24 19:41:57.994 +03:00 [INF] IslemController -> Edit çalıştı.
+2025-08-24 19:41:58.063 +03:00 [INF] HTTP POST /Islem/Edit/1006 responded 302 in 81.3573 ms
+2025-08-24 19:41:58.086 +03:00 [INF] IslemController -> Index çalıştı.
+2025-08-24 19:41:58.109 +03:00 [INF] HTTP GET /Islem responded 200 in 24.9792 ms
+2025-08-24 19:42:20.057 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 19:42:20.916 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 862.9947 ms
+2025-08-24 19:42:22.640 +03:00 [INF] HomeController -> Bildirimler çalıştı.
+2025-08-24 19:42:22.652 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 15.2699 ms
+2025-08-24 19:42:24.661 +03:00 [INF] HomeController -> Bildirimler çalıştı.
+2025-08-24 19:42:24.667 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 8.2360 ms
+2025-08-24 19:42:25.286 +03:00 [INF] HomeController -> Bildirimler çalıştı.
+2025-08-24 19:42:25.292 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 7.1266 ms
+2025-08-24 19:42:25.463 +03:00 [INF] HomeController -> Bildirimler çalıştı.
+2025-08-24 19:42:25.470 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 8.0636 ms
+2025-08-24 19:42:25.650 +03:00 [INF] HomeController -> Bildirimler çalıştı.
+2025-08-24 19:42:25.657 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 7.7761 ms
+2025-08-24 19:42:25.872 +03:00 [INF] HomeController -> Bildirimler çalıştı.
+2025-08-24 19:42:25.881 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 10.0687 ms
+2025-08-24 19:42:29.466 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-24 19:42:29.538 +03:00 [INF] HTTP GET /OdemeTaksiti/Index responded 200 in 79.5553 ms
+2025-08-24 19:42:33.615 +03:00 [INF] OdemeTaksitiController -> Create çalıştı.
+2025-08-24 19:42:33.644 +03:00 [INF] HTTP GET /OdemeTaksiti/Create responded 200 in 33.3984 ms
+2025-08-24 19:42:50.878 +03:00 [INF] HTTP POST /OdemeTaksiti/Create responded 302 in 74.0372 ms
+2025-08-24 19:42:50.896 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-24 19:42:50.910 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 14.5098 ms
+2025-08-24 19:43:00.537 +03:00 [INF] HTTP GET /OdemeTaksiti/Edit/8 responded 200 in 50.7107 ms
+2025-08-24 19:43:11.625 +03:00 [INF] HTTP POST /OdemeTaksiti/Edit/8 responded 302 in 29.3778 ms
+2025-08-24 19:43:11.644 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-24 19:43:11.665 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 22.4151 ms
+2025-08-24 19:43:21.579 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 19:43:22.694 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1115.8370 ms
+2025-08-24 19:43:25.684 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 19:43:26.402 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 718.8486 ms
+2025-08-24 19:43:27.459 +03:00 [INF] HomeController -> Bildirimler çalıştı.
+2025-08-24 19:43:27.472 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 13.3075 ms
+2025-08-24 19:43:30.750 +03:00 [INF] HomeController -> Bildirimler çalıştı.
+2025-08-24 19:43:30.757 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 7.8734 ms
+2025-08-24 19:44:38.506 +03:00 [INF] HomeController -> Bildirimler çalıştı.
+2025-08-24 19:44:38.524 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 18.8870 ms
+2025-08-24 19:56:48.980 +03:00 [INF] Application is shutting down...
+2025-08-24 19:56:56.532 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 19:56:56.559 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 19:56:56.561 +03:00 [INF] Hosting environment: Development
+2025-08-24 19:56:56.563 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 19:57:01.542 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 19:57:01.918 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 19:57:01.922 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 19:57:02.382 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 842.2302 ms
+2025-08-24 19:57:03.820 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 19:57:05.535 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1728.8348 ms
+2025-08-24 19:57:06.559 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 19:57:07.359 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 807.9434 ms
+2025-08-24 19:57:09.001 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 19:57:10.466 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1466.2109 ms
+2025-08-24 19:57:11.360 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 10.0703 ms
+2025-08-24 19:57:14.700 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 4.8223 ms
+2025-08-24 19:57:15.387 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.1428 ms
+2025-08-24 19:57:15.547 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.5232 ms
+2025-08-24 19:57:15.728 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 4.1257 ms
+2025-08-24 19:57:17.230 +03:00 [INF] HTTP GET /Account/Login responded 200 in 51.2084 ms
+2025-08-24 19:57:19.589 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 19:57:19.602 +03:00 [INF] HTTP GET / responded 200 in 17.0174 ms
+2025-08-24 19:57:21.860 +03:00 [INF] HTTP GET /Account/Login responded 200 in 5.3732 ms
+2025-08-24 19:57:30.517 +03:00 [INF] HTTP POST /Account/Login responded 302 in 54.4275 ms
+2025-08-24 19:57:30.528 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 19:57:31.515 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 987.8732 ms
+2025-08-24 19:57:35.473 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-24 19:57:35.477 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-24 19:57:35.548 +03:00 [INF] HTTP GET /TaksitliOdeme/Index responded 200 in 82.8013 ms
+2025-08-24 19:57:42.221 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 13.2282 ms
+2025-08-24 19:59:33.767 +03:00 [INF] Application is shutting down...
+2025-08-24 19:59:38.577 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 19:59:38.606 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 19:59:38.608 +03:00 [INF] Hosting environment: Development
+2025-08-24 19:59:38.611 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 19:59:41.208 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 19:59:41.591 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 19:59:41.594 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 19:59:42.080 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 874.2128 ms
+2025-08-24 19:59:45.393 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 19:59:46.445 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1066.4403 ms
+2025-08-24 19:59:48.933 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 74.9791 ms
+2025-08-24 20:01:06.905 +03:00 [INF] Application is shutting down...
+2025-08-24 20:01:11.512 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 20:01:11.538 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:01:11.540 +03:00 [INF] Hosting environment: Development
+2025-08-24 20:01:11.542 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 20:01:13.947 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 20:01:14.329 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:01:14.333 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:01:14.831 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 886.6300 ms
+2025-08-24 20:01:16.401 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:01:16.611 +03:00 [INF] HTTP GET /Account/Login responded 200 in 26.2129 ms
+2025-08-24 20:01:17.408 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1021.0013 ms
+2025-08-24 20:01:25.818 +03:00 [INF] Application is shutting down...
+2025-08-24 20:01:28.825 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 20:01:28.852 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:01:28.854 +03:00 [INF] Hosting environment: Development
+2025-08-24 20:01:28.856 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 20:01:38.853 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 20:01:38.939 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 20:01:38.989 +03:00 [INF] HTTP GET / responded 200 in 138.1141 ms
+2025-08-24 20:01:41.293 +03:00 [INF] HTTP GET /Account/Login responded 200 in 85.0527 ms
+2025-08-24 20:01:49.469 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:01:49.481 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:01:50.313 +03:00 [INF] HTTP POST /Account/Login responded 302 in 1408.2864 ms
+2025-08-24 20:01:50.354 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:01:51.429 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1096.3719 ms
+2025-08-24 20:01:53.711 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 95.4394 ms
+2025-08-24 20:03:48.347 +03:00 [INF] Application is shutting down...
+2025-08-24 20:03:52.249 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 20:03:52.276 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:03:52.278 +03:00 [INF] Hosting environment: Development
+2025-08-24 20:03:52.280 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 20:03:54.910 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 20:03:55.294 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:03:55.298 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:03:55.791 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 883.5426 ms
+2025-08-24 20:12:33.055 +03:00 [INF] Application is shutting down...
+2025-08-24 20:12:37.655 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 20:12:37.682 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:12:37.683 +03:00 [INF] Hosting environment: Development
+2025-08-24 20:12:37.685 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 20:12:42.608 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 20:12:42.991 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:12:42.995 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:12:43.406 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 800.3408 ms
+2025-08-24 20:12:43.538 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 200 in 97.5841 ms
+2025-08-24 20:12:46.020 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:12:47.532 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1539.1729 ms
+2025-08-24 20:12:49.660 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:12:50.336 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 679.1563 ms
+2025-08-24 20:12:50.359 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 200 in 5.0619 ms
+2025-08-24 20:12:52.315 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 8.5272 ms
+2025-08-24 20:12:52.343 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 200 in 3.7846 ms
+2025-08-24 20:14:00.451 +03:00 [INF] Application is shutting down...
+2025-08-24 20:14:04.620 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 20:14:04.647 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:14:04.649 +03:00 [INF] Hosting environment: Development
+2025-08-24 20:14:04.650 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 20:14:07.155 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 20:14:07.534 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:14:07.537 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:14:07.941 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 787.5710 ms
+2025-08-24 20:14:08.079 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 94.3269 ms
+2025-08-24 20:14:08.138 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 51.3300 ms
+2025-08-24 20:14:42.427 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:14:42.673 +03:00 [INF] HTTP GET /Account/Login responded 200 in 22.0878 ms
+2025-08-24 20:14:43.353 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 941.1336 ms
+2025-08-24 20:14:45.912 +03:00 [INF] HTTP GET /Account/Login responded 200 in 3.2696 ms
+2025-08-24 20:14:51.643 +03:00 [INF] HTTP POST /Account/Login responded 302 in 86.1937 ms
+2025-08-24 20:14:51.658 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:14:52.338 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 682.9100 ms
+2025-08-24 20:14:52.373 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 5.3262 ms
+2025-08-24 20:14:52.391 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 6.5864 ms
+2025-08-24 20:14:58.449 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:14:59.269 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 821.3690 ms
+2025-08-24 20:14:59.294 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.0253 ms
+2025-08-24 20:14:59.313 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.3441 ms
+2025-08-24 20:15:02.010 +03:00 [INF] HTTP GET /Islem/Analiz responded 200 in 155.8149 ms
+2025-08-24 20:15:02.085 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.7948 ms
+2025-08-24 20:15:02.102 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.0845 ms
+2025-08-24 20:15:29.736 +03:00 [INF] IslemController -> Index çalıştı.
+2025-08-24 20:15:29.809 +03:00 [INF] HTTP GET /Islem responded 200 in 82.5927 ms
+2025-08-24 20:15:29.845 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 9.2266 ms
+2025-08-24 20:15:29.862 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 8.2365 ms
+2025-08-24 20:15:31.081 +03:00 [INF] IslemController -> Create çalıştı.
+2025-08-24 20:15:31.208 +03:00 [INF] HTTP GET /Islem/Create responded 200 in 133.0981 ms
+2025-08-24 20:15:31.238 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.4502 ms
+2025-08-24 20:15:31.259 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.0347 ms
+2025-08-24 20:15:56.557 +03:00 [INF] HTTP POST /Islem/Create responded 302 in 231.1494 ms
+2025-08-24 20:15:56.572 +03:00 [INF] IslemController -> Index çalıştı.
+2025-08-24 20:15:56.582 +03:00 [INF] HTTP GET /Islem responded 200 in 12.1703 ms
+2025-08-24 20:15:56.606 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.1042 ms
+2025-08-24 20:15:56.635 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.5834 ms
+2025-08-24 20:15:59.876 +03:00 [INF] HTTP GET /Islem/Edit/1007 responded 200 in 89.6481 ms
+2025-08-24 20:18:20.552 +03:00 [INF] IslemController -> Edit çalıştı.
+2025-08-24 20:18:20.604 +03:00 [INF] HTTP POST /Islem/Edit/1007 responded 302 in 64.9490 ms
+2025-08-24 20:18:20.620 +03:00 [INF] IslemController -> Index çalıştı.
+2025-08-24 20:18:20.637 +03:00 [INF] HTTP GET /Islem responded 200 in 17.2299 ms
+2025-08-24 20:18:20.659 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.8866 ms
+2025-08-24 20:18:20.677 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 7.7158 ms
+2025-08-24 20:18:25.192 +03:00 [INF] IslemController -> Index çalıştı.
+2025-08-24 20:18:25.201 +03:00 [INF] HTTP GET /Islem responded 200 in 10.6490 ms
+2025-08-24 20:18:25.225 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.0179 ms
+2025-08-24 20:18:25.240 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 4.1278 ms
+2025-08-24 20:18:30.414 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:18:31.480 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1067.1092 ms
+2025-08-24 20:18:31.506 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 10.0121 ms
+2025-08-24 20:18:31.524 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 7.3835 ms
+2025-08-24 20:18:34.492 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 4.9562 ms
+2025-08-24 20:18:34.515 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.7285 ms
+2025-08-24 20:18:34.531 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 4.8505 ms
+2025-08-24 20:18:36.346 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.4092 ms
+2025-08-24 20:18:36.371 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.3520 ms
+2025-08-24 20:18:36.391 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 9.5085 ms
+2025-08-24 20:18:36.523 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.1882 ms
+2025-08-24 20:18:36.543 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.6953 ms
+2025-08-24 20:18:36.568 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 6.2607 ms
+2025-08-24 20:18:36.685 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 4.9108 ms
+2025-08-24 20:18:36.708 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.5597 ms
+2025-08-24 20:18:36.726 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 4.7107 ms
+2025-08-24 20:18:36.836 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.9390 ms
+2025-08-24 20:18:36.857 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.0275 ms
+2025-08-24 20:18:36.875 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.3795 ms
+2025-08-24 20:18:37.064 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 4.8253 ms
+2025-08-24 20:18:37.089 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.2688 ms
+2025-08-24 20:18:37.106 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 8.5447 ms
+2025-08-24 20:18:37.258 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.7592 ms
+2025-08-24 20:18:37.283 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.1196 ms
+2025-08-24 20:18:37.300 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 6.3987 ms
+2025-08-24 20:18:37.458 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.7336 ms
+2025-08-24 20:18:37.482 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 5.0391 ms
+2025-08-24 20:18:37.501 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 6.8450 ms
+2025-08-24 20:24:19.418 +03:00 [INF] Application is shutting down...
+2025-08-24 20:24:26.518 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 20:24:26.546 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:24:26.549 +03:00 [INF] Hosting environment: Development
+2025-08-24 20:24:26.551 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 20:24:30.335 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 20:24:30.425 +03:00 [INF] Bildirimler sayfası açıldı.
+2025-08-24 20:24:30.714 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:24:30.718 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:24:31.124 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 791.6154 ms
+2025-08-24 20:24:31.178 +03:00 [INF] CheckTaksitNotifications çalıştı.
+2025-08-24 20:24:31.273 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 200 in 102.1667 ms
+2025-08-24 20:24:33.536 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:24:37.503 +03:00 [INF] HTTP GET /Account/Login responded 200 in 51.9919 ms
+2025-08-24 20:24:39.866 +03:00 [INF] HTTP GET /Account/Login responded 200 in 8.0627 ms
+2025-08-24 20:24:48.902 +03:00 [INF] HTTP POST /Account/Login responded 302 in 61.7523 ms
+2025-08-24 20:24:48.916 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:25:32.595 +03:00 [INF] HTTP POST /Account/Login responded 302 in 13.6130 ms
+2025-08-24 20:25:32.611 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:25:33.466 +03:00 [INF] HTTP POST /Account/Login responded 302 in 5.2664 ms
+2025-08-24 20:25:33.478 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:25:33.666 +03:00 [INF] HTTP POST /Account/Login responded 302 in 5.3285 ms
+2025-08-24 20:25:33.676 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:25:33.874 +03:00 [INF] HTTP POST /Account/Login responded 302 in 4.9307 ms
+2025-08-24 20:25:33.884 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:25:41.057 +03:00 [INF] Application is shutting down...
+2025-08-24 20:26:31.297 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:26:31.325 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:26:37.461 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 20:26:37.487 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:26:37.490 +03:00 [INF] Hosting environment: Development
+2025-08-24 20:26:37.492 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 20:26:46.300 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 20:26:46.388 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 20:26:46.452 +03:00 [INF] HTTP GET / responded 200 in 154.1982 ms
+2025-08-24 20:26:46.536 +03:00 [INF] CheckTaksitNotifications çalıştı.
+2025-08-24 20:26:46.834 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:26:46.838 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:26:47.290 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 200 in 765.5080 ms
+2025-08-24 20:26:48.941 +03:00 [INF] HTTP GET /Account/Login responded 200 in 62.2812 ms
+2025-08-24 20:26:54.798 +03:00 [INF] HTTP POST /Account/Login responded 302 in 177.6468 ms
+2025-08-24 20:26:54.831 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:28:35.082 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+ ---> System.TimeoutException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: Bir iş parçacığı çıkışı veya bir uygulama isteği nedeniyle G/Ç işlemi iptal edildi..
+ ---> System.Net.Sockets.SocketException (995): Bir iş parçacığı çıkışı veya bir uygulama isteği nedeniyle G/Ç işlemi iptal edildi.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CuzdanUygulamasi.Services.ExchangeRateService.GetRatesAsync(String baseCurrency, String symbols) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Services\ExchangeRateService.cs:line 25
+   at CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync(Int32 id) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\KullaniciController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-08-24 20:28:35.149 +03:00 [ERR] HTTP GET /Kullanici/Details/2 responded 500 in 100336.1537 ms
+2025-08-24 20:30:33.305 +03:00 [INF] Application is shutting down...
+2025-08-24 20:30:39.714 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 20:30:39.741 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:30:39.743 +03:00 [INF] Hosting environment: Development
+2025-08-24 20:30:39.745 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 20:30:43.210 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 20:30:43.310 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:30:43.601 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:30:43.605 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:30:46.738 +03:00 [INF] HTTP GET /Account/Login responded 200 in 49.0697 ms
+2025-08-24 20:30:47.806 +03:00 [INF] HTTP GET /Account/Login responded 200 in 14.2716 ms
+2025-08-24 20:30:54.152 +03:00 [INF] HTTP POST /Account/Login responded 302 in 179.4058 ms
+2025-08-24 20:30:54.167 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:31:40.894 +03:00 [INF] HTTP POST /Account/Login responded 302 in 8.2307 ms
+2025-08-24 20:31:40.903 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:31:41.593 +03:00 [INF] HTTP POST /Account/Login responded 302 in 5.7508 ms
+2025-08-24 20:31:41.601 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:31:41.773 +03:00 [INF] HTTP POST /Account/Login responded 302 in 3.0299 ms
+2025-08-24 20:31:41.780 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:31:41.963 +03:00 [INF] HTTP POST /Account/Login responded 302 in 5.6292 ms
+2025-08-24 20:31:41.970 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:32:24.092 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 499 in 100885.8353 ms
+2025-08-24 20:32:34.246 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 499 in 100081.4321 ms
+2025-08-24 20:33:09.517 +03:00 [INF] Application is shutting down...
+2025-08-24 20:33:20.931 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 499 in 100030.0601 ms
+2025-08-24 20:33:21.631 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 499 in 100030.1791 ms
+2025-08-24 20:33:21.802 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 499 in 100022.7972 ms
+2025-08-24 20:33:22.006 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+ ---> System.TimeoutException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: Bir iş parçacığı çıkışı veya bir uygulama isteği nedeniyle G/Ç işlemi iptal edildi..
+ ---> System.Net.Sockets.SocketException (995): Bir iş parçacığı çıkışı veya bir uygulama isteği nedeniyle G/Ç işlemi iptal edildi.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CuzdanUygulamasi.Services.ExchangeRateService.GetRatesAsync(String baseCurrency, String symbols) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Services\ExchangeRateService.cs:line 25
+   at CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync(Int32 id) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\KullaniciController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-08-24 20:33:22.051 +03:00 [ERR] HTTP GET /Kullanici/Details/2 responded 500 in 100081.8454 ms
+2025-08-24 20:33:30.189 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 20:33:30.216 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:33:30.218 +03:00 [INF] Hosting environment: Development
+2025-08-24 20:33:30.220 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 20:33:34.548 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 20:33:34.683 +03:00 [INF] HTTP GET /Account/Login responded 200 in 136.2833 ms
+2025-08-24 20:33:36.873 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 20:33:36.899 +03:00 [INF] HTTP GET / responded 200 in 33.7955 ms
+2025-08-24 20:33:36.923 +03:00 [INF] HomeController -> Currency çalıştı.
+2025-08-24 20:33:37.235 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:33:37.239 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:33:37.692 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 776.7673 ms
+2025-08-24 20:33:37.702 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 20:33:37.712 +03:00 [INF] HTTP GET / responded 200 in 11.3440 ms
+2025-08-24 20:33:39.249 +03:00 [INF] HTTP GET /Account/Login responded 200 in 6.4835 ms
+2025-08-24 20:33:47.462 +03:00 [INF] HTTP POST /Account/Login responded 302 in 172.1114 ms
+2025-08-24 20:33:47.490 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 20:33:48.728 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1254.5689 ms
+2025-08-24 20:33:48.750 +03:00 [INF] HomeController -> Currency çalıştı.
+2025-08-24 20:33:48.759 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 11.6837 ms
+2025-08-24 20:33:48.774 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 20:33:48.778 +03:00 [INF] HTTP GET / responded 200 in 4.8800 ms
+2025-08-24 20:33:51.640 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 32.4517 ms
+2025-08-24 20:33:51.657 +03:00 [INF] HomeController -> Currency çalıştı.
+2025-08-24 20:33:51.665 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 8.1204 ms
+2025-08-24 20:33:51.678 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 20:33:51.681 +03:00 [INF] HTTP GET / responded 200 in 4.0798 ms
+2025-08-24 20:33:53.994 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 12.1430 ms
+2025-08-24 20:33:54.016 +03:00 [INF] HomeController -> Currency çalıştı.
+2025-08-24 20:33:54.028 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 13.6707 ms
+2025-08-24 20:33:54.040 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 20:33:54.045 +03:00 [INF] HTTP GET / responded 200 in 6.1811 ms
+2025-08-24 20:33:54.489 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 8.9263 ms
+2025-08-24 20:33:54.508 +03:00 [INF] HomeController -> Currency çalıştı.
+2025-08-24 20:33:54.518 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 11.1497 ms
+2025-08-24 20:33:54.527 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 20:33:54.530 +03:00 [INF] HTTP GET / responded 200 in 4.3246 ms
+2025-08-24 20:33:54.716 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 7.9261 ms
+2025-08-24 20:33:54.734 +03:00 [INF] HomeController -> Currency çalıştı.
+2025-08-24 20:33:54.745 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 12.3344 ms
+2025-08-24 20:33:54.753 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 20:33:54.756 +03:00 [INF] HTTP GET / responded 200 in 4.1297 ms
+2025-08-24 20:33:54.926 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 8.3751 ms
+2025-08-24 20:33:54.947 +03:00 [INF] HomeController -> Currency çalıştı.
+2025-08-24 20:33:54.960 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 13.6585 ms
+2025-08-24 20:33:54.966 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 20:33:54.968 +03:00 [INF] HTTP GET / responded 200 in 3.4827 ms
+2025-08-24 20:33:55.151 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 7.0498 ms
+2025-08-24 20:33:55.173 +03:00 [INF] HomeController -> Currency çalıştı.
+2025-08-24 20:33:55.182 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 10.0861 ms
+2025-08-24 20:33:55.191 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 20:33:55.194 +03:00 [INF] HTTP GET / responded 200 in 3.6122 ms
+2025-08-24 20:41:10.079 +03:00 [INF] Application is shutting down...
+2025-08-24 20:41:15.123 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 20:41:15.158 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:41:15.160 +03:00 [INF] Hosting environment: Development
+2025-08-24 20:41:15.161 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 20:41:19.476 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 20:41:19.859 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:41:19.862 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:41:20.257 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 782.7701 ms
+2025-08-24 20:41:20.314 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 20:41:20.411 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 20:41:20.415 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 108.7371 ms
+2025-08-24 20:41:20.429 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 20:41:20.435 +03:00 [INF] HTTP GET / responded 200 in 11.1348 ms
+2025-08-24 20:42:28.775 +03:00 [INF] Application is shutting down...
+2025-08-24 20:42:33.044 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 20:42:33.072 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:42:33.075 +03:00 [INF] Hosting environment: Development
+2025-08-24 20:42:33.077 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 20:42:37.524 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 20:42:37.903 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:42:37.906 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:42:38.247 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 20:42:38.292 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 769.9514 ms
+2025-08-24 20:42:38.342 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 20:42:38.439 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 20:42:38.442 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 106.8647 ms
+2025-08-24 20:42:38.453 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 20:42:38.459 +03:00 [INF] HTTP GET / responded 200 in 11.5596 ms
+2025-08-24 20:43:45.764 +03:00 [INF] Application is shutting down...
+2025-08-24 20:43:49.930 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 20:43:49.956 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:43:49.958 +03:00 [INF] Hosting environment: Development
+2025-08-24 20:43:49.959 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 20:43:54.175 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 20:43:54.550 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:43:54.554 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 20:43:54.900 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 20:43:54.945 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 771.6663 ms
+2025-08-24 20:43:54.985 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 20:43:55.083 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 20:43:55.087 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 108.6723 ms
+2025-08-24 20:43:55.098 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 20:43:55.105 +03:00 [INF] HTTP GET / responded 200 in 11.6346 ms
+2025-08-24 21:12:09.016 +03:00 [INF] Application is shutting down...
+2025-08-24 21:12:16.683 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 21:12:16.710 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 21:12:16.712 +03:00 [INF] Hosting environment: Development
+2025-08-24 21:12:16.715 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 21:12:30.355 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 21:12:31.134 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 21:12:31.140 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 21:12:31.783 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:12:31.829 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 1478.8060 ms
+2025-08-24 21:12:31.882 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:12:31.978 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:12:31.982 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 106.9519 ms
+2025-08-24 21:12:31.995 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:12:32.000 +03:00 [INF] HTTP GET / responded 200 in 9.2555 ms
+2025-08-24 21:12:33.591 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 21:12:35.441 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1862.3081 ms
+2025-08-24 21:12:37.775 +03:00 [INF] IslemController -> Index çalıştı.
+2025-08-24 21:12:37.810 +03:00 [INF] HTTP GET /Islem responded 200 in 40.9284 ms
+2025-08-24 21:12:37.830 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:12:37.839 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:12:37.841 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 11.3181 ms
+2025-08-24 21:12:37.846 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:12:37.849 +03:00 [INF] HTTP GET / responded 200 in 3.1660 ms
+2025-08-24 21:12:39.823 +03:00 [INF] IslemController -> Create çalıştı.
+2025-08-24 21:12:39.906 +03:00 [INF] HTTP GET /Islem/Create responded 200 in 86.6632 ms
+2025-08-24 21:12:39.929 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:12:39.938 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:12:39.939 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 10.2076 ms
+2025-08-24 21:12:39.945 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:12:39.947 +03:00 [INF] HTTP GET / responded 200 in 2.9483 ms
+2025-08-24 21:12:58.459 +03:00 [INF] HTTP POST /Islem/Create responded 302 in 114.0621 ms
+2025-08-24 21:12:58.464 +03:00 [INF] IslemController -> Index çalıştı.
+2025-08-24 21:12:58.472 +03:00 [INF] HTTP GET /Islem responded 200 in 8.7208 ms
+2025-08-24 21:12:58.490 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:12:58.497 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:12:58.497 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 8.7610 ms
+2025-08-24 21:12:58.506 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:12:58.509 +03:00 [INF] HTTP GET / responded 200 in 3.7413 ms
+2025-08-24 21:13:03.997 +03:00 [INF] IslemController -> Index çalıştı.
+2025-08-24 21:13:04.002 +03:00 [INF] HTTP GET /Islem responded 200 in 6.6707 ms
+2025-08-24 21:13:04.022 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:13:04.025 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:13:04.026 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.4992 ms
+2025-08-24 21:13:04.036 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:13:04.039 +03:00 [INF] HTTP GET / responded 200 in 3.9505 ms
+2025-08-24 21:13:08.714 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-24 21:13:08.746 +03:00 [INF] HTTP GET /OdemeTaksiti/Index responded 200 in 36.4766 ms
+2025-08-24 21:13:08.792 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:13:08.796 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:13:08.797 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 5.7382 ms
+2025-08-24 21:13:08.810 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:13:08.816 +03:00 [INF] HTTP GET / responded 200 in 6.9749 ms
+2025-08-24 21:13:10.382 +03:00 [INF] OdemeTaksitiController -> Create çalıştı.
+2025-08-24 21:13:10.403 +03:00 [INF] HTTP GET /OdemeTaksiti/Create responded 200 in 24.1440 ms
+2025-08-24 21:13:10.432 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:13:10.435 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:13:10.437 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 5.1249 ms
+2025-08-24 21:13:10.451 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:13:10.454 +03:00 [INF] HTTP GET / responded 200 in 3.3985 ms
+2025-08-24 21:13:22.483 +03:00 [INF] HTTP POST /OdemeTaksiti/Create responded 200 in 9.3101 ms
+2025-08-24 21:13:22.511 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:13:22.515 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:13:22.517 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.4392 ms
+2025-08-24 21:13:22.525 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:13:22.527 +03:00 [INF] HTTP GET / responded 200 in 2.4482 ms
+2025-08-24 21:13:24.471 +03:00 [INF] HTTP POST /OdemeTaksiti/Create responded 200 in 2.3958 ms
+2025-08-24 21:13:24.502 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:13:24.506 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:13:24.507 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.0367 ms
+2025-08-24 21:13:24.515 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:13:24.517 +03:00 [INF] HTTP GET / responded 200 in 3.0712 ms
+2025-08-24 21:13:37.686 +03:00 [INF] HTTP POST /OdemeTaksiti/Create responded 200 in 2.4086 ms
+2025-08-24 21:13:37.746 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:13:37.756 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:13:37.758 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 12.6053 ms
+2025-08-24 21:13:37.765 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:13:37.767 +03:00 [INF] HTTP GET / responded 200 in 3.0414 ms
+2025-08-24 21:13:39.664 +03:00 [INF] OdemeTaksitiController -> Create çalıştı.
+2025-08-24 21:13:39.670 +03:00 [INF] HTTP GET /OdemeTaksiti/Create responded 200 in 7.1448 ms
+2025-08-24 21:13:41.121 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 21:13:42.149 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1029.6349 ms
+2025-08-24 21:13:43.800 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:13:43.806 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 12.9549 ms
+2025-08-24 21:13:43.841 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:13:43.845 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:13:43.848 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 7.5730 ms
+2025-08-24 21:13:43.861 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:13:43.865 +03:00 [INF] HTTP GET / responded 200 in 4.6003 ms
+2025-08-24 21:13:45.269 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:13:45.275 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 24.8591 ms
+2025-08-24 21:13:45.301 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:13:45.316 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:13:45.318 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 17.8393 ms
+2025-08-24 21:13:45.328 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:13:45.331 +03:00 [INF] HTTP GET / responded 200 in 4.6003 ms
+2025-08-24 21:13:45.886 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:13:45.891 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 12.6887 ms
+2025-08-24 21:13:45.913 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:13:45.925 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:13:45.928 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 15.8255 ms
+2025-08-24 21:13:45.935 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:13:45.937 +03:00 [INF] HTTP GET / responded 200 in 3.2402 ms
+2025-08-24 21:13:46.055 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:13:46.061 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 12.5042 ms
+2025-08-24 21:13:46.080 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:13:46.094 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:13:46.097 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 17.2506 ms
+2025-08-24 21:13:46.103 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:13:46.106 +03:00 [INF] HTTP GET / responded 200 in 4.0740 ms
+2025-08-24 21:13:46.236 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:13:46.241 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 12.3902 ms
+2025-08-24 21:13:46.262 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:13:46.274 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:13:46.277 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 15.1698 ms
+2025-08-24 21:13:46.288 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:13:46.294 +03:00 [INF] HTTP GET / responded 200 in 7.3163 ms
+2025-08-24 21:14:56.710 +03:00 [INF] Application is shutting down...
+2025-08-24 21:15:01.197 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 21:15:01.223 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 21:15:01.225 +03:00 [INF] Hosting environment: Development
+2025-08-24 21:15:01.227 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 21:15:03.766 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 21:15:04.165 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 21:15:04.169 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 21:15:04.515 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:15:04.559 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 795.4391 ms
+2025-08-24 21:15:04.604 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:15:04.700 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:15:04.705 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 108.3149 ms
+2025-08-24 21:15:04.716 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:15:04.721 +03:00 [INF] HTTP GET / responded 200 in 9.5291 ms
+2025-08-24 21:15:05.077 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 21:15:06.162 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1098.4848 ms
+2025-08-24 21:15:07.700 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-24 21:15:07.739 +03:00 [INF] HTTP GET /OdemeTaksiti/Index responded 200 in 44.9087 ms
+2025-08-24 21:15:07.796 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:15:07.805 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:15:07.808 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 11.7256 ms
+2025-08-24 21:15:07.818 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:15:07.820 +03:00 [INF] HTTP GET / responded 200 in 3.0231 ms
+2025-08-24 21:15:09.581 +03:00 [INF] OdemeTaksitiController -> Create çalıştı.
+2025-08-24 21:15:09.664 +03:00 [INF] HTTP GET /OdemeTaksiti/Create responded 200 in 89.4990 ms
+2025-08-24 21:15:09.701 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:15:09.706 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:15:09.709 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 9.2314 ms
+2025-08-24 21:15:09.730 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:15:09.733 +03:00 [INF] HTTP GET / responded 200 in 3.8260 ms
+2025-08-24 21:15:24.954 +03:00 [INF] HTTP POST /OdemeTaksiti/Create responded 302 in 245.2148 ms
+2025-08-24 21:15:24.966 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-24 21:15:24.977 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 11.5457 ms
+2025-08-24 21:15:25.019 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:15:25.026 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:15:25.029 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 11.5982 ms
+2025-08-24 21:15:25.046 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:15:25.050 +03:00 [INF] HTTP GET / responded 200 in 4.2704 ms
+2025-08-24 21:15:33.116 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-24 21:15:33.127 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 11.7433 ms
+2025-08-24 21:15:33.161 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:15:33.170 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:15:33.174 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 13.9981 ms
+2025-08-24 21:15:33.185 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:15:33.190 +03:00 [INF] HTTP GET / responded 200 in 6.9670 ms
+2025-08-24 21:15:39.079 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:15:39.084 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 10.5022 ms
+2025-08-24 21:15:39.103 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:15:39.109 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:15:39.112 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 9.7450 ms
+2025-08-24 21:15:39.121 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:15:39.125 +03:00 [INF] HTTP GET / responded 200 in 4.1468 ms
+2025-08-24 21:15:40.719 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:15:40.724 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 8.5330 ms
+2025-08-24 21:15:40.741 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:15:40.747 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:15:40.750 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 10.0486 ms
+2025-08-24 21:15:40.764 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:15:40.768 +03:00 [INF] HTTP GET / responded 200 in 4.6988 ms
+2025-08-24 21:15:41.089 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:15:41.094 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 8.7834 ms
+2025-08-24 21:15:41.114 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:15:41.121 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:15:41.124 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 10.2715 ms
+2025-08-24 21:15:41.131 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:15:41.135 +03:00 [INF] HTTP GET / responded 200 in 4.6680 ms
+2025-08-24 21:15:41.265 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:15:41.269 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 11.2021 ms
+2025-08-24 21:15:41.289 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:15:41.301 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:15:41.304 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 15.5554 ms
+2025-08-24 21:15:41.310 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:15:41.313 +03:00 [INF] HTTP GET / responded 200 in 3.8694 ms
+2025-08-24 21:15:41.435 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:15:41.440 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 12.7616 ms
+2025-08-24 21:15:41.463 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:15:41.474 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:15:41.478 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 15.9364 ms
+2025-08-24 21:15:41.488 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:15:41.492 +03:00 [INF] HTTP GET / responded 200 in 5.2437 ms
+2025-08-24 21:15:41.578 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:15:41.582 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 11.7927 ms
+2025-08-24 21:15:41.603 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:15:41.613 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:15:41.616 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 13.3860 ms
+2025-08-24 21:15:41.625 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:15:41.628 +03:00 [INF] HTTP GET / responded 200 in 4.4409 ms
+2025-08-24 21:15:41.747 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:15:41.751 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 9.9912 ms
+2025-08-24 21:15:41.773 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:15:41.783 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:15:41.786 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 13.6866 ms
+2025-08-24 21:15:41.792 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:15:41.794 +03:00 [INF] HTTP GET / responded 200 in 3.5084 ms
+2025-08-24 21:22:04.915 +03:00 [INF] Application is shutting down...
+2025-08-24 21:22:10.084 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 21:22:10.111 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 21:22:10.113 +03:00 [INF] Hosting environment: Development
+2025-08-24 21:22:10.115 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 21:22:12.474 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 21:22:12.859 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 21:22:12.862 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 21:22:13.213 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:22:13.258 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 786.8055 ms
+2025-08-24 21:22:13.302 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:22:13.402 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:22:13.406 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 110.5717 ms
+2025-08-24 21:22:13.417 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:22:13.423 +03:00 [INF] HTTP GET / responded 200 in 10.7672 ms
+2025-08-24 21:22:15.032 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 21:22:19.080 +03:00 [INF] HTTP GET /Account/Login responded 200 in 61.7559 ms
+2025-08-24 21:22:19.507 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 4487.9991 ms
+2025-08-24 21:22:25.732 +03:00 [INF] HTTP POST /Account/Login responded 302 in 47.0434 ms
+2025-08-24 21:22:25.747 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 21:22:26.529 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 783.7996 ms
+2025-08-24 21:22:26.576 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:22:26.586 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:22:26.589 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 13.2944 ms
+2025-08-24 21:22:26.602 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:22:26.605 +03:00 [INF] HTTP GET / responded 200 in 4.5032 ms
+2025-08-24 21:22:29.242 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:22:29.247 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 13.0491 ms
+2025-08-24 21:22:29.284 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:22:29.292 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:22:29.297 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 12.9747 ms
+2025-08-24 21:22:29.309 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:22:29.313 +03:00 [INF] HTTP GET / responded 200 in 5.2409 ms
+2025-08-24 21:22:30.885 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=0
+2025-08-24 21:22:30.890 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 8.9148 ms
+2025-08-24 21:22:30.910 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:22:30.918 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:22:30.922 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 13.9963 ms
+2025-08-24 21:22:30.935 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:22:30.940 +03:00 [INF] HTTP GET / responded 200 in 6.5929 ms
+2025-08-24 21:22:33.695 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-24 21:22:33.776 +03:00 [INF] HTTP GET /OdemeTaksiti/Index responded 200 in 90.4640 ms
+2025-08-24 21:22:33.834 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:22:33.839 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:22:33.842 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 8.5890 ms
+2025-08-24 21:22:33.852 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:22:33.855 +03:00 [INF] HTTP GET / responded 200 in 4.0522 ms
+2025-08-24 21:22:34.862 +03:00 [INF] OdemeTaksitiController -> Create çalıştı.
+2025-08-24 21:22:34.907 +03:00 [INF] HTTP GET /OdemeTaksiti/Create responded 200 in 48.7031 ms
+2025-08-24 21:22:34.942 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:22:34.954 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:22:34.958 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 16.7564 ms
+2025-08-24 21:22:34.968 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:22:34.973 +03:00 [INF] HTTP GET / responded 200 in 6.3895 ms
+2025-08-24 21:22:48.386 +03:00 [INF] HTTP POST /OdemeTaksiti/Create responded 302 in 310.3240 ms
+2025-08-24 21:22:48.396 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-24 21:22:48.411 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 15.9900 ms
+2025-08-24 21:22:48.455 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:22:48.465 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:22:48.467 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 12.9089 ms
+2025-08-24 21:22:48.479 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:22:48.483 +03:00 [INF] HTTP GET / responded 200 in 4.8677 ms
+2025-08-24 21:22:56.936 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=1
+2025-08-24 21:22:56.941 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 17.0791 ms
+2025-08-24 21:22:56.961 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:22:56.967 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:22:56.970 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 10.3786 ms
+2025-08-24 21:22:56.987 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:22:56.991 +03:00 [INF] HTTP GET / responded 200 in 5.6376 ms
+2025-08-24 21:24:25.343 +03:00 [INF] Application is shutting down...
+2025-08-24 21:24:29.804 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 21:24:29.831 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 21:24:29.833 +03:00 [INF] Hosting environment: Development
+2025-08-24 21:24:29.835 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 21:24:32.985 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 21:24:33.082 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 21:24:33.372 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 21:24:33.375 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 21:24:34.740 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1757.5590 ms
+2025-08-24 21:24:36.137 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-24 21:24:36.203 +03:00 [INF] HTTP GET /OdemeTaksiti/Index responded 200 in 73.5334 ms
+2025-08-24 21:24:36.263 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:24:36.327 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:24:36.329 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 73.4528 ms
+2025-08-24 21:24:36.337 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:24:36.341 +03:00 [INF] HTTP GET / responded 200 in 6.8328 ms
+2025-08-24 21:24:37.713 +03:00 [INF] OdemeTaksitiController -> Create çalıştı.
+2025-08-24 21:24:37.786 +03:00 [INF] HTTP GET /OdemeTaksiti/Create responded 200 in 77.9658 ms
+2025-08-24 21:24:37.823 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:24:37.833 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:24:37.836 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 17.6078 ms
+2025-08-24 21:24:37.847 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:24:37.853 +03:00 [INF] HTTP GET / responded 200 in 7.0766 ms
+2025-08-24 21:24:46.700 +03:00 [INF] HTTP POST /OdemeTaksiti/Create responded 302 in 276.5437 ms
+2025-08-24 21:24:46.713 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-24 21:24:46.731 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 18.8158 ms
+2025-08-24 21:24:46.773 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:24:46.780 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:24:46.782 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 10.2763 ms
+2025-08-24 21:24:46.792 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:24:46.795 +03:00 [INF] HTTP GET / responded 200 in 3.6384 ms
+2025-08-24 21:24:51.162 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=2
+2025-08-24 21:24:51.178 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 43.3970 ms
+2025-08-24 21:24:51.215 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:24:51.223 +03:00 [INF] 🔎 Bildirim kontrolü -> Bulunan taksit sayısı: 0
+2025-08-24 21:24:51.227 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 12.7118 ms
+2025-08-24 21:24:51.246 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:24:51.252 +03:00 [INF] HTTP GET / responded 200 in 7.0880 ms
+2025-08-24 21:31:54.821 +03:00 [INF] Application is shutting down...
+2025-08-24 21:31:58.778 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-24 21:31:58.805 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 21:31:58.807 +03:00 [INF] Hosting environment: Development
+2025-08-24 21:31:58.808 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-24 21:32:02.928 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-24 21:32:03.303 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 21:32:03.308 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-24 21:32:03.659 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=2
+2025-08-24 21:32:03.708 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 782.7691 ms
+2025-08-24 21:32:03.761 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:32:03.857 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 103.0567 ms
+2025-08-24 21:32:03.867 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:32:03.874 +03:00 [INF] HTTP GET / responded 200 in 11.1750 ms
+2025-08-24 21:32:06.650 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=2
+2025-08-24 21:32:06.657 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 103.7540 ms
+2025-08-24 21:32:06.682 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:32:06.692 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 11.0586 ms
+2025-08-24 21:32:06.706 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:32:06.715 +03:00 [INF] HTTP GET / responded 200 in 10.6296 ms
+2025-08-24 21:32:07.989 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 21:32:14.689 +03:00 [INF] HTTP GET /Account/Login responded 200 in 34.0256 ms
+2025-08-24 21:32:20.428 +03:00 [INF] HTTP POST /Account/Login responded 302 in 60.7668 ms
+2025-08-24 21:32:20.442 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 21:32:36.994 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 16554.5390 ms
+2025-08-24 21:32:37.036 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:32:37.048 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 13.5968 ms
+2025-08-24 21:32:37.059 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:32:37.064 +03:00 [INF] HTTP GET / responded 200 in 5.9946 ms
+2025-08-24 21:32:37.499 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 29532.3470 ms
+2025-08-24 21:32:41.000 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=2
+2025-08-24 21:32:41.006 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 12.2073 ms
+2025-08-24 21:32:41.047 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:32:41.054 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 7.4948 ms
+2025-08-24 21:32:41.070 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:32:41.074 +03:00 [INF] HTTP GET / responded 200 in 4.3115 ms
+2025-08-24 21:32:45.043 +03:00 [INF] TaksitliOdemeController -> Create çalıştı.
+2025-08-24 21:32:45.093 +03:00 [INF] HTTP GET /TaksitliOdeme/Create responded 200 in 53.3790 ms
+2025-08-24 21:32:45.119 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:32:45.125 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.7902 ms
+2025-08-24 21:32:45.138 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:32:45.141 +03:00 [INF] HTTP GET / responded 200 in 3.8917 ms
+2025-08-24 21:32:54.355 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-24 21:32:54.571 +03:00 [INF] 📩 Bildirim eklendi -> KullanıcıId: 2, Mesaj: Yeni taksitli ödeme eklendi. Toplam: 360,00₺, Taksit Sayısı: 1
+2025-08-24 21:32:54.574 +03:00 [INF] HTTP POST /TaksitliOdeme/Create responded 302 in 263.5959 ms
+2025-08-24 21:32:54.595 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-24 21:32:54.597 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-24 21:32:54.622 +03:00 [INF] HTTP GET /TaksitliOdeme responded 200 in 32.0003 ms
+2025-08-24 21:32:54.644 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:32:54.650 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.7982 ms
+2025-08-24 21:32:54.665 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:32:54.669 +03:00 [INF] HTTP GET / responded 200 in 5.5603 ms
+2025-08-24 21:33:01.130 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-24 21:33:01.161 +03:00 [INF] HTTP GET /TaksitliOdeme/Edit/8 responded 200 in 38.5405 ms
+2025-08-24 21:33:06.015 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-24 21:33:06.033 +03:00 [INF] HTTP POST /TaksitliOdeme/Edit/8 responded 302 in 26.8195 ms
+2025-08-24 21:33:06.051 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-24 21:33:06.057 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-24 21:33:06.072 +03:00 [INF] HTTP GET /TaksitliOdeme responded 200 in 22.9821 ms
+2025-08-24 21:33:06.097 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:33:06.103 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.0630 ms
+2025-08-24 21:33:06.113 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:33:06.116 +03:00 [INF] HTTP GET / responded 200 in 3.5728 ms
+2025-08-24 21:33:10.989 +03:00 [INF] TaksitliOdemeController -> Create çalıştı.
+2025-08-24 21:33:10.996 +03:00 [INF] HTTP GET /TaksitliOdeme/Create responded 200 in 7.9471 ms
+2025-08-24 21:33:11.016 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:33:11.022 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.9909 ms
+2025-08-24 21:33:11.034 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:33:11.038 +03:00 [INF] HTTP GET / responded 200 in 5.7531 ms
+2025-08-24 21:33:17.889 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 21:33:18.528 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 639.7914 ms
+2025-08-24 21:33:18.554 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:33:18.563 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 9.6664 ms
+2025-08-24 21:33:18.576 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:33:18.580 +03:00 [INF] HTTP GET / responded 200 in 5.4118 ms
+2025-08-24 21:33:30.864 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=3
+2025-08-24 21:33:30.869 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 13.3566 ms
+2025-08-24 21:33:30.895 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:33:30.901 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.3228 ms
+2025-08-24 21:33:30.917 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:33:30.922 +03:00 [INF] HTTP GET / responded 200 in 6.4019 ms
+2025-08-24 21:33:47.129 +03:00 [INF] TaksitliOdemeController -> Create çalıştı.
+2025-08-24 21:33:47.136 +03:00 [INF] HTTP GET /TaksitliOdeme/Create responded 200 in 7.4501 ms
+2025-08-24 21:33:47.157 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:33:47.162 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.0153 ms
+2025-08-24 21:33:47.181 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:33:47.185 +03:00 [INF] HTTP GET / responded 200 in 4.9221 ms
+2025-08-24 21:33:56.673 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-24 21:33:56.689 +03:00 [INF] 📩 Bildirim eklendi -> KullanıcıId: 2, Mesaj: Yeni taksitli ödeme eklendi. Toplam: 500,00₺, Taksit Sayısı: 1
+2025-08-24 21:33:56.692 +03:00 [INF] HTTP POST /TaksitliOdeme/Create responded 302 in 20.8296 ms
+2025-08-24 21:33:56.703 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-24 21:33:56.706 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-24 21:33:56.722 +03:00 [INF] HTTP GET /TaksitliOdeme responded 200 in 19.8653 ms
+2025-08-24 21:33:56.750 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:33:56.756 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.4716 ms
+2025-08-24 21:33:56.777 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:33:56.781 +03:00 [INF] HTTP GET / responded 200 in 4.3717 ms
+2025-08-24 21:34:00.212 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-24 21:34:00.222 +03:00 [INF] HTTP GET /TaksitliOdeme/Edit/9 responded 200 in 10.9918 ms
+2025-08-24 21:34:07.744 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-24 21:34:07.747 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-24 21:34:07.757 +03:00 [INF] HTTP GET /TaksitliOdeme responded 200 in 13.8965 ms
+2025-08-24 21:34:07.780 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:34:07.790 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 10.6392 ms
+2025-08-24 21:34:07.809 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:34:07.813 +03:00 [INF] HTTP GET / responded 200 in 4.6584 ms
+2025-08-24 21:34:25.070 +03:00 [INF] IslemController -> Index çalıştı.
+2025-08-24 21:34:25.141 +03:00 [INF] HTTP GET /Islem responded 200 in 79.6193 ms
+2025-08-24 21:34:25.170 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:34:25.182 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 13.5459 ms
+2025-08-24 21:34:25.204 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:34:25.208 +03:00 [INF] HTTP GET / responded 200 in 5.0278 ms
+2025-08-24 21:34:26.043 +03:00 [INF] IslemController -> Create çalıştı.
+2025-08-24 21:34:26.176 +03:00 [INF] HTTP GET /Islem/Create responded 200 in 138.5501 ms
+2025-08-24 21:34:26.209 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:34:26.215 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.8089 ms
+2025-08-24 21:34:26.229 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:34:26.234 +03:00 [INF] HTTP GET / responded 200 in 5.4886 ms
+2025-08-24 21:34:56.170 +03:00 [INF] HTTP POST /Islem/Create responded 302 in 64.4235 ms
+2025-08-24 21:34:56.185 +03:00 [INF] IslemController -> Index çalıştı.
+2025-08-24 21:34:56.206 +03:00 [INF] HTTP GET /Islem responded 200 in 20.9177 ms
+2025-08-24 21:34:56.233 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:34:56.238 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.1526 ms
+2025-08-24 21:34:56.254 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:34:56.258 +03:00 [INF] HTTP GET / responded 200 in 4.2707 ms
+2025-08-24 21:34:59.342 +03:00 [INF] HTTP GET /Islem/Edit/1009 responded 200 in 57.9741 ms
+2025-08-24 21:35:11.983 +03:00 [INF] IslemController -> Edit çalıştı.
+2025-08-24 21:35:12.018 +03:00 [INF] HTTP POST /Islem/Edit/1009 responded 302 in 44.5300 ms
+2025-08-24 21:35:12.034 +03:00 [INF] IslemController -> Index çalıştı.
+2025-08-24 21:35:12.054 +03:00 [INF] HTTP GET /Islem responded 200 in 20.3831 ms
+2025-08-24 21:35:12.080 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:35:12.085 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 5.1149 ms
+2025-08-24 21:35:12.097 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:35:12.100 +03:00 [INF] HTTP GET / responded 200 in 4.3952 ms
+2025-08-24 21:35:18.093 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-24 21:35:18.895 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 803.6347 ms
+2025-08-24 21:35:18.913 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:35:18.918 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 5.7460 ms
+2025-08-24 21:35:18.930 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:35:18.935 +03:00 [INF] HTTP GET / responded 200 in 6.5137 ms
+2025-08-24 21:35:20.890 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-24 21:35:20.956 +03:00 [INF] HTTP GET /OdemeTaksiti/Index responded 200 in 73.0154 ms
+2025-08-24 21:35:21.013 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:35:21.020 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 7.6609 ms
+2025-08-24 21:35:21.029 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:35:21.033 +03:00 [INF] HTTP GET / responded 200 in 4.1752 ms
+2025-08-24 21:35:26.758 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-24 21:35:26.762 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 9.6806 ms
+2025-08-24 21:35:26.784 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-24 21:35:26.789 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 5.8265 ms
+2025-08-24 21:35:26.805 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-24 21:35:26.809 +03:00 [INF] HTTP GET / responded 200 in 5.2044 ms

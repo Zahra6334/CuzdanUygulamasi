@@ -1,6 +1,7 @@
 ﻿using CuzdanUygulamasi.Data;
 using CuzdanUygulamasi.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,14 +11,16 @@ namespace CuzdanUygulamasi.Services
     public class NotificationService
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<NotificationService> _logger;
 
-        public NotificationService(ApplicationDbContext context)
+        public NotificationService(ApplicationDbContext context, ILogger<NotificationService> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // Kullanıcıya bildirim ekleme
-        public void BildirimGonder(int kullaniciId, string mesaj)
+        public async Task BildirimGonderAsync(int kullaniciId, string mesaj)
         {
             var bildirim = new Bildirim
             {
@@ -27,36 +30,52 @@ namespace CuzdanUygulamasi.Services
                 OkunduMu = false
             };
 
-            _context.Bildirimler.Add(bildirim);
-            _context.SaveChanges();
+            await _context.Bildirimler.AddAsync(bildirim);
+            await _context.SaveChangesAsync();
+
+            _logger.LogInformation($"📩 Bildirim eklendi -> KullanıcıId: {kullaniciId}, Mesaj: {mesaj}");
         }
 
         // Ödenmemiş taksitleri kontrol et ve bildirim oluştur
-        public void KontrolEtVeBildirimOlustur()
+        public async Task KontrolEtVeBildirimOlusturAsync()
         {
             var today = DateTime.Today;
+            var tomorrow = today.AddDays(1);
 
-            var taksitler = _context.OdemeTaksitleri
-                .Include("Islem")
+            var taksitler = await _context.OdemeTaksitleri
+                .Include(t => t.Islem)
                 .Where(t => !t.OdendiMi &&
-                            (t.SonOdemeTarihi.Date == today || t.SonOdemeTarihi.Date == today.AddDays(1)))
-                .ToList();
+                            (t.SonOdemeTarihi.Date == today || t.SonOdemeTarihi.Date == tomorrow))
+                .ToListAsync();
+
+            var bildirimler = new List<Bildirim>();
 
             foreach (var taksit in taksitler)
             {
+                if (taksit.Islem == null) continue;
+
                 var userId = taksit.Islem.KullaniciId;
 
                 string mesaj = taksit.SonOdemeTarihi.Date == today
-                    ? $"Bugün ödenmesi gereken taksit: {taksit.OdenenTutar:N2}₺ ({taksit.Islem.Aciklama})"
-                    : $"Yarın ödenmesi gereken taksit: {taksit.OdenenTutar:N2}₺ ({taksit.Islem.Aciklama})";
+                    ? $"Bugün ödenmesi gereken taksit: {taksit.TaksitliOdeme:N2}₺ ({taksit.Islem.Aciklama})"
+                    : $"Yarın ödenmesi gereken taksit: {taksit.TaksitliOdeme:N2}₺ ({taksit.Islem.Aciklama})";
 
-                BildirimGonder(userId, mesaj);
+                bildirimler.Add(new Bildirim
+                {
+                    KullaniciId = userId,
+                    Mesaj = mesaj,
+                    Tarih = DateTime.Now,
+                    OkunduMu = false
+                });
+            }
+
+            if (bildirimler.Any())
+            {
+                await _context.Bildirimler.AddRangeAsync(bildirimler);
+                await _context.SaveChangesAsync();
             }
         }
 
-        internal async Task KontrolEtVeBildirimOlusturAsync()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
+

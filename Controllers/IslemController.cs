@@ -13,15 +13,17 @@ namespace CuzdanUygulamasi.Controllers
     public class IslemController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public IslemController(ApplicationDbContext context)
+        private readonly ILogger<IslemController> _logger;
+        public IslemController(ApplicationDbContext context, ILogger<IslemController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // Index: Sadece giriş yapan kullanıcıya ait işlemler
         public async Task<IActionResult> Index()
         {
+            _logger.LogInformation("IslemController -> Index çalıştı.");
             var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (string.IsNullOrEmpty(userIdStr))
                 return View(new List<Islem>());
@@ -42,6 +44,7 @@ namespace CuzdanUygulamasi.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            _logger.LogInformation("IslemController -> Create çalıştı.");
             ViewBag.Kategoriler = _context.Kategoriler.ToList();
             return View();
         }
@@ -105,6 +108,7 @@ namespace CuzdanUygulamasi.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Islem islem)
         {
+            _logger.LogInformation("IslemController -> Edit çalıştı.");
             var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (string.IsNullOrEmpty(userIdStr))
                 return RedirectToAction("Index");

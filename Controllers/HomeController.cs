@@ -1,4 +1,4 @@
-using CuzdanUygulamasi.Data;
+ï»¿using CuzdanUygulamasi.Data;
 using CuzdanUygulamasi.Models.ViewModels;
 using CuzdanUygulamasi.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -28,18 +28,21 @@ namespace CuzdanUygulamasi.Controllers
 
         public IActionResult Index()
         {
-            _notificationService.KontrolEtVeBildirimOlustur();
+            _logger.LogInformation("HomeController -> Index Ã§alÄ±ÅŸtÄ±.");
+            
             return View();
         }
 
         public IActionResult Privacy()
         {
+            _logger.LogInformation("HomeController -> Privacy Ã§alÄ±ÅŸtÄ±.");
             return View();
         }
         public async Task<IActionResult> Currency()
         {
+            _logger.LogInformation("HomeController -> Currency Ã§alÄ±ÅŸtÄ±.");
             var result = await _exchangeRateService.GetRatesAsync("TRY", "USD,EUR,GBP");
-            return View(result); // View'e result modelini gönderiyoruz
+            return View(result); // View'e result modelini gÃ¶nderiyoruz
         }
 
 
@@ -48,22 +51,36 @@ namespace CuzdanUygulamasi.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
+            _logger.LogInformation("HomeController -> Error Ã§alÄ±ÅŸtÄ±.");
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        // Kullanıcı giriş yaptığında veya sayfa açıldığında çağrılabilir
         
+
+        // Ã–denmemiÅŸ taksitleri kontrol edip bildirim oluÅŸtur
         public async Task<IActionResult> CheckTaksitNotifications()
         {
+            _logger.LogInformation("HomeController -> Bildirim kontrolÃ¼ Ã§alÄ±ÅŸtÄ±.");
             await _notificationService.KontrolEtVeBildirimOlusturAsync();
             return RedirectToAction("Index");
         }
 
-
-        // Kullanıcıya bildirimleri göster
+        // KullanÄ±cÄ±ya bildirimleri gÃ¶ster
         public ActionResult Bildirimler()
         {
-            var userIdClaim = User.Identity as ClaimsIdentity;
-            var userId = int.Parse(userIdClaim.FindFirst(ClaimTypes.NameIdentifier).Value);
+            if (!(User.Identity is ClaimsIdentity identity))
+            {
+                _logger.LogWarning("Bildirimler -> KullanÄ±cÄ± giriÅŸ yapmamÄ±ÅŸ!");
+                return RedirectToAction("Index");
+            }
+
+            var userIdClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                _logger.LogWarning("Bildirimler -> KullanÄ±cÄ± ID bulunamadÄ±!");
+                return RedirectToAction("Index");
+            }
+
+            int userId = int.Parse(userIdClaim.Value);
 
             var bildirimler = _context.Bildirimler
                 .Where(b => b.KullaniciId == userId && !b.OkunduMu)
@@ -77,16 +94,10 @@ namespace CuzdanUygulamasi.Controllers
                 })
                 .ToList();
 
+            _logger.LogInformation($"Bildirimler -> KullanÄ±cÄ±Id={userId}, Bildirim sayÄ±sÄ±={bildirimler.Count}");
+
             return View(bildirimler);
         }
-
-        // Ödenmemiş taksitleri kontrol edip bildirim oluştur
-        public async Task<IActionResult> Notifications()
-        {
-            await _notificationService.KontrolEtVeBildirimOlusturAsync();
-            return RedirectToAction("Index");
-        }
-
     }
     
     

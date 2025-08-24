@@ -336,6 +336,15 @@
             });
         });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('/Home/CheckTaksitNotifications')
+                .then(res => {
+                    if (!res.ok) console.error("Bildirim kontrolü başarısız");
+                });
+        });
+    </script>
+
 
     @RenderSection("Scripts", required: false)
 </body>

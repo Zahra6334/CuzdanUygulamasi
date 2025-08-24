@@ -17,20 +17,23 @@ namespace CuzdanUygulamasi.Controllers
     public class OdemeTaksitiController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public OdemeTaksitiController(ApplicationDbContext context)
+        private readonly ILogger<OdemeTaksitiController> _logger;
+        public OdemeTaksitiController(ApplicationDbContext context, ILogger<OdemeTaksitiController> logger)
         {
             _context = context;
+            _logger= logger;
         }
         // PDF indir
         public IActionResult PdfSayfasi()
         {
+            _logger.LogInformation("OdemeTaksitiController -> PdfSayfasi çalıştı.");
             var odemeler = _context.OdemeTaksitleri.ToList();
             return View("OdemePdf", odemeler); // OdemePdf.cshtml'e veri gönderiyoruz
         }
 
         public async Task<IActionResult> IndirPdf()
         {
+            _logger.LogInformation("OdemeTaksitiController -> IndirPdf çalıştı.");
             var odemeler = _context.OdemeTaksitleri.ToList();
             var html = await this.RenderViewAsync("OdemePdf", odemeler, true);
 
@@ -58,11 +61,13 @@ namespace CuzdanUygulamasi.Controllers
 
         public IActionResult IndirPdfView()
         {
+            _logger.LogInformation("OdemeTaksitiController -> IndirPdfView çalıştı.");
             return View(); // IndirPdf.cshtml
         }
         // Ödemeleri listele
         public async Task<IActionResult> Index()
         {
+            _logger.LogInformation("OdemeTaksitiController -> Index çalıştı.");
             var odemeler = await _context.OdemeTaksitleri
                 .Include(o => o.TaksitliOdeme)
                 .ToListAsync();
@@ -86,6 +91,8 @@ namespace CuzdanUygulamasi.Controllers
         // Yeni ödeme formu
         public IActionResult Create()
         {
+            _logger.LogInformation("OdemeTaksitiController -> Create çalıştı.");
+
             return View();
         }
 
@@ -96,9 +103,10 @@ namespace CuzdanUygulamasi.Controllers
         {
             if (!ModelState.IsValid)
             {
+                
                 odeme.OdemeTarihi = DateTime.Now; // otomatik tarih
                 _context.OdemeTaksitleri.Add(odeme);
-
+                
                 // Taksitli ödeme tablosunu güncelle
                 var taksitliOdeme = await _context.TaksitliOdemeler.FindAsync(odeme.TaksitliOdemeId);
                 if (taksitliOdeme != null && taksitliOdeme.KalanTaksit > 0)
@@ -106,7 +114,14 @@ namespace CuzdanUygulamasi.Controllers
                     taksitliOdeme.KalanTaksit--;
                     _context.TaksitliOdemeler.Update(taksitliOdeme);
                 }
-
+                var bildirim = new Bildirim
+                {
+                    KullaniciId = taksitliOdeme.KullaniciId, // ilgili kullanıcı
+                    Mesaj = $"Yeni ödeme yapıldı: {odeme.OdenenTutar:N2}₺",
+                    Tarih = DateTime.Now,
+                    OkunduMu = false
+                };
+                _context.Bildirimler.Add(bildirim);
                 await _context.SaveChangesAsync(); // 🔑 DB'ye yazma noktası
                 return RedirectToAction(nameof(Index));
             }
@@ -182,6 +197,7 @@ namespace CuzdanUygulamasi.Controllers
         [HttpPost]
         public async Task<IActionResult> OdemeYap(int taksitliOdemeId, decimal odenenTutar, string odemeYontemi)
         {
+
             var taksitliOdeme = await _context.TaksitliOdemeler.FindAsync(taksitliOdemeId);
             if (taksitliOdeme == null)
                 return NotFound();

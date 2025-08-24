@@ -17,10 +17,11 @@ namespace CuzdanUygulamasi.Controllers
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _env;
         private readonly ExchangeRateService _exchangeRateService;
+        private readonly ILogger<KullaniciController> _logger;
 
-        public KullaniciController(ApplicationDbContext context, IWebHostEnvironment env,ExchangeRateService exchangeRateService)
+        public KullaniciController(ApplicationDbContext context, IWebHostEnvironment env,ExchangeRateService exchangeRateService, ILogger<KullaniciController> logger)
         {
-
+            _logger= logger;
             _context = context;
             _env = env;
             _exchangeRateService = exchangeRateService;
@@ -28,6 +29,7 @@ namespace CuzdanUygulamasi.Controllers
         [HttpGet("Details/{id}")]
         public async Task<IActionResult> DetailsAsync(int id)
         {
+            _logger.LogInformation("KullaniciController -> DetailsAsync çalıştı.");
             var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (userIdStr == null || int.Parse(userIdStr) != id)
                 return Unauthorized(); // Başkasının profilini görmesin
@@ -74,6 +76,7 @@ namespace CuzdanUygulamasi.Controllers
         [HttpPost]
         public async Task<IActionResult> ProfilResmiDegistir(IFormFile profilResmi)
         {
+            _logger.LogInformation("KullaniciController -> ProfilResmiDegistir çalıştı.");
             var kullaniciId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
             if (profilResmi != null && profilResmi.Length > 0)
             {
@@ -113,6 +116,7 @@ namespace CuzdanUygulamasi.Controllers
         [HttpPost]
         public IActionResult KullaniciEkle([FromBody] Kullanici yeniKullanici)
         {
+            _logger.LogInformation("KullaniciController -> KullaniciEkle çalıştı.");
             kullanicilar.Add(yeniKullanici);
             return Ok("Kullanıcı eklendi.");
         }
@@ -120,6 +124,7 @@ namespace CuzdanUygulamasi.Controllers
         [HttpPut("{id}")]
         public IActionResult KullaniciGuncelle(int id, [FromBody] Kullanici guncellenenKullanici)
         {
+            _logger.LogInformation("KullaniciController -> KullaniciGuncelle çalıştı.");
             var mevcut = kullanicilar.FirstOrDefault(k => k.Id == id);
             if (mevcut == null) return NotFound("Kullanıcı bulunamadı.");
 
@@ -133,6 +138,7 @@ namespace CuzdanUygulamasi.Controllers
         [HttpPost("ProfilFotoGuncelle")]
         public async Task<IActionResult> ProfilFotoGuncelle(int id, IFormFile profilFoto)
         {
+            
             var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (userIdStr == null || int.Parse(userIdStr) != id)
                 return Unauthorized();
@@ -173,6 +179,7 @@ namespace CuzdanUygulamasi.Controllers
         [HttpDelete("{id}")]
         public IActionResult KullaniciSil(int id)
         {
+            _logger.LogInformation("KullaniciController -> KullaniciSil çalıştı.");
             var silinecek = kullanicilar.FirstOrDefault(k => k.Id == id);
             if (silinecek == null) return NotFound("Kullanıcı bulunamadı.");
 

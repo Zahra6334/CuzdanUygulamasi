@@ -1,5 +1,6 @@
 ﻿using CuzdanUygulamasi.Data;
 using CuzdanUygulamasi.Models;
+using CuzdanUygulamasi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,15 +13,19 @@ namespace CuzdanUygulamasi.Controllers
     public class TaksitliOdemeController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public TaksitliOdemeController(ApplicationDbContext context)
+        private readonly ILogger<TaksitliOdemeController> _logger;
+        private readonly NotificationService _notificationService;
+        public TaksitliOdemeController(ApplicationDbContext context, ILogger<TaksitliOdemeController> logger, NotificationService notificationService)
         {
+            _notificationService = notificationService;
             _context = context;
+            _logger= logger;
         }
 
         // Taksitlerim sayfası
         public async Task<IActionResult> Index()
         {
+            _logger.LogInformation("TaksitliOdemeController -> Index çalıştı.");
             int kullaniciId = GetCurrentUserId();
             var odemeler = await _context.TaksitliOdemeler
                                          .Where(x => x.KullaniciId == kullaniciId)
@@ -31,18 +36,17 @@ namespace CuzdanUygulamasi.Controllers
         // Yeni taksit ekleme formunu göster
         public IActionResult Create()
         {
+            _logger.LogInformation("TaksitliOdemeController -> Create çalıştı.");
             return View();
         }
 
         // Yeni taksiti kaydet
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(TaksitliOdeme yeniOdeme)
+        public async Task<IActionResult> Create(TaksitliOdeme yeniOdeme, [FromServices] NotificationService notificationService)
         {
-            Console.WriteLine("girdi");
             if (!ModelState.IsValid)
             {
-                Console.WriteLine("bunada girdi");
                 int kullaniciId = GetCurrentUserId();
                 yeniOdeme.KullaniciId = kullaniciId;
                 yeniOdeme.BaslangicTarihi = DateTime.Now;
@@ -51,6 +55,12 @@ namespace CuzdanUygulamasi.Controllers
 
                 _context.TaksitliOdemeler.Add(yeniOdeme);
                 await _context.SaveChangesAsync();
+
+                // ✅ Bildirim oluştur
+                await notificationService.BildirimGonderAsync(
+                    kullaniciId,
+                    $"Yeni taksitli ödeme eklendi. Toplam: {yeniOdeme.ToplamTutar:N2}₺, Taksit Sayısı: {yeniOdeme.TaksitSayisi}"
+                );
 
                 return RedirectToAction(nameof(Index));
             }
@@ -126,11 +136,17 @@ namespace CuzdanUygulamasi.Controllers
         // Giriş yapan kullanıcı ID'sini al
         private int GetCurrentUserId()
         {
+            _logger.LogInformation("TaksitliOdemeController -> GetCurrentUserId çalıştı");
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
             if (userIdClaim == null)
                 throw new Exception("Kullanıcı giriş yapmamış.");
 
             return int.Parse(userIdClaim.Value);
+        }
+        public async Task<IActionResult> BildirimleriKontrolEt()
+        {
+            await _notificationService.KontrolEtVeBildirimOlusturAsync();
+            return RedirectToAction("Index");
         }
     }
 }

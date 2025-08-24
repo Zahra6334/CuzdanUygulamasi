@@ -18,19 +18,21 @@ namespace CuzdanUygulamasi.Controllers
     {
         private readonly IKullaniciServisi _kullaniciServisi;
         private readonly ApplicationDbContext _context;
-
+        private readonly ILogger<AccountController> _logger;
         // Statik kullanıcı listesi örnek amaçlı
         private static List<Kullanici> kullanicilar = new List<Kullanici>();
 
-        public AccountController(IKullaniciServisi kullaniciServisi,ApplicationDbContext context)
+        public AccountController(IKullaniciServisi kullaniciServisi,ApplicationDbContext context, ILogger<AccountController> logger)
         {
             _kullaniciServisi = kullaniciServisi;
             _context = context;
+            logger = logger;
         }
 
         [HttpGet]
         public IActionResult Login()
         {
+            
             return View();
         }
 
@@ -78,6 +80,7 @@ namespace CuzdanUygulamasi.Controllers
         [HttpGet]
         public IActionResult Register()
         {
+            _logger.LogInformation("AccountController -> Register çalıştı.");
             return View();
         }
 
@@ -191,6 +194,7 @@ namespace CuzdanUygulamasi.Controllers
         [HttpGet]
         public IActionResult ResetPasswordConfirmation()
         {
+            _logger.LogInformation("AccountController -> ResetPasswordConfirmation çalıştı.");
             return View();
         }
     }
