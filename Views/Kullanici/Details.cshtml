@@ -399,7 +399,27 @@
                     <a href="/Islem" class="menu-item"><i class="fas fa-exchange-alt"></i> İşlemlerim</a>
                     <a href="/TaksitliOdeme/Index" class="menu-item"><i class="fas fa-credit-card"></i> Taksitlerim</a>
                     <a href="/OdemeTaksiti/Index" class="menu-item"><i class="fas fa-credit-card"></i> Ödemelerim</a>
-                    <a href="/Home/Bildirimler" class="menu-item"> <i class="fas fa-bell"></i> Bildirimler </a>
+                    <a href="/Home/Bildirimler" class="menu-item @(ViewContext.RouteData.Values["action"].ToString() == "Bildirimler" ? "active" : "")" style="position: relative; display: inline-block;">
+                        <i class="fas fa-bell"></i> Bildirimler
+                        @if (ViewBag.okunmamısbildirim > 0)
+                        {
+                            <span style="
+                position: absolute;
+                top: -5px;
+                right: -10px;
+                background-color: red;
+                color: black;
+                border-radius: 50%;
+                padding: 2px 6px;
+                font-size: 12px;
+                font-weight: bold;
+                display: inline-block;">
+                                @ViewBag.okunmamısbildirim
+                            </span>
+                        }
+                    </a>
+
+
                     <a href="/Home/Currency" class="menu-item"><i class="fas fa-credit-card"></i> Döviz Kuru</a>
                     <a asp-controller="Islem" asp-action="Analiz" class="menu-item"><i class="fas fa-chart-bar"></i> Harcama Analizim</a>
                 </div>

@@ -195,13 +195,15 @@ namespace CuzdanUygulamasi.Controllers
 
         // Senin özel methodun: Ödeme yap
         [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> OdemeYap(int taksitliOdemeId, decimal odenenTutar, string odemeYontemi)
         {
-
+            // Taksitli ödemeyi getir
             var taksitliOdeme = await _context.TaksitliOdemeler.FindAsync(taksitliOdemeId);
             if (taksitliOdeme == null)
                 return NotFound();
 
+            // Ödeme kaydı oluştur
             var odeme = new OdemeTaksiti
             {
                 TaksitliOdemeId = taksitliOdemeId,
@@ -209,16 +211,28 @@ namespace CuzdanUygulamasi.Controllers
                 OdemeYontemi = odemeYontemi,
                 OdemeTarihi = DateTime.Now
             };
-
             _context.OdemeTaksitleri.Add(odeme);
 
+            // Taksitli ödeme tablosunu güncelle
             if (taksitliOdeme.KalanTaksit > 0)
                 taksitliOdeme.KalanTaksit--;
-
             _context.Update(taksitliOdeme);
-            await _context.SaveChangesAsync(); // 🔑 DB’ye kayıt noktası
+
+            // Bildirim oluştur
+            var bildirim = new Bildirim
+            {
+                KullaniciId = taksitliOdeme.KullaniciId, // ödeme yapan kullanıcı
+                Mesaj = $"Yeni ödeme yapıldı: {odeme.OdenenTutar:N2}₺ (Taksitli Ödeme ID: {taksitliOdemeId})",
+                Tarih = DateTime.Now,
+                OkunduMu = false
+            };
+            _context.Bildirimler.Add(bildirim);
+
+            // Değişiklikleri kaydet
+            await _context.SaveChangesAsync();
 
             return RedirectToAction("Detay", "TaksitliOdemeMvc", new { id = taksitliOdemeId });
         }
+
     }
 }

@@ -1,0 +1,1416 @@
+2025-08-25 10:43:23.490 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-25 10:43:23.518 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 10:43:23.521 +03:00 [INF] Hosting environment: Development
+2025-08-25 10:43:23.523 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-25 10:43:33.814 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-25 10:43:33.977 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:43:34.045 +03:00 [INF] HTTP GET / responded 200 in 235.0286 ms
+2025-08-25 10:43:34.065 +03:00 [INF] HTTP GET /lib/bootstrap/dist/css/bootstrap.min.css responded 304 in 2.9542 ms
+2025-08-25 10:43:34.065 +03:00 [INF] HTTP GET /css/site.css responded 304 in 3.1715 ms
+2025-08-25 10:43:34.096 +03:00 [INF] HTTP GET /lib/jquery/dist/jquery.min.js responded 304 in 0.3277 ms
+2025-08-25 10:43:34.104 +03:00 [INF] HTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js responded 304 in 0.3566 ms
+2025-08-25 10:43:34.104 +03:00 [INF] HTTP GET /js/site.js responded 304 in 0.2292 ms
+2025-08-25 10:43:34.144 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:43:34.459 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 10:43:34.462 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 10:43:35.225 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 1092.3160 ms
+2025-08-25 10:43:35.236 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:43:35.239 +03:00 [INF] HTTP GET / responded 200 in 7.5780 ms
+2025-08-25 10:43:53.251 +03:00 [INF] HTTP GET /Account/Login responded 200 in 90.2552 ms
+2025-08-25 10:43:59.828 +03:00 [INF] HTTP POST /Account/Login responded 302 in 219.1546 ms
+2025-08-25 10:43:59.858 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 10:44:39.629 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 522.
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CuzdanUygulamasi.Services.ExchangeRateService.GetRatesAsync(String baseCurrency, String symbols) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Services\ExchangeRateService.cs:line 25
+   at CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync(Int32 id) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\KullaniciController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-08-25 10:44:39.720 +03:00 [ERR] HTTP GET /Kullanici/Details/2 responded 500 in 39878.9485 ms
+2025-08-25 10:45:39.673 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 10:45:55.508 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 15838.8420 ms
+2025-08-25 10:45:55.556 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:45:55.576 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 22.2754 ms
+2025-08-25 10:45:55.578 +03:00 [INF] HTTP GET /favicon.ico responded 304 in 0.6534 ms
+2025-08-25 10:45:55.583 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:45:55.588 +03:00 [INF] HTTP GET / responded 200 in 6.0126 ms
+2025-08-25 10:46:02.607 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:46:02.626 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 56.8123 ms
+2025-08-25 10:46:02.672 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:46:02.681 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 9.1280 ms
+2025-08-25 10:46:02.700 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:46:02.704 +03:00 [INF] HTTP GET / responded 200 in 4.7600 ms
+2025-08-25 10:46:18.721 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:46:18.729 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 25.3392 ms
+2025-08-25 10:46:18.753 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:46:18.762 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 9.3838 ms
+2025-08-25 10:46:18.780 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:46:18.786 +03:00 [INF] HTTP GET / responded 200 in 6.8628 ms
+2025-08-25 10:46:20.420 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:46:20.427 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 10.5962 ms
+2025-08-25 10:46:20.450 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:46:20.457 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 7.7374 ms
+2025-08-25 10:46:20.465 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:46:20.470 +03:00 [INF] HTTP GET / responded 200 in 5.1357 ms
+2025-08-25 10:46:20.618 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:46:20.623 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 9.0829 ms
+2025-08-25 10:46:20.643 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:46:20.650 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 8.1174 ms
+2025-08-25 10:46:20.662 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:46:20.667 +03:00 [INF] HTTP GET / responded 200 in 5.5100 ms
+2025-08-25 10:46:20.940 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:46:20.946 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 10.3033 ms
+2025-08-25 10:46:20.970 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:46:20.977 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 9.1597 ms
+2025-08-25 10:46:20.991 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:46:20.995 +03:00 [INF] HTTP GET / responded 200 in 5.3358 ms
+2025-08-25 10:46:23.458 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-25 10:46:23.462 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 10:46:23.527 +03:00 [INF] HTTP GET /TaksitliOdeme/Index responded 200 in 78.9985 ms
+2025-08-25 10:46:23.549 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:46:23.553 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 5.5812 ms
+2025-08-25 10:46:23.563 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:46:23.567 +03:00 [INF] HTTP GET / responded 200 in 4.3612 ms
+2025-08-25 10:46:28.677 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-25 10:46:28.681 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 10:46:28.692 +03:00 [INF] HTTP GET /TaksitliOdeme/Index responded 200 in 17.7672 ms
+2025-08-25 10:46:28.714 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:46:28.720 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 7.4561 ms
+2025-08-25 10:46:28.732 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:46:28.736 +03:00 [INF] HTTP GET / responded 200 in 5.1308 ms
+2025-08-25 10:48:57.603 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:48:57.608 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 21.2083 ms
+2025-08-25 10:48:57.636 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:48:57.650 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 14.4033 ms
+2025-08-25 10:48:57.659 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:48:57.664 +03:00 [INF] HTTP GET / responded 200 in 5.4380 ms
+2025-08-25 10:49:04.339 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 10:49:04.375 +03:00 [INF] HTTP GET /OdemeTaksiti/Index responded 200 in 44.6511 ms
+2025-08-25 10:49:04.434 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:04.438 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.6648 ms
+2025-08-25 10:49:04.450 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:04.455 +03:00 [INF] HTTP GET / responded 200 in 5.5475 ms
+2025-08-25 10:49:07.902 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 10:49:07.934 +03:00 [INF] HTTP GET /OdemeTaksiti/Index responded 200 in 33.5720 ms
+2025-08-25 10:49:07.967 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:07.978 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 11.9866 ms
+2025-08-25 10:49:07.986 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:07.988 +03:00 [INF] HTTP GET / responded 200 in 2.6460 ms
+2025-08-25 10:49:12.431 +03:00 [INF] OdemeTaksitiController -> Create çalıştı.
+2025-08-25 10:49:12.459 +03:00 [INF] HTTP GET /OdemeTaksiti/Create responded 200 in 29.7671 ms
+2025-08-25 10:49:12.500 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:12.519 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 19.6057 ms
+2025-08-25 10:49:12.529 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:12.532 +03:00 [INF] HTTP GET / responded 200 in 3.6659 ms
+2025-08-25 10:49:25.264 +03:00 [INF] HTTP POST /OdemeTaksiti/Create responded 302 in 184.0690 ms
+2025-08-25 10:49:25.269 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 10:49:25.276 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 7.6448 ms
+2025-08-25 10:49:25.312 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:25.317 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 5.5590 ms
+2025-08-25 10:49:25.336 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:25.339 +03:00 [INF] HTTP GET / responded 200 in 3.4182 ms
+2025-08-25 10:49:27.890 +03:00 [INF] OdemeTaksitiController -> IndirPdf çalıştı.
+2025-08-25 10:49:28.641 +03:00 [INF] HTTP GET /OdemeTaksiti/IndirPdf responded 200 in 754.7356 ms
+2025-08-25 10:49:34.165 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:34.169 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 9.7158 ms
+2025-08-25 10:49:34.197 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:34.204 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 8.1254 ms
+2025-08-25 10:49:34.230 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:34.232 +03:00 [INF] HTTP GET / responded 200 in 2.8913 ms
+2025-08-25 10:49:36.233 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:36.237 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 7.3289 ms
+2025-08-25 10:49:36.258 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:36.262 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.9104 ms
+2025-08-25 10:49:36.272 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:36.275 +03:00 [INF] HTTP GET / responded 200 in 2.8874 ms
+2025-08-25 10:49:38.775 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:38.790 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 17.9866 ms
+2025-08-25 10:49:38.808 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:38.812 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.0079 ms
+2025-08-25 10:49:38.825 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:38.828 +03:00 [INF] HTTP GET / responded 200 in 3.5928 ms
+2025-08-25 10:49:40.021 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:40.024 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 6.0444 ms
+2025-08-25 10:49:40.039 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:40.043 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.8765 ms
+2025-08-25 10:49:40.056 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:40.058 +03:00 [INF] HTTP GET / responded 200 in 3.2578 ms
+2025-08-25 10:49:40.230 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:40.234 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 6.5869 ms
+2025-08-25 10:49:40.251 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:40.254 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.0191 ms
+2025-08-25 10:49:40.267 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:40.270 +03:00 [INF] HTTP GET / responded 200 in 2.8978 ms
+2025-08-25 10:49:40.418 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:40.422 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 7.5097 ms
+2025-08-25 10:49:40.442 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:40.445 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.5895 ms
+2025-08-25 10:49:40.453 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:40.455 +03:00 [INF] HTTP GET / responded 200 in 2.5863 ms
+2025-08-25 10:49:40.593 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:40.596 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 6.4735 ms
+2025-08-25 10:49:40.616 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:40.620 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.3117 ms
+2025-08-25 10:49:40.627 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:40.629 +03:00 [INF] HTTP GET / responded 200 in 2.7037 ms
+2025-08-25 10:49:40.782 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:40.785 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 6.2524 ms
+2025-08-25 10:49:40.800 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:40.803 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.6643 ms
+2025-08-25 10:49:40.816 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:40.817 +03:00 [INF] HTTP GET / responded 200 in 1.9292 ms
+2025-08-25 10:49:40.968 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:40.972 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 7.0598 ms
+2025-08-25 10:49:40.988 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:40.991 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.4707 ms
+2025-08-25 10:49:41.004 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:41.007 +03:00 [INF] HTTP GET / responded 200 in 3.0595 ms
+2025-08-25 10:49:41.163 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:41.167 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 7.1770 ms
+2025-08-25 10:49:41.183 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:41.186 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.9320 ms
+2025-08-25 10:49:41.197 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:41.200 +03:00 [INF] HTTP GET / responded 200 in 3.0915 ms
+2025-08-25 10:49:41.356 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:41.359 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.6042 ms
+2025-08-25 10:49:41.375 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:41.378 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.2499 ms
+2025-08-25 10:49:41.390 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:41.393 +03:00 [INF] HTTP GET / responded 200 in 4.0863 ms
+2025-08-25 10:49:41.537 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:41.540 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.7524 ms
+2025-08-25 10:49:41.560 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:41.563 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.4347 ms
+2025-08-25 10:49:41.569 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:41.572 +03:00 [INF] HTTP GET / responded 200 in 3.4184 ms
+2025-08-25 10:49:41.737 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:41.740 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 6.0888 ms
+2025-08-25 10:49:41.756 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:41.760 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.2894 ms
+2025-08-25 10:49:41.773 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:41.775 +03:00 [INF] HTTP GET / responded 200 in 3.2845 ms
+2025-08-25 10:49:41.941 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:41.943 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.2181 ms
+2025-08-25 10:49:41.960 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:41.964 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.6626 ms
+2025-08-25 10:49:41.976 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:41.978 +03:00 [INF] HTTP GET / responded 200 in 2.4785 ms
+2025-08-25 10:49:42.141 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:42.144 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.4030 ms
+2025-08-25 10:49:42.164 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:42.167 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.3340 ms
+2025-08-25 10:49:42.173 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:42.176 +03:00 [INF] HTTP GET / responded 200 in 3.2939 ms
+2025-08-25 10:49:42.593 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:42.597 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 6.1330 ms
+2025-08-25 10:49:42.614 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:42.617 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.4436 ms
+2025-08-25 10:49:42.631 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:42.634 +03:00 [INF] HTTP GET / responded 200 in 3.6919 ms
+2025-08-25 10:49:42.954 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:42.957 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 6.6923 ms
+2025-08-25 10:49:42.973 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:42.979 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.6071 ms
+2025-08-25 10:49:42.989 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:42.991 +03:00 [INF] HTTP GET / responded 200 in 2.8777 ms
+2025-08-25 10:49:51.849 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:51.852 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.9987 ms
+2025-08-25 10:49:51.872 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:51.876 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.4970 ms
+2025-08-25 10:49:51.884 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:51.887 +03:00 [INF] HTTP GET / responded 200 in 3.1218 ms
+2025-08-25 10:49:52.408 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:52.417 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 11.4884 ms
+2025-08-25 10:49:52.432 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:52.436 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.4216 ms
+2025-08-25 10:49:52.448 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:52.450 +03:00 [INF] HTTP GET / responded 200 in 2.3828 ms
+2025-08-25 10:49:52.625 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:52.627 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 4.4608 ms
+2025-08-25 10:49:52.643 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:52.646 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.8404 ms
+2025-08-25 10:49:52.657 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:52.659 +03:00 [INF] HTTP GET / responded 200 in 3.3158 ms
+2025-08-25 10:49:52.862 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:52.865 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.4637 ms
+2025-08-25 10:49:52.882 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:52.885 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.5163 ms
+2025-08-25 10:49:52.897 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:52.899 +03:00 [INF] HTTP GET / responded 200 in 2.4129 ms
+2025-08-25 10:49:53.085 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:53.088 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 6.0905 ms
+2025-08-25 10:49:53.104 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:53.107 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.6711 ms
+2025-08-25 10:49:53.120 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:53.121 +03:00 [INF] HTTP GET / responded 200 in 2.5031 ms
+2025-08-25 10:49:53.353 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:49:53.356 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 6.5389 ms
+2025-08-25 10:49:53.373 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:49:53.377 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 5.4001 ms
+2025-08-25 10:49:53.390 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:49:53.392 +03:00 [INF] HTTP GET / responded 200 in 3.3413 ms
+2025-08-25 10:50:02.070 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 10:50:02.078 +03:00 [INF] HTTP GET /OdemeTaksiti/Index responded 200 in 9.2320 ms
+2025-08-25 10:50:02.112 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:02.115 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.6192 ms
+2025-08-25 10:50:02.131 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:02.133 +03:00 [INF] HTTP GET / responded 200 in 3.0751 ms
+2025-08-25 10:50:05.437 +03:00 [INF] HTTP GET /OdemeTaksiti/Edit/12 responded 200 in 22.7893 ms
+2025-08-25 10:50:05.463 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:05.466 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.7403 ms
+2025-08-25 10:50:05.482 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:05.484 +03:00 [INF] HTTP GET / responded 200 in 2.1155 ms
+2025-08-25 10:50:08.318 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 10:50:08.323 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 5.9224 ms
+2025-08-25 10:50:08.355 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:08.358 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.5237 ms
+2025-08-25 10:50:08.372 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:08.375 +03:00 [INF] HTTP GET / responded 200 in 3.6394 ms
+2025-08-25 10:50:09.862 +03:00 [INF] HTTP GET /OdemeTaksiti/Delete/12 responded 200 in 20.8273 ms
+2025-08-25 10:50:09.890 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:09.892 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.2513 ms
+2025-08-25 10:50:09.905 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:09.909 +03:00 [INF] HTTP GET / responded 200 in 4.2812 ms
+2025-08-25 10:50:13.363 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 10:50:13.380 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 17.3403 ms
+2025-08-25 10:50:13.413 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:13.428 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 16.0644 ms
+2025-08-25 10:50:13.433 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:13.435 +03:00 [INF] HTTP GET / responded 200 in 2.0372 ms
+2025-08-25 10:50:15.154 +03:00 [INF] HTTP GET /OdemeTaksiti/Details/12 responded 200 in 21.9982 ms
+2025-08-25 10:50:15.182 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:15.189 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 7.8689 ms
+2025-08-25 10:50:15.198 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:15.199 +03:00 [INF] HTTP GET / responded 200 in 2.0201 ms
+2025-08-25 10:50:16.778 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 10:50:16.794 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 16.5040 ms
+2025-08-25 10:50:16.826 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:16.841 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 16.0243 ms
+2025-08-25 10:50:16.850 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:16.852 +03:00 [INF] HTTP GET / responded 200 in 2.6843 ms
+2025-08-25 10:50:18.429 +03:00 [INF] HTTP GET /OdemeTaksiti/Edit/12 responded 200 in 6.5744 ms
+2025-08-25 10:50:18.458 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:18.467 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 9.1316 ms
+2025-08-25 10:50:18.478 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:18.481 +03:00 [INF] HTTP GET / responded 200 in 2.7111 ms
+2025-08-25 10:50:20.386 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 10:50:20.397 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 11.1833 ms
+2025-08-25 10:50:20.427 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:20.430 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.9327 ms
+2025-08-25 10:50:20.446 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:20.448 +03:00 [INF] HTTP GET / responded 200 in 2.5681 ms
+2025-08-25 10:50:22.042 +03:00 [INF] HTTP GET /OdemeTaksiti/Details/12 responded 200 in 6.8819 ms
+2025-08-25 10:50:22.070 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:22.073 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.7765 ms
+2025-08-25 10:50:22.087 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:22.089 +03:00 [INF] HTTP GET / responded 200 in 3.1588 ms
+2025-08-25 10:50:23.864 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 10:50:23.869 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 6.2719 ms
+2025-08-25 10:50:23.897 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:23.900 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.4313 ms
+2025-08-25 10:50:23.915 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:23.917 +03:00 [INF] HTTP GET / responded 200 in 2.9614 ms
+2025-08-25 10:50:25.323 +03:00 [INF] HTTP GET /OdemeTaksiti/Delete/12 responded 200 in 3.5861 ms
+2025-08-25 10:50:25.350 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:25.353 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.6178 ms
+2025-08-25 10:50:25.369 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:25.370 +03:00 [INF] HTTP GET / responded 200 in 2.5002 ms
+2025-08-25 10:50:26.995 +03:00 [INF] HTTP POST /OdemeTaksiti/Delete/12 responded 302 in 17.7796 ms
+2025-08-25 10:50:27.000 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 10:50:27.004 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 4.0978 ms
+2025-08-25 10:50:27.037 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:27.040 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.2284 ms
+2025-08-25 10:50:27.055 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:27.058 +03:00 [INF] HTTP GET / responded 200 in 3.0433 ms
+2025-08-25 10:50:39.826 +03:00 [INF] HTTP GET /OdemeTaksiti/Delete/12 responded 404 in 11.3717 ms
+2025-08-25 10:50:44.754 +03:00 [INF] HTTP GET /OdemeTaksiti/Edit/12 responded 404 in 2.5767 ms
+2025-08-25 10:50:46.887 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 10:50:47.736 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 850.3965 ms
+2025-08-25 10:50:49.981 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:50:49.986 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 9.6292 ms
+2025-08-25 10:50:50.005 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:50.009 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.9271 ms
+2025-08-25 10:50:50.017 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:50.020 +03:00 [INF] HTTP GET / responded 200 in 3.4759 ms
+2025-08-25 10:50:51.860 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:50:51.864 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.9551 ms
+2025-08-25 10:50:51.880 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:51.884 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.9869 ms
+2025-08-25 10:50:51.893 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:51.895 +03:00 [INF] HTTP GET / responded 200 in 2.3265 ms
+2025-08-25 10:50:52.435 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:50:52.438 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.6614 ms
+2025-08-25 10:50:52.452 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:52.455 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.4128 ms
+2025-08-25 10:50:52.468 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:52.470 +03:00 [INF] HTTP GET / responded 200 in 2.9380 ms
+2025-08-25 10:50:52.637 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:50:52.639 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 4.8898 ms
+2025-08-25 10:50:52.653 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:52.656 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.5379 ms
+2025-08-25 10:50:52.670 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:52.672 +03:00 [INF] HTTP GET / responded 200 in 2.4625 ms
+2025-08-25 10:50:52.846 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:50:52.849 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.1312 ms
+2025-08-25 10:50:52.864 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:52.867 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.6691 ms
+2025-08-25 10:50:52.880 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:52.882 +03:00 [INF] HTTP GET / responded 200 in 3.0621 ms
+2025-08-25 10:50:53.057 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:50:53.060 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 6.5735 ms
+2025-08-25 10:50:53.075 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:53.078 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.2933 ms
+2025-08-25 10:50:53.091 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:53.092 +03:00 [INF] HTTP GET / responded 200 in 2.2008 ms
+2025-08-25 10:50:53.235 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:50:53.238 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.0745 ms
+2025-08-25 10:50:53.253 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:53.257 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 5.1215 ms
+2025-08-25 10:50:53.268 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:53.272 +03:00 [INF] HTTP GET / responded 200 in 4.0919 ms
+2025-08-25 10:50:53.444 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:50:53.447 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.6015 ms
+2025-08-25 10:50:53.464 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:50:53.467 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.7412 ms
+2025-08-25 10:50:53.480 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:50:53.482 +03:00 [INF] HTTP GET / responded 200 in 2.3702 ms
+2025-08-25 10:51:12.095 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:51:12.097 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 4.1938 ms
+2025-08-25 10:51:12.140 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:12.145 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 5.4887 ms
+2025-08-25 10:51:12.177 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:12.181 +03:00 [INF] HTTP GET / responded 200 in 5.4879 ms
+2025-08-25 10:51:12.688 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:51:12.690 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.2654 ms
+2025-08-25 10:51:12.732 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:12.737 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 5.9839 ms
+2025-08-25 10:51:12.751 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:12.753 +03:00 [INF] HTTP GET / responded 200 in 2.6575 ms
+2025-08-25 10:51:12.906 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:51:12.909 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.4615 ms
+2025-08-25 10:51:12.924 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:12.927 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 4.2318 ms
+2025-08-25 10:51:12.940 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:12.943 +03:00 [INF] HTTP GET / responded 200 in 2.9541 ms
+2025-08-25 10:51:13.109 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:51:13.112 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 6.0387 ms
+2025-08-25 10:51:13.129 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:13.132 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.8384 ms
+2025-08-25 10:51:13.142 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:13.144 +03:00 [INF] HTTP GET / responded 200 in 3.2208 ms
+2025-08-25 10:51:13.305 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:51:13.307 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.4100 ms
+2025-08-25 10:51:13.323 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:13.326 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.7874 ms
+2025-08-25 10:51:13.337 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:13.340 +03:00 [INF] HTTP GET / responded 200 in 3.3259 ms
+2025-08-25 10:51:18.193 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:51:18.195 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 5.2514 ms
+2025-08-25 10:51:18.215 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:18.218 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.3239 ms
+2025-08-25 10:51:18.226 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:18.229 +03:00 [INF] HTTP GET / responded 200 in 3.4942 ms
+2025-08-25 10:51:20.355 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:51:20.358 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 16.9614 ms
+2025-08-25 10:51:20.375 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:20.384 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 9.6748 ms
+2025-08-25 10:51:20.394 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:20.396 +03:00 [INF] HTTP GET / responded 200 in 2.3305 ms
+2025-08-25 10:51:20.636 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:51:20.639 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 13.4124 ms
+2025-08-25 10:51:20.654 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:20.670 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 16.5825 ms
+2025-08-25 10:51:20.677 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:20.679 +03:00 [INF] HTTP GET / responded 200 in 3.1399 ms
+2025-08-25 10:51:20.902 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:51:20.904 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 26.5797 ms
+2025-08-25 10:51:20.925 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:20.942 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 17.9938 ms
+2025-08-25 10:51:20.947 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:20.949 +03:00 [INF] HTTP GET / responded 200 in 2.9860 ms
+2025-08-25 10:51:21.101 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:51:21.103 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 17.4720 ms
+2025-08-25 10:51:21.118 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:21.134 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 16.8688 ms
+2025-08-25 10:51:21.140 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:21.142 +03:00 [INF] HTTP GET / responded 200 in 2.6772 ms
+2025-08-25 10:51:21.329 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=4
+2025-08-25 10:51:21.332 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 18.3200 ms
+2025-08-25 10:51:21.353 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:21.371 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 19.2031 ms
+2025-08-25 10:51:21.376 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:21.378 +03:00 [INF] HTTP GET / responded 200 in 1.9926 ms
+2025-08-25 10:51:27.152 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-25 10:51:27.155 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 10:51:27.177 +03:00 [INF] HTTP GET /TaksitliOdeme/Index responded 200 in 25.0913 ms
+2025-08-25 10:51:27.203 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:27.213 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 10.3347 ms
+2025-08-25 10:51:27.227 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:27.228 +03:00 [INF] HTTP GET / responded 200 in 2.6074 ms
+2025-08-25 10:51:28.432 +03:00 [INF] TaksitliOdemeController -> Create çalıştı.
+2025-08-25 10:51:28.444 +03:00 [INF] HTTP GET /TaksitliOdeme/Create responded 200 in 13.0214 ms
+2025-08-25 10:51:28.474 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:28.477 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.5177 ms
+2025-08-25 10:51:28.487 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:28.489 +03:00 [INF] HTTP GET / responded 200 in 2.5286 ms
+2025-08-25 10:51:39.970 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 10:51:39.993 +03:00 [INF] 📩 Bildirim eklendi -> KullanıcıId: 2, Mesaj: Yeni taksitli ödeme eklendi. Toplam: 230,00₺, Taksit Sayısı: 2
+2025-08-25 10:51:39.994 +03:00 [INF] HTTP POST /TaksitliOdeme/Create responded 302 in 31.9517 ms
+2025-08-25 10:51:40.000 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-25 10:51:40.001 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 10:51:40.004 +03:00 [INF] HTTP GET /TaksitliOdeme responded 200 in 5.3656 ms
+2025-08-25 10:51:40.022 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:40.025 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.7240 ms
+2025-08-25 10:51:40.036 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:40.039 +03:00 [INF] HTTP GET / responded 200 in 3.0764 ms
+2025-08-25 10:51:49.212 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 10:51:50.411 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1199.0409 ms
+2025-08-25 10:51:50.429 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:50.432 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 3.7917 ms
+2025-08-25 10:51:50.445 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:50.448 +03:00 [INF] HTTP GET / responded 200 in 3.4676 ms
+2025-08-25 10:51:51.187 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=5
+2025-08-25 10:51:51.189 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 8.2835 ms
+2025-08-25 10:51:51.206 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:51:51.211 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 5.5201 ms
+2025-08-25 10:51:51.222 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:51:51.224 +03:00 [INF] HTTP GET / responded 200 in 2.7129 ms
+2025-08-25 10:56:37.068 +03:00 [INF] Application is shutting down...
+2025-08-25 10:56:44.790 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-25 10:56:44.817 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 10:56:44.819 +03:00 [INF] Hosting environment: Development
+2025-08-25 10:56:44.821 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-25 10:56:49.169 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-25 10:56:49.546 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 10:56:49.550 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 10:56:49.994 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=5
+2025-08-25 10:56:50.043 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 876.2613 ms
+2025-08-25 10:56:50.093 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:56:50.198 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 113.6206 ms
+2025-08-25 10:56:50.207 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:56:50.212 +03:00 [INF] HTTP GET / responded 200 in 9.8134 ms
+2025-08-25 10:56:54.120 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 10:56:55.414 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1317.5315 ms
+2025-08-25 10:56:56.839 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 10:56:56.927 +03:00 [INF] HTTP GET /OdemeTaksiti/Index responded 200 in 94.5259 ms
+2025-08-25 10:56:56.992 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:56:57.007 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 16.0376 ms
+2025-08-25 10:56:57.018 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:56:57.022 +03:00 [INF] HTTP GET / responded 200 in 5.4886 ms
+2025-08-25 10:56:58.708 +03:00 [INF] OdemeTaksitiController -> Create çalıştı.
+2025-08-25 10:56:58.795 +03:00 [INF] HTTP GET /OdemeTaksiti/Create responded 200 in 93.4615 ms
+2025-08-25 10:56:58.829 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:56:58.835 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.9724 ms
+2025-08-25 10:56:58.845 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:56:58.849 +03:00 [INF] HTTP GET / responded 200 in 4.9272 ms
+2025-08-25 10:57:15.410 +03:00 [INF] HTTP POST /OdemeTaksiti/Create responded 302 in 278.7048 ms
+2025-08-25 10:57:15.424 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 10:57:15.433 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 9.4750 ms
+2025-08-25 10:57:15.466 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:57:15.473 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 7.0009 ms
+2025-08-25 10:57:15.486 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:57:15.489 +03:00 [INF] HTTP GET / responded 200 in 4.7164 ms
+2025-08-25 10:57:20.885 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=6
+2025-08-25 10:57:20.891 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 14.5165 ms
+2025-08-25 10:57:20.911 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 10:57:20.918 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 7.4324 ms
+2025-08-25 10:57:20.934 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 10:57:20.940 +03:00 [INF] HTTP GET / responded 200 in 6.8841 ms
+2025-08-25 11:04:32.513 +03:00 [INF] Application is shutting down...
+2025-08-25 11:04:37.124 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-25 11:04:37.152 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 11:04:37.154 +03:00 [INF] Hosting environment: Development
+2025-08-25 11:04:37.156 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-25 11:04:40.009 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-25 11:04:40.112 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:04:40.394 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:04:40.397 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:04:42.111 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 2103.7660 ms
+2025-08-25 11:04:42.147 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:04:42.209 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 70.0086 ms
+2025-08-25 11:04:42.218 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:04:42.223 +03:00 [INF] HTTP GET / responded 200 in 9.1887 ms
+2025-08-25 11:04:44.917 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-25 11:04:44.922 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 11:04:45.046 +03:00 [INF] HTTP GET /TaksitliOdeme/Index responded 200 in 139.3284 ms
+2025-08-25 11:04:45.064 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:04:45.074 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 11.5564 ms
+2025-08-25 11:04:45.084 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:04:45.088 +03:00 [INF] HTTP GET / responded 200 in 4.5348 ms
+2025-08-25 11:04:46.040 +03:00 [INF] TaksitliOdemeController -> Create çalıştı.
+2025-08-25 11:04:46.088 +03:00 [INF] HTTP GET /TaksitliOdeme/Create responded 200 in 52.9735 ms
+2025-08-25 11:04:46.111 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:04:46.118 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 7.0762 ms
+2025-08-25 11:04:46.129 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:04:46.133 +03:00 [INF] HTTP GET / responded 200 in 5.0119 ms
+2025-08-25 11:04:59.357 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 11:04:59.567 +03:00 [INF] 📩 Bildirim eklendi -> KullanıcıId: 2, Mesaj: Yeni taksitli ödeme eklendi. Toplam: 400,00₺, Taksit Sayısı: 3
+2025-08-25 11:04:59.574 +03:00 [INF] HTTP POST /TaksitliOdeme/Create responded 302 in 267.0079 ms
+2025-08-25 11:04:59.588 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-25 11:04:59.591 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 11:04:59.605 +03:00 [INF] HTTP GET /TaksitliOdeme responded 200 in 18.1453 ms
+2025-08-25 11:04:59.632 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:04:59.640 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 8.2904 ms
+2025-08-25 11:04:59.647 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:04:59.652 +03:00 [INF] HTTP GET / responded 200 in 5.1921 ms
+2025-08-25 11:05:05.159 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:05:05.982 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 825.4510 ms
+2025-08-25 11:05:06.005 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:05:06.014 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 10.7599 ms
+2025-08-25 11:05:06.031 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:05:06.036 +03:00 [INF] HTTP GET / responded 200 in 6.9353 ms
+2025-08-25 11:05:09.885 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=7
+2025-08-25 11:05:09.898 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 44.8484 ms
+2025-08-25 11:05:09.935 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:05:09.941 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.8434 ms
+2025-08-25 11:05:09.953 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:05:09.957 +03:00 [INF] HTTP GET / responded 200 in 4.9810 ms
+2025-08-25 11:07:18.370 +03:00 [INF] Application is shutting down...
+2025-08-25 11:07:22.819 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-25 11:07:22.846 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 11:07:22.849 +03:00 [INF] Hosting environment: Development
+2025-08-25 11:07:22.851 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-25 11:07:25.186 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-25 11:07:25.552 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:07:25.555 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:07:26.075 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=7
+2025-08-25 11:07:26.122 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 938.3951 ms
+2025-08-25 11:07:26.178 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:07:26.259 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 88.3711 ms
+2025-08-25 11:07:26.269 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:07:26.275 +03:00 [INF] HTTP GET / responded 200 in 10.7925 ms
+2025-08-25 11:07:28.040 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:07:29.021 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 993.5501 ms
+2025-08-25 11:07:31.028 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 11:07:31.107 +03:00 [INF] HTTP GET /OdemeTaksiti/Index responded 200 in 86.2252 ms
+2025-08-25 11:07:31.159 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:07:31.168 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 9.7783 ms
+2025-08-25 11:07:31.178 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:07:31.182 +03:00 [INF] HTTP GET / responded 200 in 4.5457 ms
+2025-08-25 11:07:32.267 +03:00 [INF] OdemeTaksitiController -> Create çalıştı.
+2025-08-25 11:07:32.348 +03:00 [INF] HTTP GET /OdemeTaksiti/Create responded 200 in 87.5529 ms
+2025-08-25 11:07:32.379 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:07:32.386 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 7.1496 ms
+2025-08-25 11:07:32.403 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:07:32.407 +03:00 [INF] HTTP GET / responded 200 in 4.9691 ms
+2025-08-25 11:07:47.504 +03:00 [INF] HTTP POST /OdemeTaksiti/Create responded 302 in 198.3000 ms
+2025-08-25 11:07:47.517 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 11:07:47.533 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 16.3148 ms
+2025-08-25 11:07:47.576 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:07:47.582 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.4461 ms
+2025-08-25 11:07:47.599 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:07:47.603 +03:00 [INF] HTTP GET / responded 200 in 5.0159 ms
+2025-08-25 11:07:52.288 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:07:53.032 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 745.9809 ms
+2025-08-25 11:07:53.051 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:07:53.069 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 18.8605 ms
+2025-08-25 11:07:53.080 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:07:53.086 +03:00 [INF] HTTP GET / responded 200 in 6.5187 ms
+2025-08-25 11:07:54.999 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=7
+2025-08-25 11:07:55.004 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 23.4961 ms
+2025-08-25 11:07:55.023 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:07:55.037 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 15.4792 ms
+2025-08-25 11:07:55.045 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:07:55.049 +03:00 [INF] HTTP GET / responded 200 in 5.3144 ms
+2025-08-25 11:08:41.330 +03:00 [INF] Application is shutting down...
+2025-08-25 11:08:45.418 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-25 11:08:45.447 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 11:08:45.449 +03:00 [INF] Hosting environment: Development
+2025-08-25 11:08:45.451 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-25 11:08:51.148 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-25 11:08:51.244 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:08:51.530 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:08:51.535 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:08:53.077 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1930.4801 ms
+2025-08-25 11:08:53.116 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:08:53.256 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 152.0083 ms
+2025-08-25 11:08:53.274 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:08:53.284 +03:00 [INF] HTTP GET / responded 200 in 17.4365 ms
+2025-08-25 11:08:56.137 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 11:08:56.296 +03:00 [INF] HTTP GET /OdemeTaksiti/Index responded 200 in 168.1379 ms
+2025-08-25 11:08:56.359 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:08:56.372 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 17.1055 ms
+2025-08-25 11:08:56.381 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:08:56.385 +03:00 [INF] HTTP GET / responded 200 in 4.1763 ms
+2025-08-25 11:08:57.274 +03:00 [INF] OdemeTaksitiController -> Create çalıştı.
+2025-08-25 11:08:57.337 +03:00 [INF] HTTP GET /OdemeTaksiti/Create responded 200 in 66.7840 ms
+2025-08-25 11:08:57.371 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:08:57.389 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 19.2289 ms
+2025-08-25 11:08:57.398 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:08:57.401 +03:00 [INF] HTTP GET / responded 200 in 4.3901 ms
+2025-08-25 11:09:07.740 +03:00 [INF] HTTP POST /OdemeTaksiti/Create responded 302 in 312.9180 ms
+2025-08-25 11:09:07.750 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 11:09:07.764 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 13.8288 ms
+2025-08-25 11:09:07.801 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:09:07.810 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 10.1230 ms
+2025-08-25 11:09:07.820 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:09:07.824 +03:00 [INF] HTTP GET / responded 200 in 4.6674 ms
+2025-08-25 11:09:11.893 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:09:12.674 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 784.3449 ms
+2025-08-25 11:09:12.695 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:09:12.701 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.5171 ms
+2025-08-25 11:09:12.712 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:09:12.715 +03:00 [INF] HTTP GET / responded 200 in 4.8854 ms
+2025-08-25 11:09:16.935 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:09:17.874 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 940.4604 ms
+2025-08-25 11:09:17.895 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:09:17.902 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 8.2944 ms
+2025-08-25 11:09:17.916 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:09:17.919 +03:00 [INF] HTTP GET / responded 200 in 3.7448 ms
+2025-08-25 11:09:48.014 +03:00 [INF] Application is shutting down...
+2025-08-25 11:09:52.091 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-25 11:09:52.115 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 11:09:52.117 +03:00 [INF] Hosting environment: Development
+2025-08-25 11:09:52.119 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-25 11:09:54.192 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-25 11:09:54.293 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:09:54.589 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:09:54.592 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:10:17.897 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 23704.3085 ms
+2025-08-25 11:10:17.937 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:10:18.066 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 140.9424 ms
+2025-08-25 11:10:18.086 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:10:18.096 +03:00 [INF] HTTP GET / responded 200 in 16.4257 ms
+2025-08-25 11:10:21.294 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=7
+2025-08-25 11:10:21.308 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 142.4477 ms
+2025-08-25 11:10:21.345 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:10:21.356 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 11.5089 ms
+2025-08-25 11:10:21.366 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:10:21.369 +03:00 [INF] HTTP GET / responded 200 in 4.0877 ms
+2025-08-25 11:26:20.102 +03:00 [INF] Application is shutting down...
+2025-08-25 11:26:27.054 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-25 11:26:27.081 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 11:26:27.083 +03:00 [INF] Hosting environment: Development
+2025-08-25 11:26:27.084 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-25 11:26:32.011 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-25 11:26:32.108 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:26:32.411 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:26:32.415 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:26:34.090 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 2080.2788 ms
+2025-08-25 11:26:34.127 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 2.0006 ms
+2025-08-25 11:26:34.133 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:26:34.208 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 83.2889 ms
+2025-08-25 11:26:34.219 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:26:34.226 +03:00 [INF] HTTP GET / responded 200 in 11.5831 ms
+2025-08-25 11:26:38.254 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=7
+2025-08-25 11:26:38.264 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 143.7854 ms
+2025-08-25 11:26:38.301 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.7005 ms
+2025-08-25 11:26:38.302 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:26:38.320 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 19.6062 ms
+2025-08-25 11:26:38.329 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:26:38.334 +03:00 [INF] HTTP GET / responded 200 in 6.2905 ms
+2025-08-25 11:26:41.861 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:26:42.655 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 797.0526 ms
+2025-08-25 11:26:46.194 +03:00 [INF] TaksitliOdemeController -> Create çalıştı.
+2025-08-25 11:26:46.256 +03:00 [INF] HTTP GET /TaksitliOdeme/Create responded 200 in 66.2822 ms
+2025-08-25 11:26:46.285 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.3978 ms
+2025-08-25 11:26:46.286 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:26:46.299 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 14.2597 ms
+2025-08-25 11:26:46.311 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:26:46.315 +03:00 [INF] HTTP GET / responded 200 in 4.7520 ms
+2025-08-25 11:26:54.017 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 11:26:54.230 +03:00 [INF] 📩 Bildirim eklendi -> KullanıcıId: 2, Mesaj: Yeni taksitli ödeme eklendi. Toplam: 100,00₺, Taksit Sayısı: 1
+2025-08-25 11:26:54.236 +03:00 [INF] HTTP POST /TaksitliOdeme/Create responded 302 in 259.2696 ms
+2025-08-25 11:26:54.251 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-25 11:26:54.255 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 11:26:54.294 +03:00 [INF] HTTP GET /TaksitliOdeme responded 200 in 48.4687 ms
+2025-08-25 11:26:54.330 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.3749 ms
+2025-08-25 11:26:54.330 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:26:54.342 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 12.9988 ms
+2025-08-25 11:26:54.354 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:26:54.358 +03:00 [INF] HTTP GET / responded 200 in 4.6735 ms
+2025-08-25 11:27:05.366 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:27:06.235 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 870.0003 ms
+2025-08-25 11:27:06.255 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.3688 ms
+2025-08-25 11:27:06.262 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:27:06.269 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 8.5603 ms
+2025-08-25 11:27:06.286 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:27:06.289 +03:00 [INF] HTTP GET / responded 200 in 4.7576 ms
+2025-08-25 11:27:07.648 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=8
+2025-08-25 11:27:07.666 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 44.6880 ms
+2025-08-25 11:27:07.691 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.5361 ms
+2025-08-25 11:27:07.692 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:27:07.706 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 15.0634 ms
+2025-08-25 11:27:07.715 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:27:07.718 +03:00 [INF] HTTP GET / responded 200 in 3.9615 ms
+2025-08-25 11:27:37.985 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.3222 ms
+2025-08-25 11:28:07.975 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.4094 ms
+2025-08-25 11:28:12.541 +03:00 [INF] Application is shutting down...
+2025-08-25 11:29:34.732 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-25 11:29:34.758 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 11:29:34.760 +03:00 [INF] Hosting environment: Development
+2025-08-25 11:29:34.763 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-25 11:29:37.719 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-25 11:29:37.744 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 28.1323 ms
+2025-08-25 11:29:38.789 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:29:38.793 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:29:39.260 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=8
+2025-08-25 11:29:39.308 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 871.5636 ms
+2025-08-25 11:29:39.357 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:29:39.441 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 90.4153 ms
+2025-08-25 11:29:39.452 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:29:39.457 +03:00 [INF] HTTP GET / responded 200 in 9.1596 ms
+2025-08-25 11:29:40.744 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:29:41.774 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1050.3237 ms
+2025-08-25 11:29:42.979 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=8
+2025-08-25 11:29:42.984 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 15.9642 ms
+2025-08-25 11:29:43.017 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:29:43.026 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 10.5005 ms
+2025-08-25 11:29:43.037 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:29:43.042 +03:00 [INF] HTTP GET / responded 200 in 6.2058 ms
+2025-08-25 11:29:45.652 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=8
+2025-08-25 11:29:45.658 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 12.9359 ms
+2025-08-25 11:29:45.681 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:29:45.687 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.9061 ms
+2025-08-25 11:29:45.697 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:29:45.702 +03:00 [INF] HTTP GET / responded 200 in 5.6717 ms
+2025-08-25 11:38:15.596 +03:00 [INF] Application is shutting down...
+2025-08-25 11:38:19.320 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-25 11:38:19.346 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 11:38:19.348 +03:00 [INF] Hosting environment: Development
+2025-08-25 11:38:19.350 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-25 11:38:23.524 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-25 11:38:23.618 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:38:23.904 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:38:23.908 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:39:11.753 +03:00 [INF] IslemController -> Index çalıştı.
+2025-08-25 11:39:12.003 +03:00 [INF] HTTP GET /Islem responded 200 in 259.8513 ms
+2025-08-25 11:39:12.045 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 1.9010 ms
+2025-08-25 11:39:12.051 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:39:12.179 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 143.7721 ms
+2025-08-25 11:39:12.205 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:39:12.224 +03:00 [INF] HTTP GET / responded 200 in 26.8505 ms
+2025-08-25 11:39:24.027 +03:00 [INF] IslemController -> Create çalıştı.
+2025-08-25 11:39:24.244 +03:00 [INF] HTTP GET /Islem/Create responded 200 in 223.6267 ms
+2025-08-25 11:39:24.274 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:39:24.279 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.4444 ms
+2025-08-25 11:39:24.284 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 12.5745 ms
+2025-08-25 11:39:24.297 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:39:24.304 +03:00 [INF] HTTP GET / responded 200 in 8.3282 ms
+2025-08-25 11:39:32.769 +03:00 [INF] TaksitliOdemeController -> Create çalıştı.
+2025-08-25 11:39:32.807 +03:00 [INF] HTTP GET /TaksitliOdeme/Create responded 200 in 42.1036 ms
+2025-08-25 11:39:32.837 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:39:32.841 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.3784 ms
+2025-08-25 11:39:32.844 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 8.4224 ms
+2025-08-25 11:39:32.856 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:39:32.861 +03:00 [INF] HTTP GET / responded 200 in 5.2857 ms
+2025-08-25 11:39:46.222 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 11:39:46.476 +03:00 [INF] 📩 Bildirim eklendi -> KullanıcıId: 2, Mesaj: Yeni taksitli ödeme eklendi. Toplam: 150,00₺, Taksit Sayısı: 1
+2025-08-25 11:39:46.484 +03:00 [INF] HTTP POST /TaksitliOdeme/Create responded 302 in 330.4925 ms
+2025-08-25 11:39:46.503 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-25 11:39:46.510 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 11:39:46.589 +03:00 [INF] HTTP GET /TaksitliOdeme responded 200 in 94.6934 ms
+2025-08-25 11:39:46.625 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:39:46.632 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.3492 ms
+2025-08-25 11:39:46.639 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 14.3526 ms
+2025-08-25 11:39:46.657 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:39:46.662 +03:00 [INF] HTTP GET / responded 200 in 6.1287 ms
+2025-08-25 11:39:55.988 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:40:03.328 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 7343.4770 ms
+2025-08-25 11:40:03.361 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:40:03.362 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.4668 ms
+2025-08-25 11:40:03.369 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 9.7397 ms
+2025-08-25 11:40:03.382 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:40:03.387 +03:00 [INF] HTTP GET / responded 200 in 5.6187 ms
+2025-08-25 11:40:04.497 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 499 in 100976.0822 ms
+2025-08-25 11:40:07.175 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=9
+2025-08-25 11:40:07.191 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 75.7565 ms
+2025-08-25 11:40:07.236 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:40:07.236 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.4010 ms
+2025-08-25 11:40:07.246 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 10.6333 ms
+2025-08-25 11:40:07.262 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:40:07.266 +03:00 [INF] HTTP GET / responded 200 in 5.8527 ms
+2025-08-25 11:40:14.650 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=9
+2025-08-25 11:40:14.655 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 11.2305 ms
+2025-08-25 11:40:14.674 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:40:14.678 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.2928 ms
+2025-08-25 11:40:14.679 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.1600 ms
+2025-08-25 11:40:14.700 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:40:14.706 +03:00 [INF] HTTP GET / responded 200 in 7.2946 ms
+2025-08-25 11:40:33.985 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.5345 ms
+2025-08-25 11:41:03.977 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.5904 ms
+2025-08-25 11:41:33.980 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.2643 ms
+2025-08-25 11:42:03.974 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.3499 ms
+2025-08-25 11:42:12.198 +03:00 [INF] Application is shutting down...
+2025-08-25 11:42:15.840 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-25 11:42:15.866 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 11:42:15.868 +03:00 [INF] Hosting environment: Development
+2025-08-25 11:42:15.870 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-25 11:42:19.524 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-25 11:42:19.621 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:42:19.931 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:42:19.936 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:42:33.376 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 3.1341 ms
+2025-08-25 11:43:03.383 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 5.3177 ms
+2025-08-25 11:43:33.378 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.8261 ms
+2025-08-25 11:43:55.825 +03:00 [INF] Application is shutting down...
+2025-08-25 11:44:00.498 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+ ---> System.TimeoutException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: Bir iş parçacığı çıkışı veya bir uygulama isteği nedeniyle G/Ç işlemi iptal edildi..
+ ---> System.Net.Sockets.SocketException (995): Bir iş parçacığı çıkışı veya bir uygulama isteği nedeniyle G/Ç işlemi iptal edildi.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CuzdanUygulamasi.Services.ExchangeRateService.GetRatesAsync(String baseCurrency, String symbols) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Services\ExchangeRateService.cs:line 25
+   at CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync(Int32 id) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\KullaniciController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-08-25 11:44:00.549 +03:00 [ERR] HTTP GET /Kullanici/Details/2 responded 500 in 101028.2194 ms
+2025-08-25 11:44:16.308 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-25 11:44:16.333 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 11:44:16.336 +03:00 [INF] Hosting environment: Development
+2025-08-25 11:44:16.337 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-25 11:44:19.890 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-25 11:44:19.983 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:44:20.256 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:44:20.259 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:44:27.072 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 7180.6840 ms
+2025-08-25 11:44:27.110 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:44:27.113 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 4.6934 ms
+2025-08-25 11:44:27.245 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 143.0584 ms
+2025-08-25 11:44:27.262 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:44:27.281 +03:00 [INF] HTTP GET / responded 200 in 26.6285 ms
+2025-08-25 11:44:32.589 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=9
+2025-08-25 11:44:32.600 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 132.9651 ms
+2025-08-25 11:44:32.636 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:44:32.637 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.7050 ms
+2025-08-25 11:44:32.648 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 13.6158 ms
+2025-08-25 11:44:32.660 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:44:32.665 +03:00 [INF] HTTP GET / responded 200 in 6.0073 ms
+2025-08-25 11:44:40.103 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.9477 ms
+2025-08-25 11:44:42.721 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-25 11:44:42.723 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 11:44:42.769 +03:00 [INF] HTTP GET /TaksitliOdeme/Index responded 200 in 54.2152 ms
+2025-08-25 11:44:42.796 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.5533 ms
+2025-08-25 11:44:42.797 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:44:42.812 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 16.3461 ms
+2025-08-25 11:44:42.824 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:44:42.831 +03:00 [INF] HTTP GET / responded 200 in 8.3885 ms
+2025-08-25 11:44:44.577 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 11:44:44.642 +03:00 [INF] HTTP GET /TaksitliOdeme/Edit/1 responded 200 in 75.0120 ms
+2025-08-25 11:44:48.501 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 11:44:48.665 +03:00 [INF] HTTP POST /TaksitliOdeme/Edit/1 responded 302 in 200.5873 ms
+2025-08-25 11:44:48.677 +03:00 [INF] TaksitliOdemeController -> Index çalıştı.
+2025-08-25 11:44:48.682 +03:00 [INF] TaksitliOdemeController -> GetCurrentUserId çalıştı
+2025-08-25 11:44:48.692 +03:00 [INF] HTTP GET /TaksitliOdeme responded 200 in 15.2192 ms
+2025-08-25 11:44:48.709 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:44:48.715 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.4776 ms
+2025-08-25 11:44:48.716 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 7.9718 ms
+2025-08-25 11:44:48.738 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:44:48.742 +03:00 [INF] HTTP GET / responded 200 in 4.6705 ms
+2025-08-25 11:44:51.639 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.4978 ms
+2025-08-25 11:44:53.135 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=9
+2025-08-25 11:44:53.141 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 12.2820 ms
+2025-08-25 11:44:53.162 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:44:53.167 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.6243 ms
+2025-08-25 11:44:53.171 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 9.2555 ms
+2025-08-25 11:44:53.192 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:44:53.197 +03:00 [INF] HTTP GET / responded 200 in 6.5960 ms
+2025-08-25 11:44:56.337 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=9
+2025-08-25 11:44:56.344 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 11.8587 ms
+2025-08-25 11:44:56.364 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:44:56.371 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.6913 ms
+2025-08-25 11:44:56.374 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 9.9268 ms
+2025-08-25 11:44:56.398 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:44:56.402 +03:00 [INF] HTTP GET / responded 200 in 4.8052 ms
+2025-08-25 11:44:58.378 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=9
+2025-08-25 11:44:58.383 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 11.1457 ms
+2025-08-25 11:44:58.407 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.2997 ms
+2025-08-25 11:44:58.408 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:44:58.423 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 16.0409 ms
+2025-08-25 11:44:58.433 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:44:58.439 +03:00 [INF] HTTP GET / responded 200 in 7.0052 ms
+2025-08-25 11:44:58.572 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=9
+2025-08-25 11:44:58.577 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 10.2881 ms
+2025-08-25 11:44:58.595 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:44:58.601 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.4073 ms
+2025-08-25 11:44:58.601 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 7.6660 ms
+2025-08-25 11:44:58.623 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:44:58.629 +03:00 [INF] HTTP GET / responded 200 in 6.2601 ms
+2025-08-25 11:44:58.765 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=9
+2025-08-25 11:44:58.771 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 11.3415 ms
+2025-08-25 11:44:58.794 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.3141 ms
+2025-08-25 11:44:58.794 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:44:58.807 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 13.9339 ms
+2025-08-25 11:44:58.817 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:44:58.822 +03:00 [INF] HTTP GET / responded 200 in 6.1867 ms
+2025-08-25 11:44:58.945 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=9
+2025-08-25 11:44:58.951 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 11.6404 ms
+2025-08-25 11:44:58.976 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.1925 ms
+2025-08-25 11:44:58.976 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:44:58.990 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 15.0055 ms
+2025-08-25 11:44:59.001 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:44:59.006 +03:00 [INF] HTTP GET / responded 200 in 6.0784 ms
+2025-08-25 11:44:59.133 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=9
+2025-08-25 11:44:59.138 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 11.6135 ms
+2025-08-25 11:44:59.159 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:44:59.165 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.6678 ms
+2025-08-25 11:44:59.167 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 8.9568 ms
+2025-08-25 11:44:59.193 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:44:59.198 +03:00 [INF] HTTP GET / responded 200 in 6.7390 ms
+2025-08-25 11:45:02.592 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.4139 ms
+2025-08-25 11:45:03.490 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 11:45:03.580 +03:00 [INF] HTTP GET /OdemeTaksiti/Index responded 200 in 97.7846 ms
+2025-08-25 11:45:03.638 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:45:03.643 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.3851 ms
+2025-08-25 11:45:03.644 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.5002 ms
+2025-08-25 11:45:03.657 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:45:03.660 +03:00 [INF] HTTP GET / responded 200 in 3.6380 ms
+2025-08-25 11:45:06.826 +03:00 [INF] OdemeTaksitiController -> Create çalıştı.
+2025-08-25 11:45:06.854 +03:00 [INF] HTTP GET /OdemeTaksiti/Create responded 200 in 31.3710 ms
+2025-08-25 11:45:06.883 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:45:06.889 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.4738 ms
+2025-08-25 11:45:06.891 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.7675 ms
+2025-08-25 11:45:06.909 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:45:06.913 +03:00 [INF] HTTP GET / responded 200 in 5.4176 ms
+2025-08-25 11:45:16.897 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.5049 ms
+2025-08-25 11:45:17.804 +03:00 [INF] HTTP POST /OdemeTaksiti/Create responded 302 in 164.9093 ms
+2025-08-25 11:45:17.815 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 11:45:17.834 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 19.3626 ms
+2025-08-25 11:45:17.866 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:45:17.875 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.4745 ms
+2025-08-25 11:45:17.880 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 14.1191 ms
+2025-08-25 11:45:17.891 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:45:17.895 +03:00 [INF] HTTP GET / responded 200 in 4.8273 ms
+2025-08-25 11:45:19.885 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.4026 ms
+2025-08-25 11:45:20.426 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.5296 ms
+2025-08-25 11:45:21.811 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:45:27.115 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 1.0541 ms
+2025-08-25 11:45:30.670 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 8861.4602 ms
+2025-08-25 11:45:30.694 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:45:30.695 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.2517 ms
+2025-08-25 11:45:30.701 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 8.1744 ms
+2025-08-25 11:45:30.715 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:45:30.720 +03:00 [INF] HTTP GET / responded 200 in 6.8691 ms
+2025-08-25 11:45:40.697 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.2859 ms
+2025-08-25 11:45:50.976 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.4484 ms
+2025-08-25 11:46:00.986 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.5485 ms
+2025-08-25 11:46:10.983 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.3229 ms
+2025-08-25 11:46:20.973 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.4665 ms
+2025-08-25 11:46:30.987 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.7945 ms
+2025-08-25 11:46:40.990 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.6313 ms
+2025-08-25 11:47:19.984 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.4071 ms
+2025-08-25 11:48:19.977 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.4981 ms
+2025-08-25 11:49:19.995 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.3274 ms
+2025-08-25 11:50:19.979 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.3429 ms
+2025-08-25 11:51:19.981 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.2848 ms
+2025-08-25 11:52:19.987 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.3822 ms
+2025-08-25 11:53:19.988 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.6868 ms
+2025-08-25 11:54:19.975 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.9169 ms
+2025-08-25 11:55:19.984 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 0.3083 ms
+2025-08-25 11:55:24.336 +03:00 [INF] Application is shutting down...
+2025-08-25 11:55:41.600 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-25 11:55:41.627 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 11:55:41.629 +03:00 [INF] Hosting environment: Development
+2025-08-25 11:55:41.630 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-25 11:55:44.942 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-25 11:55:44.969 +03:00 [INF] HTTP GET /Home/GetUnreadNotificationCount responded 404 in 28.4819 ms
+2025-08-25 11:55:46.038 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:55:46.349 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:55:46.353 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 11:55:48.073 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 2119.9692 ms
+2025-08-25 11:55:48.124 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:55:48.187 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 75.2940 ms
+2025-08-25 11:55:48.197 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:55:48.206 +03:00 [INF] HTTP GET / responded 200 in 12.4881 ms
+2025-08-25 11:56:36.999 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 11:56:37.212 +03:00 [INF] HTTP GET /OdemeTaksiti/Index responded 200 in 225.6967 ms
+2025-08-25 11:56:37.297 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:56:37.317 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 20.9319 ms
+2025-08-25 11:56:37.325 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:56:37.330 +03:00 [INF] HTTP GET / responded 200 in 6.2807 ms
+2025-08-25 11:56:39.287 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 11:56:40.091 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 807.7569 ms
+2025-08-25 11:56:41.522 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=10
+2025-08-25 11:56:41.537 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 170.0152 ms
+2025-08-25 11:56:41.570 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 11:56:41.576 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 7.1612 ms
+2025-08-25 11:56:41.590 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 11:56:41.593 +03:00 [INF] HTTP GET / responded 200 in 3.9761 ms
+2025-08-25 12:03:37.448 +03:00 [INF] Application is shutting down...
+2025-08-25 12:03:41.477 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-25 12:03:41.505 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 12:03:41.507 +03:00 [INF] Hosting environment: Development
+2025-08-25 12:03:41.509 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-25 12:03:44.292 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-25 12:03:44.395 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 12:03:44.693 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 12:03:44.696 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 12:03:46.223 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 1933.5922 ms
+2025-08-25 12:03:46.268 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 12:03:46.325 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 63.3374 ms
+2025-08-25 12:03:46.336 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 12:03:46.342 +03:00 [INF] HTTP GET / responded 200 in 10.1738 ms
+2025-08-25 12:03:51.772 +03:00 [INF] Bildirimler -> KullanıcıId=2, Bildirim sayısı=10
+2025-08-25 12:03:51.788 +03:00 [INF] HTTP GET /Home/Bildirimler responded 200 in 160.7789 ms
+2025-08-25 12:03:51.841 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 12:03:51.852 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 11.9100 ms
+2025-08-25 12:03:51.863 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 12:03:51.868 +03:00 [INF] HTTP GET / responded 200 in 6.7603 ms
+2025-08-25 12:03:54.963 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 12:03:55.656 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 695.0453 ms
+2025-08-25 12:03:57.565 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 12:03:57.659 +03:00 [INF] HTTP GET /OdemeTaksiti/Index responded 200 in 101.5588 ms
+2025-08-25 12:03:57.716 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 12:03:57.726 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 11.5746 ms
+2025-08-25 12:03:57.739 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 12:03:57.743 +03:00 [INF] HTTP GET / responded 200 in 4.3894 ms
+2025-08-25 12:03:58.489 +03:00 [INF] OdemeTaksitiController -> Create çalıştı.
+2025-08-25 12:03:58.531 +03:00 [INF] HTTP GET /OdemeTaksiti/Create responded 200 in 45.8432 ms
+2025-08-25 12:03:58.556 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 12:03:58.562 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.3490 ms
+2025-08-25 12:03:58.575 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 12:03:58.579 +03:00 [INF] HTTP GET / responded 200 in 4.7688 ms
+2025-08-25 12:04:08.692 +03:00 [INF] HTTP POST /OdemeTaksiti/Create responded 302 in 325.7288 ms
+2025-08-25 12:04:08.718 +03:00 [INF] OdemeTaksitiController -> Index çalıştı.
+2025-08-25 12:04:08.744 +03:00 [INF] HTTP GET /OdemeTaksiti responded 200 in 26.8682 ms
+2025-08-25 12:04:08.786 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 12:04:08.794 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 8.2647 ms
+2025-08-25 12:04:08.805 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 12:04:08.808 +03:00 [INF] HTTP GET / responded 200 in 3.7580 ms
+2025-08-25 12:04:18.399 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 12:04:19.133 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 734.7977 ms
+2025-08-25 12:04:19.157 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 12:04:19.162 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 6.2643 ms
+2025-08-25 12:04:19.176 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 12:04:19.181 +03:00 [INF] HTTP GET / responded 200 in 6.2847 ms
+2025-08-25 12:29:47.340 +03:00 [INF] Application is shutting down...
+2025-08-25 12:29:54.740 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-25 12:29:54.771 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 12:29:54.774 +03:00 [INF] Hosting environment: Development
+2025-08-25 12:29:54.775 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-25 12:29:58.657 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-25 12:29:58.756 +03:00 [INF] Action çalışıyor: CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync (CuzdanUygulamasi)
+2025-08-25 12:29:58.763 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 12:29:59.050 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 12:29:59.055 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 12:31:39.572 +03:00 [ERR] Action hata verdi: CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync (CuzdanUygulamasi)
+System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+ ---> System.TimeoutException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: Bir iş parçacığı çıkışı veya bir uygulama isteği nedeniyle G/Ç işlemi iptal edildi..
+ ---> System.Net.Sockets.SocketException (995): Bir iş parçacığı çıkışı veya bir uygulama isteği nedeniyle G/Ç işlemi iptal edildi.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CuzdanUygulamasi.Services.ExchangeRateService.GetRatesAsync(String baseCurrency, String symbols) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Services\ExchangeRateService.cs:line 25
+   at CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync(Int32 id) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\KullaniciController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-08-25 12:31:39.632 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+ ---> System.TimeoutException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: Bir iş parçacığı çıkışı veya bir uygulama isteği nedeniyle G/Ç işlemi iptal edildi..
+ ---> System.Net.Sockets.SocketException (995): Bir iş parçacığı çıkışı veya bir uygulama isteği nedeniyle G/Ç işlemi iptal edildi.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CuzdanUygulamasi.Services.ExchangeRateService.GetRatesAsync(String baseCurrency, String symbols) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Services\ExchangeRateService.cs:line 25
+   at CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync(Int32 id) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\KullaniciController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-08-25 12:31:39.727 +03:00 [ERR] HTTP GET /Kullanici/Details/2 responded 500 in 101072.4716 ms
+2025-08-25 12:32:13.046 +03:00 [INF] Action çalışıyor: CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync (CuzdanUygulamasi)
+2025-08-25 12:32:13.050 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 12:33:53.129 +03:00 [ERR] Action hata verdi: CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync (CuzdanUygulamasi)
+System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+ ---> System.TimeoutException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: Bir iş parçacığı çıkışı veya bir uygulama isteği nedeniyle G/Ç işlemi iptal edildi..
+ ---> System.Net.Sockets.SocketException (995): Bir iş parçacığı çıkışı veya bir uygulama isteği nedeniyle G/Ç işlemi iptal edildi.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CuzdanUygulamasi.Services.ExchangeRateService.GetRatesAsync(String baseCurrency, String symbols) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Services\ExchangeRateService.cs:line 25
+   at CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync(Int32 id) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\KullaniciController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-08-25 12:33:53.160 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+ ---> System.TimeoutException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: Bir iş parçacığı çıkışı veya bir uygulama isteği nedeniyle G/Ç işlemi iptal edildi..
+ ---> System.Net.Sockets.SocketException (995): Bir iş parçacığı çıkışı veya bir uygulama isteği nedeniyle G/Ç işlemi iptal edildi.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CuzdanUygulamasi.Services.ExchangeRateService.GetRatesAsync(String baseCurrency, String symbols) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Services\ExchangeRateService.cs:line 25
+   at CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync(Int32 id) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\KullaniciController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-08-25 12:33:53.227 +03:00 [ERR] HTTP GET /Kullanici/Details/2 responded 500 in 100188.3872 ms
+2025-08-25 12:34:43.162 +03:00 [INF] Action çalışıyor: CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync (CuzdanUygulamasi)
+2025-08-25 12:34:43.167 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 12:34:59.849 +03:00 [INF] Application is shutting down...
+2025-08-25 12:35:22.492 +03:00 [ERR] Action hata verdi: CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync (CuzdanUygulamasi)
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 522.
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CuzdanUygulamasi.Services.ExchangeRateService.GetRatesAsync(String baseCurrency, String symbols) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Services\ExchangeRateService.cs:line 25
+   at CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync(Int32 id) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\KullaniciController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-08-25 12:35:22.501 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 522.
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CuzdanUygulamasi.Services.ExchangeRateService.GetRatesAsync(String baseCurrency, String symbols) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Services\ExchangeRateService.cs:line 25
+   at CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync(Int32 id) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\KullaniciController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-08-25 12:35:22.512 +03:00 [ERR] HTTP GET /Kullanici/Details/2 responded 500 in 39358.5376 ms
+2025-08-25 12:36:33.277 +03:00 [INF] Now listening on: http://localhost:5011
+2025-08-25 12:36:33.306 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 12:36:33.308 +03:00 [INF] Hosting environment: Development
+2025-08-25 12:36:33.309 +03:00 [INF] Content root path: C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi
+2025-08-25 12:36:42.321 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-08-25 12:36:42.406 +03:00 [INF] Action çalışıyor: CuzdanUygulamasi.Controllers.HomeController.Index (CuzdanUygulamasi)
+2025-08-25 12:36:42.408 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 12:36:42.410 +03:00 [INF] Action tamamlandı: CuzdanUygulamasi.Controllers.HomeController.Index (CuzdanUygulamasi)
+2025-08-25 12:36:42.458 +03:00 [INF] HTTP GET / responded 200 in 139.5235 ms
+2025-08-25 12:36:42.544 +03:00 [INF] Action çalışıyor: CuzdanUygulamasi.Controllers.HomeController.CheckTaksitNotifications (CuzdanUygulamasi)
+2025-08-25 12:36:42.549 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 12:36:42.828 +03:00 [WRN] No store type was specified for the decimal property 'Tutar' on entity type 'Islem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 12:36:42.831 +03:00 [WRN] No store type was specified for the decimal property 'FaizOrani' on entity type 'TaksitliOdeme'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-25 12:36:43.275 +03:00 [INF] Action tamamlandı: CuzdanUygulamasi.Controllers.HomeController.CheckTaksitNotifications (CuzdanUygulamasi)
+2025-08-25 12:36:43.280 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 755.0917 ms
+2025-08-25 12:36:43.291 +03:00 [INF] Action çalışıyor: CuzdanUygulamasi.Controllers.HomeController.Index (CuzdanUygulamasi)
+2025-08-25 12:36:43.293 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 12:36:43.294 +03:00 [INF] Action tamamlandı: CuzdanUygulamasi.Controllers.HomeController.Index (CuzdanUygulamasi)
+2025-08-25 12:36:43.299 +03:00 [INF] HTTP GET / responded 200 in 12.6588 ms
+2025-08-25 12:36:45.055 +03:00 [INF] Action çalışıyor: CuzdanUygulamasi.Controllers.AccountController.Login (CuzdanUygulamasi)
+2025-08-25 12:36:45.059 +03:00 [INF] Action tamamlandı: CuzdanUygulamasi.Controllers.AccountController.Login (CuzdanUygulamasi)
+2025-08-25 12:36:45.124 +03:00 [INF] HTTP GET /Account/Login responded 200 in 73.2787 ms
+2025-08-25 12:36:50.228 +03:00 [INF] Action çalışıyor: CuzdanUygulamasi.Controllers.AccountController.Login (CuzdanUygulamasi)
+2025-08-25 12:36:50.353 +03:00 [INF] Action tamamlandı: CuzdanUygulamasi.Controllers.AccountController.Login (CuzdanUygulamasi)
+2025-08-25 12:36:50.365 +03:00 [INF] HTTP POST /Account/Login responded 302 in 168.0452 ms
+2025-08-25 12:36:50.389 +03:00 [INF] Action çalışıyor: CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync (CuzdanUygulamasi)
+2025-08-25 12:36:50.396 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 12:37:30.244 +03:00 [ERR] Action hata verdi: CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync (CuzdanUygulamasi)
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 522.
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CuzdanUygulamasi.Services.ExchangeRateService.GetRatesAsync(String baseCurrency, String symbols) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Services\ExchangeRateService.cs:line 25
+   at CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync(Int32 id) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\KullaniciController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-08-25 12:37:30.272 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 522.
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CuzdanUygulamasi.Services.ExchangeRateService.GetRatesAsync(String baseCurrency, String symbols) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Services\ExchangeRateService.cs:line 25
+   at CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync(Int32 id) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\KullaniciController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-08-25 12:37:30.341 +03:00 [ERR] HTTP GET /Kullanici/Details/2 responded 500 in 39963.3611 ms
+2025-08-25 12:37:45.037 +03:00 [INF] Action çalışıyor: CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync (CuzdanUygulamasi)
+2025-08-25 12:37:45.041 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 12:38:24.449 +03:00 [ERR] Action hata verdi: CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync (CuzdanUygulamasi)
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 522.
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CuzdanUygulamasi.Services.ExchangeRateService.GetRatesAsync(String baseCurrency, String symbols) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Services\ExchangeRateService.cs:line 25
+   at CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync(Int32 id) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\KullaniciController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-08-25 12:38:24.468 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 522.
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at CuzdanUygulamasi.Services.ExchangeRateService.GetRatesAsync(String baseCurrency, String symbols) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Services\ExchangeRateService.cs:line 25
+   at CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync(Int32 id) in C:\Users\ZAHRA\source\repos\CuzdanUygulamasi\CuzdanUygulamasi\Controllers\KullaniciController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-08-25 12:38:24.514 +03:00 [ERR] HTTP GET /Kullanici/Details/2 responded 500 in 39479.5963 ms
+2025-08-25 12:40:13.552 +03:00 [INF] Action çalışıyor: CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync (CuzdanUygulamasi)
+2025-08-25 12:40:13.557 +03:00 [INF] KullaniciController -> DetailsAsync çalıştı.
+2025-08-25 12:41:02.017 +03:00 [INF] Action tamamlandı: CuzdanUygulamasi.Controllers.KullaniciController.DetailsAsync (CuzdanUygulamasi)
+2025-08-25 12:41:02.057 +03:00 [INF] HTTP GET /Kullanici/Details/2 responded 200 in 48505.8370 ms
+2025-08-25 12:41:02.107 +03:00 [INF] Action çalışıyor: CuzdanUygulamasi.Controllers.HomeController.CheckTaksitNotifications (CuzdanUygulamasi)
+2025-08-25 12:41:02.111 +03:00 [INF] HomeController -> Bildirim kontrolü çalıştı.
+2025-08-25 12:41:02.124 +03:00 [INF] Action tamamlandı: CuzdanUygulamasi.Controllers.HomeController.CheckTaksitNotifications (CuzdanUygulamasi)
+2025-08-25 12:41:02.127 +03:00 [INF] HTTP GET /Home/CheckTaksitNotifications responded 302 in 21.8308 ms
+2025-08-25 12:41:02.140 +03:00 [INF] Action çalışıyor: CuzdanUygulamasi.Controllers.HomeController.Index (CuzdanUygulamasi)
+2025-08-25 12:41:02.143 +03:00 [INF] HomeController -> Index çalıştı.
+2025-08-25 12:41:02.147 +03:00 [INF] Action tamamlandı: CuzdanUygulamasi.Controllers.HomeController.Index (CuzdanUygulamasi)
+2025-08-25 12:41:02.155 +03:00 [INF] HTTP GET / responded 200 in 16.3497 ms

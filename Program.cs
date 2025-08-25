@@ -16,14 +16,22 @@ var builder = WebApplication.CreateBuilder(args);
 
 // ------------------ Serilog Baþlangýç ------------------
 Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug() // Debug ve üzeri seviyeleri yakalar
     .ReadFrom.Configuration(builder.Configuration) // appsettings.json'dan oku
+    .WriteTo.File("Logs/log-.log",
+        rollingInterval: RollingInterval.Day,
+        retainedFileCountLimit: 30,
+        outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
     .CreateLogger();
 
 builder.Host.UseSerilog();
 // ------------------ Serilog Bitiþ ------------------
 
 // Services
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add<CuzdanUygulamasi.Attributes.LoggingActionFilter>();
+});
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 

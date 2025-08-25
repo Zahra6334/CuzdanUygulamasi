@@ -70,6 +70,16 @@ namespace CuzdanUygulamasi.Controllers
             { "GBP", 1 / result.Rates["GBP"] }  // 1 GBP = ? TL
         }
             };
+            var bildirimsayisi = _context.Bildirimler
+                .Where(b => b.KullaniciId == kullanici.Id)
+                .Count();
+            ViewBag.bildirimsayisi = bildirimsayisi;
+
+            var okunmamısbildirim = _context.Bildirimler
+                .Where(b => b.KullaniciId == kullanici.Id && b.OkunduMu == false)
+                .Count();
+            ViewBag.okunmamısbildirim = okunmamısbildirim;
+
 
             return View(vm);
         }

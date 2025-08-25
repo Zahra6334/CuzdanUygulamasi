@@ -65,7 +65,7 @@ namespace CuzdanUygulamasi.Controllers
         }
 
         // Kullanıcıya bildirimleri göster
-        public ActionResult Bildirimler()
+        public IActionResult Bildirimler()
         {
             if (!(User.Identity is ClaimsIdentity identity))
             {
@@ -82,8 +82,9 @@ namespace CuzdanUygulamasi.Controllers
 
             int userId = int.Parse(userIdClaim.Value);
 
+            // Tüm bildirimleri getir (okunmuş + okunmamış)
             var bildirimler = _context.Bildirimler
-                .Where(b => b.KullaniciId == userId && !b.OkunduMu)
+                .Where(b => b.KullaniciId == userId)
                 .OrderByDescending(b => b.Tarih)
                 .Select(b => new BildirimViewModel
                 {
@@ -94,10 +95,21 @@ namespace CuzdanUygulamasi.Controllers
                 })
                 .ToList();
 
+            // Kullanıcı sayfaya girdiğinde okunmamış bildirimleri "okundu" yap
+            var okunmamis = _context.Bildirimler
+                .Where(b => b.KullaniciId == userId && !b.OkunduMu)
+                .ToList();
+
+            foreach (var b in okunmamis)
+                b.OkunduMu = true;
+
+            _context.SaveChanges();
+
             _logger.LogInformation($"Bildirimler -> KullanıcıId={userId}, Bildirim sayısı={bildirimler.Count}");
 
             return View(bildirimler);
         }
+
     }
     
     
